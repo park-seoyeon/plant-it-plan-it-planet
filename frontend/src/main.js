@@ -1,14 +1,16 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+
+const APP_KEY = process.env.VUE_APP_KAKAO_KEY;
 
 Vue.config.productionTip = false;
 
-window.Kakao.init('676c5fa31785f08e2ce866bd98c4c645');
+window.Kakao.init(APP_KEY);
 
 new Vue({
   router,
   store,
   render: (h) => h(App),
-}).$mount("#app");
+}).$mount('#app');
