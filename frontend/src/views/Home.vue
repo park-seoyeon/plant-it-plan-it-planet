@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div v-if="isStatusOn" @click="toggleOnOff">
+    <div v-if="isStatusOn" @click="toggleOnOff" style="height: 100%">
       <Intro />
     </div>
-    <div v-else>
+    <div v-else style="height: 100%">
       <Login />
     </div>
   </div>
@@ -13,8 +13,6 @@
 import axios from 'axios';
 import Login from '@/components/Login/Login.vue';
 import Intro from '@/components/Intro/Intro.vue';
-
-const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
@@ -42,9 +40,9 @@ export default {
     },
     loginKakao() {
       axios
-        .post(`${SERVER_URL}/login/`, {'code':this.code})
-        
-        .then((response)=>{
+        .post(`${SERVER_URL}/login/`, { code: this.code })
+
+        .then((response) => {
           history.pushState(null, '', `/`);
           // console.log(response)
 
