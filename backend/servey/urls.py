@@ -2,5 +2,6 @@ from servey.views import servey
 from django.urls import path, include
 
 urlpatterns = [
-    path('', servey.getServeyQuestion ),
+    path('list/', servey.getServeyQuestion ),
+    path('', servey.isServey),
 ]

@@ -16,6 +16,8 @@ import Intro from '@/components/Intro/Intro.vue';
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
+const SERVER_URL = process.env.VUE_APP_SERVER_URL;
+
 export default {
   name: 'Home',
   data: () => {
@@ -40,9 +42,9 @@ export default {
     },
     loginKakao() {
       axios
-        .post(`${SERVER_URL}/login/`, { code: this.code })
-
-        .then((response) => {
+        .post(`${SERVER_URL}/login/`, {'code':this.code})
+        
+        .then((response)=>{
           history.pushState(null, '', `/`);
           // console.log(response)
 

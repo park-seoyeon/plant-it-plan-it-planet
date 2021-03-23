@@ -57,6 +57,16 @@ def kakaoLogin(request):
     return JsonResponse({'message':'success', 'access_token':access_token, 'user_number':user_number, 'email':email, 'name':name}, status = 200)
 
 
+@api_view(['DELETE'])
+def deleteUser(request):
+    data = json.loads(request.body)
+    user_number = data['user_number']
+    sql = """delete from user
+            where user_number = %s """
+    curs.execute(sql, user_number)
+    conn.commit()
+    return JsonResponse({'message':'success'}, status=200)
+
 
 def getUser(email):
     sql = "select * from user where email=%s"
