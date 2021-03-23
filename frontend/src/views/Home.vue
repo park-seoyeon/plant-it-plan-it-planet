@@ -15,6 +15,8 @@ import axios from "axios";
 import Login from "@/components/Login/Login.vue";
 import Intro from "@/components/Intro/Intro.vue";
 
+const SERVER_URL = process.env.VUE_APP_SERVER_URL;
+
 export default {
   name: "Home",
   data: () => {
@@ -41,7 +43,7 @@ export default {
     },
     loginKakao(){
       axios
-        .post(`http://localhost:8000/login/`, {'code':this.code})
+        .post(`${SERVER_URL}/login/`, {'code':this.code})
         
         .then((response)=>{
           history.pushState(null, '', `/`);

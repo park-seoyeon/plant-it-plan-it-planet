@@ -2,8 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Home from "../views/Home.vue";
+
 import SurveyStart from "../views/Survey/Survey_select.vue";
 import SurveyProgress from "../components/Survey/Survey_progress.vue";
+import SurveyResult from "../components/Survey/Survey_result.vue";
+
 import Main from "../views/Main.vue";
 
 Vue.use(VueRouter);
@@ -28,6 +31,11 @@ const routes = [
     path: "/survey_progress",
     name: "SurveyProgress",
     component: SurveyProgress,
+  },
+  {
+    path: "/survey_result",
+    name: "SurveyResult",
+    component: SurveyResult,
   },
 ];
 
