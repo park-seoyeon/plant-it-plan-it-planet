@@ -41,7 +41,6 @@ export default {
     requestKakao() {
       window.Kakao.Auth.authorize({
         redirectUri: `http://localhost:8080`,
-        
         });
     //   this.$router.push({ name: 'SurveyStart' })
     },

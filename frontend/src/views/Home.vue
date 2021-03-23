@@ -4,44 +4,43 @@
       <Intro />
     </div>
     <div v-else>
-      <Login /> 
+      <Login />
     </div>
   </div>
-
 </template>
 
 <script>
-import axios from "axios";
-import Login from "@/components/Login/Login.vue";
-import Intro from "@/components/Intro/Intro.vue";
+import axios from 'axios';
+import Login from '@/components/Login/Login.vue';
+import Intro from '@/components/Intro/Intro.vue';
+
+const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {
-  name: "Home",
+  name: 'Home',
   data: () => {
     return {
-      isStatusOn : true,
-      isLogin : false,
-    }
+      isStatusOn: true,
+      isLogin: false,
+    };
   },
   components: {
     Login,
     Intro,
   },
   methods: {
-    toggleOnOff: function(){
-      if(this.isLogin){
+    toggleOnOff: function () {
+      if (this.isLogin) {
         this.isStatusOn = true;
         this.$router.push({ name: 'SurveyStart' });
-      }
-      else{
+      } else {
         this.isStatusOn = false;
         // this.$router.push({ name: 'Login' })
       }
-      
     },
-    loginKakao(){
+    loginKakao() {
       axios
         .post(`${SERVER_URL}/login/`, {'code':this.code})
         
@@ -58,15 +57,13 @@ export default {
 
           location.reload();
           // this.$router.push({ name: 'SurveyStart' });
-
-
-        })
+        });
     },
   },
-  created(){
-    const token = localStorage.getItem("jwt");
+  created() {
+    const token = localStorage.getItem('jwt');
 
-    if(token){
+    if (token) {
       this.isLogin = true;
     }
     this.code = this.$route.query.code;
