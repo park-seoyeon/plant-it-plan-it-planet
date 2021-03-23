@@ -1,25 +1,20 @@
 <template>
-    <div>
-        <Survey_start />
-    </div>
+  <div class="select">
+    <Survey_start />
+  </div>
 </template>
 <script>
-import Survey_start from "@/components/Survey/Survey_start.vue";
+import Survey_start from '@/components/Survey/Survey_start.vue';
 
 export default {
-  name: "SurveyStart",
+  name: 'SurveyStart',
   data: () => {
-    return {
-
-    }
+    return {};
   },
   components: {
-    Survey_start
+    Survey_start,
   },
-  methods: {
-    
-  },
+  methods: {},
 };
 </script>
-<style>
-</style>
+<style></style>
