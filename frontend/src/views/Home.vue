@@ -32,7 +32,11 @@ export default {
     toggleOnOff: function () {
       if (this.isLogin) {
         this.isStatusOn = true;
-        this.$router.push({ name: 'SurveyStart' });
+        this.$router.push({ name: 'SurveyStart' }).catch((error) => {
+          if (error.name === 'NavigationDuplicated') {
+            location.reload();
+          }
+        });
       } else {
         this.isStatusOn = false;
         // this.$router.push({ name: 'Login' })
@@ -41,7 +45,6 @@ export default {
     loginKakao() {
       axios
         .post(`${SERVER_URL}/login/`, { code: this.code })
-
         .then((response) => {
           history.pushState(null, '', `/`);
           // console.log(response)
@@ -52,9 +55,18 @@ export default {
           localStorage.setItem('email', response.data['email']);
           localStorage.setItem('name', response.data['name']);
           localStorage.setItem('jwt', response.data['access_token']);
+          localStorage.setItem('user_number', response.data['user_number']);
 
           location.reload();
           // this.$router.push({ name: 'SurveyStart' });
+        })
+        .catch(() => {
+          alert('로그인중 오류가 발생했습니다. 다시 로그인 해주세요.');
+          this.$router.push({ name: 'Home' }).catch((error) => {
+            if (error.name === 'NavigationDuplicated') {
+              location.reload();
+            }
+          });
         });
     },
   },

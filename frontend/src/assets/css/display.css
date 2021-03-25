@@ -1,13 +1,15 @@
 /* content */
 .home {
-  height: 100%;
+  background: rgb(36, 36, 36) no-repeat center center fixed;
+  min-height: 100%;
   width: 375px;
   margin: 0 auto;
   text-align: center;
 }
 
 .select {
-  height: 100%;
+  background: rgb(36, 36, 36) no-repeat center center fixed;
+  min-height: 100%;
   width: 375px;
   margin: 0 auto;
   text-align: center;
@@ -23,5 +25,5 @@
   /* background-size: 100%; */
   margin: 0 auto;
   width: 375px;
-  height: 100%;
+  min-height: 100%;
 }

@@ -111,3 +111,140 @@
   vertical-align: middle;
   line-height: 60px;
 }
+
+/* survay_result */
+.content #resulticons {
+  padding: 7% 0 0 0;
+}
+
+.content #resulticons img {
+  width: 20%;
+  height: 20%;
+  margin: 0 2% 0 0;
+}
+
+.content #resultbar {
+  height: 2px;
+  width: 250px;
+  background: white;
+  margin: 1% auto 0 auto;
+}
+
+.content .result-detail #expression {
+  color: white;
+  font-size: 20px;
+  margin-top: 10%;
+}
+
+.content .result-detail #division-bar {
+  width: 307px;
+  height: 1px;
+  background: rgb(133, 133, 133);
+  margin: 2% auto 0 auto;
+}
+
+.content .result-detail #result-img {
+  margin: 5% 0;
+}
+
+.content .result-detail #result-img img {
+  width: 70%;
+  height: 70%;
+}
+
+.content .result-detail #recommend {
+  color: white;
+  text-align: left;
+  margin: 5% 0 5% 7%;
+}
+
+.content .result-detail #recommend #title {
+  font-size: 15px;
+}
+
+.content .result-detail #recommend #desc {
+  margin-top: 5%;
+}
+
+.content .result-detail #recommend #desc img {
+  width: 25%;
+  height: 25%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.content .result-detail #recommend #desc #text {
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.content .result-detail #recommend #desc #text #name {
+  font-size: 13px;
+}
+
+.content .result-detail #recommend #desc #text #division {
+  height: 1px;
+  width: 200px;
+  margin: 3% 0;
+  background: rgb(133, 133, 133);
+}
+
+.content .result-detail #recommend #desc #text #intro {
+  font-size: 11px;
+  max-width: 220px;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content .result-detail #friend {
+  color: white;
+  text-align: left;
+  margin: 0 0 5% 7%;
+  padding-bottom: 3%;
+}
+
+.content .result-detail #friend #partner {
+  margin: 10% 0 5% 0;
+}
+
+.content .result-detail #friend #partner img {
+  width: 20%;
+  height: 20%;
+}
+
+.content .result-detail #friend #partner #cont {
+  display: inline-block;
+  margin-left: 7%;
+  padding-left: 6%;
+  border-left: 1px solid #ffffff;
+}
+
+.content .result-detail #friend #partner #cont #title {
+  color: #f6f5c7;
+  font-size: 15px;
+}
+
+.content .result-detail #friend #partner #cont #division {
+  height: 1px;
+  width: 73px;
+  margin: 10% 0;
+  background: rgb(133, 133, 133);
+}
+
+.content .result-detail #friend #partner #cont #mbti {
+  font-size: 13px;
+}
+
+.content .result-detail #start-tool {
+  color: white;
+  padding-bottom: 10%;
+}
+
+.content .result-detail #start-tool #start {
+  font-size: 14px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding: 1% 5%;
+}
