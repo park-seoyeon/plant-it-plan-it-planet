@@ -14,6 +14,7 @@
 @import './assets/css/intro.css';
 @import './assets/css/login.css';
 @import './assets/css/survey.css';
+@import './assets/css/loading.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;
@@ -24,7 +25,11 @@
   align-self: center;
 }
 
-html,
+html {
+  margin: 0px;
+  height: 100%;
+}
+
 body {
   background-color: #252525;
   margin: 0px;
