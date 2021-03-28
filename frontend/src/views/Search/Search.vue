@@ -52,6 +52,7 @@
         @send13="getfilterlist"
         @send14="getfilterlist"
         @send15="getfilterlist"
+        ref="resetfilter"
         style="float: left;"
       />
     </div>
@@ -107,14 +108,7 @@ export default {
     reset(){
         this.selected_list = [];
 
-        if(this.isStatusOn){
-            this.isStatusOn = false;
-            this.isStatusOn = true;
-        }
-        else{
-            this.isStatusOn = true;
-            this.isStatusOn = false;
-        }
+        this.$refs.resetfilter.resetfilters();
 
         axios
             .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
@@ -234,13 +228,13 @@ export default {
 
     addfiltertolist(getdata){
       if(this.selected_list.includes(getdata)){
-        alert("dete");
+        // alert("dete");
         const where =  this.selected_list.indexOf(getdata);
         this.selected_list.splice(where, 1);
         this.idx = this.idx - 1;
       }
       else{
-        alert("add");
+        // alert("add");
         this.selected_list[this.idx] = getdata;
         this.idx = this.idx + 1;
       }
@@ -248,7 +242,7 @@ export default {
     },
 
     addfiltertolistdelete(getdata){
-      alert("초기화");
+    //   alert("초기화");
 
       this.selected_list = [];
       this.idx = 0;
@@ -257,7 +251,7 @@ export default {
     },
 
     addfiltertolistdeleteleaftype(getdata){
-      alert("잎 모양만 초기화");
+    //   alert("잎 모양만 초기화");
 
       const where =  this.selected_list.indexOf(getdata);
       this.selected_list.splice(where, 1);
@@ -286,9 +280,9 @@ export default {
 };
 </script>
 <style>
-    .content {
+    /* .content {
         text-align: left;
-    }
+    } */
 
     .plantitlogo img {
         width: 154px;

@@ -1,6 +1,5 @@
 <template>
   <div id="searchfilter">
-    <!-- <FilterButton v-for="(buttons, idx) in filter_list" :key="idx" :buttons="buttons" @callParent="addfiltertolist"/> -->
 
     <!-- 1. 잎이 있는 식물, 공중식물, 덩굴식물,  선인장/다육식물  컴포넌트  -> PlantCategory.vue -->
     <PlantCategory
@@ -13,6 +12,7 @@
 
     <!-- 2. 잎이 있는 식물 선택했을 때 나오는 하위 필터 컴포넌트 -> LeafCategory.vue -->
     <LeafCategory 
+      class="filters"
       v-if="isLeafcategoryOn"
       @callLeaftype="getleaftype"
       @callAir="getair"
@@ -108,7 +108,7 @@ import LeafType from '@/components/Search/PlantCategory/LeafType/LeafType.vue';
 export default {
   name: "SearchFilter",
 
-  // props: ['filter_list'],
+  props: ['resetOn'],
 
   data: () => {
     return {
@@ -136,14 +136,38 @@ export default {
 
   },
   methods: {
+    resetfilters(){
+      if(this.isLeafcategoryOn){
+        this.isLeafcategoryOn = false;
+      }
+      if(this.isSkycategoryOn){
+        this.isSkycategoryOn = false;
+      }
+      if(this.isDungulcategoryOn){
+        this.isDungulcategoryOn = false;
+      }
+      if(this.isCactuscategoryOn){
+        this.isCactuscategoryOn = false;
+      }
+      if(this.isLeaftypeOn){
+        this.isLeaftypeOn = false;
+      }
+    },
 
     getleafcategory(){
       this.selectedfilter = 1;
 
       if(this.isLeafcategoryOn){
+
         this.isLeafcategoryOn = false;
 
-        this.$emit('sendCategory', this.selectedfilter);
+        if(this.isLeaftypeOn){
+          this.isLeaftypeOn = false;
+          this.$emit('sendCategorydelete', this.selectedfilter);
+        }
+        else{
+          this.$emit('sendCategory', this.selectedfilter);
+        }
       }
       else{
         if(this.isSkycategoryOn){
@@ -172,7 +196,13 @@ export default {
       if(this.isSkycategoryOn){
         this.isSkycategoryOn = false;
 
-        this.$emit('sendCategory', this.selectedfilter);
+        if(this.isLeaftypeOn){
+          this.isLeaftypeOn = false;
+          this.$emit('sendCategorydelete', this.selectedfilter);
+        }
+        else{
+          this.$emit('sendCategory', this.selectedfilter);
+        }
       }
       else{
         if(this.isLeafcategoryOn){
@@ -199,7 +229,13 @@ export default {
       if(this.isDungulcategoryOn){
         this.isDungulcategoryOn = false;
 
-        this.$emit('sendCategory', this.selectedfilter);
+        if(this.isLeaftypeOn){
+          this.isLeaftypeOn = false;
+          this.$emit('sendCategorydelete', this.selectedfilter);
+        }
+        else{
+          this.$emit('sendCategory', this.selectedfilter);
+        }
       }
       else{
         if(this.isSkycategoryOn){
@@ -225,7 +261,13 @@ export default {
       if(this.isCactuscategoryOn){
         this.isCactuscategoryOn = false;
 
-        this.$emit('sendCategory', this.selectedfilter);
+        if(this.isLeaftypeOn){
+          this.isLeaftypeOn = false;
+          this.$emit('sendCategorydelete', this.selectedfilter);
+        }
+        else{
+          this.$emit('sendCategory', this.selectedfilter);
+        }
       }
       else{
         if(this.isSkycategoryOn){
@@ -392,3 +434,8 @@ export default {
   },
 };
 </script>
+<style>
+   .filters {
+     /* margin: 0 0 0 15%; */
+   }
+</style>

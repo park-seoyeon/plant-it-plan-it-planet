@@ -39,5 +39,7 @@ export default {
         color: white;
         padding: 0 0 0 5%;
         font-weight: bold;
+        margin-top: 22%;
+        /* float: left; */
     }
 </style>
