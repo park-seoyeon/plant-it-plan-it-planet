@@ -28,7 +28,7 @@
   font-size: 17px;
 }
 
-.content .buttons {
+.content .survey-buttons {
   border: 2px solid white;
   border-radius: 10px;
   width: 338px;
@@ -41,7 +41,7 @@
   line-height: 520%;
 }
 
-.content .buttons:hover {
+.content .survey-buttons:hover {
   border: 2px solid #00b564;
   border-radius: 10px;
   width: 338px;

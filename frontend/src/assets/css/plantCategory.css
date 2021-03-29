@@ -1,0 +1,71 @@
+.content #plantcategory {
+  width: 375px;
+  height: 56px;
+}
+
+.content #plantcategory .plantcategoryfilter {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  float: left;
+  vertical-align: middle;
+  margin: 0 0 0 2%;
+}
+
+.content #plantcategory .plantcategoryfilter-active {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #00b564;
+
+  float: left;
+  vertical-align: middle;
+  margin: 0 0 0 2%;
+}
+
+.content #plantcategory #leaf {
+  width: 106px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #plantcategory #sky {
+  width: 82px;
+  float: left;
+  margin-right: 100px;
+}
+
+.content #plantcategory #dungul {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.content #plantcategory #cactus {
+  width: 106px;
+  float: left;
+  margin-top: 2%;
+}

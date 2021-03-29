@@ -1,49 +1,183 @@
 <template>
   <div id="leaftype">
     <div class="dashedline2"></div>
-    <div class="leaftypefilter" id="select1" @click="select1">
+    <div
+      v-if="is_1"
+      class="leaftypefilter-active"
+      id="select1"
+      @click="select1()"
+    >
       구멍
     </div>
-    <div class="leaftypefilter" id="select2" @click="select2">
+    <div v-else class="leaftypefilter" id="select1" @click="select1()">
+      구멍
+    </div>
+
+    <div
+      v-if="is_2"
+      class="leaftypefilter-active"
+      id="select2"
+      @click="select2()"
+    >
       넓은
     </div>
-    <div class="leaftypefilter" id="select3" @click="select3">
+    <div v-else class="leaftypefilter" id="select2" @click="select2()">
+      넓은
+    </div>
+
+    <div
+      v-if="is_3"
+      class="leaftypefilter-active"
+      id="select3"
+      @click="select3()"
+    >
       둥근
     </div>
-    <div class="leaftypefilter" id="select4" @click="select4">
+    <div v-else class="leaftypefilter" id="select3" @click="select3()">
+      둥근
+    </div>
+
+    <div
+      v-if="is_4"
+      class="leaftypefilter-active"
+      id="select4"
+      @click="select4()"
+    >
       뾰족한
     </div>
-    <div class="leaftypefilter" id="select5" @click="select5">
+    <div v-else class="leaftypefilter" id="select4" @click="select4()">
+      뾰족한
+    </div>
+
+    <div
+      v-if="is_5"
+      class="leaftypefilter-active"
+      id="select5"
+      @click="select5()"
+    >
       길쭉한
     </div>
-    <div class="leaftypefilter" id="select6" @click="select6">
+    <div v-else class="leaftypefilter" id="select5" @click="select5()">
+      길쭉한
+    </div>
+
+    <div
+      v-if="is_6"
+      class="leaftypefilter-active"
+      id="select6"
+      @click="select6()"
+    >
       갈라진
     </div>
-    <div class="leaftypefilter" id="select7" @click="select7">
+    <div v-else class="leaftypefilter" id="select6" @click="select6()">
+      갈라진
+    </div>
+
+    <div
+      v-if="is_7"
+      class="leaftypefilter-active"
+      id="select7"
+      @click="select7()"
+    >
       하트모양
     </div>
-    <div class="leaftypefilter" id="select8" @click="select8">
+    <div v-else class="leaftypefilter" id="select7" @click="select7()">
+      하트모양
+    </div>
+
+    <div
+      v-if="is_8"
+      class="leaftypefilter-active"
+      id="select8"
+      @click="select8()"
+    >
       별모양
     </div>
-    <div class="leaftypefilter" id="select9" @click="select9">
+    <div v-else class="leaftypefilter" id="select8" @click="select8()">
+      별모양
+    </div>
+
+    <div
+      v-if="is_9"
+      class="leaftypefilter-active"
+      id="select9"
+      @click="select9()"
+    >
       작은
     </div>
-    <div class="leaftypefilter" id="select10" @click="select10">
+    <div v-else class="leaftypefilter" id="select9" @click="select9()">
+      작은
+    </div>
+
+    <div
+      v-if="is_10"
+      class="leaftypefilter-active"
+      id="select10"
+      @click="select10()"
+    >
       두꺼운
     </div>
-    <div class="leaftypefilter" id="select11" @click="select11">
+    <div v-else class="leaftypefilter" id="select10" @click="select10()">
+      두꺼운
+    </div>
+
+    <div
+      v-if="is_11"
+      class="leaftypefilter-active"
+      id="select11"
+      @click="select11()"
+    >
       무늬
     </div>
-    <div class="leaftypefilter" id="select12" @click="select12">
+    <div v-else class="leaftypefilter" id="select11" @click="select11()">
+      무늬
+    </div>
+
+    <div
+      v-if="is_12"
+      class="leaftypefilter-active"
+      id="select12"
+      @click="select12()"
+    >
       꽃 모양
     </div>
-    <div class="leaftypefilter" id="select13" @click="select13">
+    <div v-else class="leaftypefilter" id="select12" @click="select12()">
+      꽃 모양
+    </div>
+
+    <div
+      v-if="is_13"
+      class="leaftypefilter-active"
+      id="select13"
+      @click="select13()"
+    >
       통통한
     </div>
-    <div class="leaftypefilter" id="select14" @click="select14">
+    <div v-else class="leaftypefilter" id="select13" @click="select13()">
+      통통한
+    </div>
+
+    <div
+      v-if="is_14"
+      class="leaftypefilter-active"
+      id="select14"
+      @click="select14()"
+    >
       납작한
     </div>
-    <div class="leaftypefilter" id="select15" @click="select15">
+    <div v-else class="leaftypefilter" id="select14" @click="select14()">
+      납작한
+    </div>
+
+    <div
+      v-if="is_15"
+      class="leaftypefilter-active"
+      id="select15"
+      @click="select15()"
+    >
+      잎이 없음
+    </div>
+    <div v-else class="leaftypefilter" id="select15" @click="select15()">
       잎이 없음
     </div>
   </div>
@@ -53,180 +187,107 @@
 // import axios from "axios";
 
 export default {
-  name: "LeafType",
+  name: 'LeafType',
 
   data: () => {
     return {
-      
-    }
+      is_1: false,
+      is_2: false,
+      is_3: false,
+      is_4: false,
+      is_5: false,
+      is_6: false,
+      is_7: false,
+      is_8: false,
+      is_9: false,
+      is_10: false,
+      is_11: false,
+      is_12: false,
+      is_13: false,
+      is_14: false,
+      is_15: false,
+    };
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
-    select1(){
+    select1() {
       this.$emit('call1');
+      this.is_1 = !this.is_1;
     },
-    select2(){
+    select2() {
       this.$emit('call2');
+      this.is_2 = !this.is_2;
     },
-    select3(){
+    select3() {
       this.$emit('call3');
+      this.is_3 = !this.is_3;
     },
-    select4(){
+    select4() {
       this.$emit('call4');
+      this.is_4 = !this.is_4;
     },
-    select5(){
+    select5() {
       this.$emit('call5');
+      this.is_5 = !this.is_5;
     },
-    select6(){
+    select6() {
       this.$emit('call6');
+      this.is_6 = !this.is_6;
     },
-    select7(){
+    select7() {
       this.$emit('call7');
+      this.is_7 = !this.is_7;
     },
-    select8(){
+    select8() {
       this.$emit('call8');
+      this.is_8 = !this.is_8;
     },
-    select9(){
+    select9() {
       this.$emit('call9');
+      this.is_9 = !this.is_9;
     },
-    select10(){
+    select10() {
       this.$emit('call10');
+      this.is_10 = !this.is_10;
     },
-    select11(){
+    select11() {
       this.$emit('call11');
+      this.is_11 = !this.is_11;
     },
-    select12(){
+    select12() {
       this.$emit('call12');
+      this.is_12 = !this.is_12;
     },
-    select13(){
+    select13() {
       this.$emit('call13');
+      this.is_13 = !this.is_13;
     },
-    select14(){
+    select14() {
       this.$emit('call14');
+      this.is_14 = !this.is_14;
     },
-    select15(){
+    select15() {
       this.$emit('call15');
+      this.is_15 = !this.is_15;
     },
   },
-  created(){
-    
+  created() {
+    this.is_1 = false;
+    this.is_2 = false;
+    this.is_3 = false;
+    this.is_4 = false;
+    this.is_5 = false;
+    this.is_6 = false;
+    this.is_7 = false;
+    this.is_8 = false;
+    this.is_9 = false;
+    this.is_10 = false;
+    this.is_11 = false;
+    this.is_12 = false;
+    this.is_13 = false;
+    this.is_14 = false;
+    this.is_15 = false;
   },
 };
 </script>
-<style>
-  .leaftypefilter {
-    width: 82px;
-    height: 28px;
-
-    background: #242424;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    font-family: Binggrae Melona;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 25px;
-
-    color: #FFFFFF;
-
-    float:left;
-    vertical-align: center;
-    margin: 0 0 2% 2%;
-  }
-
-  .dashedline2 {
-    width: 330px;
-    height: 0px;
-    margin: -10px auto 0 auto;
-
-    border: 0.25px dashed #FFFFFF;
-  }
-
-  #select1{
-    width: 62px;
-    float: left;
-    margin-left: 5%;
-    margin-top: 2%;
-  }
-
-  #select2{
-    width: 62px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #select3{
-    width: 62px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #select4{
-    width: 72px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #select5{
-    width: 72px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #select6{
-    width: 72px;
-    float: left;
-  }
-
-  #select7{
-    width: 80px;
-    float: left;
-  }
-
-  #select8{
-    width: 72px;
-    float: left;
-  }
-
-  #select9{
-    width: 62px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #select10{
-    width: 72px;
-    float: left;
-  }
-
-  #select11{
-    width: 62px;
-    float: left;
-  }
-
-  #select12{
-    width: 80px;
-    float: left;
-  }
-
-  #select13{
-    width: 72px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #select14{
-    width: 72px;
-    float: left;
-  }
-
-  #select15{
-    width: 90px;
-    float: left;
-  }
-
-</style>
+<style></style>

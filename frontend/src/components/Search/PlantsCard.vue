@@ -59,28 +59,4 @@ export default {
   },
 };
 </script>
-<style>
-.plantscard {
-  width: 50%;
-  height: 200px;
-  float: left;
-  margin: 0 0 5% 0;
-}
-
-.plantscard img {
-  float: left;
-  width: 80%;
-  height: 80%;
-  margin: 0 0 5% 10%;
-}
-
-.plantscard .plantsname {
-  width: 80%;
-  height: 20%;
-  padding: 0 0 0 10%;
-  text-align: left;
-  font-size: 14px;
-  color: white;
-  float: left;
-}
-</style>
+<style></style>

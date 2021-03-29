@@ -1,0 +1,109 @@
+/* search.vue */
+.content .searchicons {
+  text-align: left;
+  margin: 0 0 0 5%;
+}
+
+.content .searchicons .top-btn {
+  cursor: pointer;
+  display: inline-block;
+  background: #00b564;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 3% 1% 0;
+  width: 15%;
+}
+
+.content .searchicons .top-btn img {
+  width: 45%;
+  height: 45%;
+  vertical-align: middle;
+}
+
+.content .searchtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 28px;
+  color: white;
+  text-align: left;
+  margin: 0 0 5% 5%;
+}
+
+/* plantscard.vue */
+.content .plants .plantscard {
+  width: 50%;
+  height: 200px;
+  float: left;
+  margin: 0 0 5% 0;
+}
+
+.content .plants .plantscard img {
+  float: left;
+  width: 80%;
+  height: 80%;
+  margin: 0 0 5% 10%;
+}
+
+.content .plants .plantscard .plantsname {
+  width: 80%;
+  height: 20%;
+  padding: 0 0 0 10%;
+  text-align: left;
+  font-size: 14px;
+  color: white;
+  float: left;
+}
+
+/* searchlist.vue */
+.content #searchlist .plantscardtitle {
+  text-align: left;
+  color: white;
+  padding: 0 0 0 5%;
+  font-weight: bold;
+  margin-top: 22%;
+}
+
+/* searchname.vue */
+.content #searchname {
+  margin: 0 0 0 5%;
+  padding: 5% 0 0 0;
+  width: 500px;
+  text-align: left;
+}
+
+.content #searchname img {
+  width: 3%;
+  height: 3%;
+  vertical-align: middle;
+  margin-right: 1%;
+}
+
+.content #searchname #plantname {
+  background: rgb(36, 36, 36);
+  border-bottom: 2px solid white;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  color: white;
+  width: 240px;
+  padding-bottom: 1%;
+}
+
+.content #searchname .submitbutton {
+  width: 10%;
+  height: 10%;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  vertical-align: sub;
+  line-height: 25px;
+  font-size: 15px;
+  background: rgb(36, 36, 36);
+  margin: 0 0 0 2%;
+}
+
+/* searchfilter.vue */
+.content #searchfilter {
+  float: left;
+}

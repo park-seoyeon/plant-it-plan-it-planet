@@ -1,31 +1,108 @@
 <template>
   <div id="leafcategory">
     <div class="dashedline"></div>
-    <div class="leafcategoryfilter" id="leaftype" @click="selectleaftype">
+    <div
+      v-if="isleafType"
+      class="leafcategoryfilter-active"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
       잎 모양
     </div>
-    <div class="leafcategoryfilter" id="air" @click="selectair">
+    <div
+      v-else
+      class="leafcategoryfilter"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
+      잎 모양
+    </div>
+    <div
+      v-if="isair"
+      class="leafcategoryfilter-active"
+      id="air"
+      @click="selectair()"
+    >
       공기정화
     </div>
-    <div class="leafcategoryfilter" id="smell" @click="selectsmell">
+    <div v-else class="leafcategoryfilter" id="air" @click="selectair()">
+      공기정화
+    </div>
+    <div
+      v-if="issmell"
+      class="leafcategoryfilter-active"
+      id="smell"
+      @click="selectsmell()"
+    >
       향기나는
     </div>
-    <div class="leafcategoryfilter" id="animal" @click="selectanimal">
+    <div v-else class="leafcategoryfilter" id="smell" @click="selectsmell()">
+      향기나는
+    </div>
+    <div
+      v-if="isanimal"
+      class="leafcategoryfilter-active"
+      id="animal"
+      @click="selectanimal()"
+    >
       반려동물 안전한
     </div>
-    <div class="leafcategoryfilter" id="light" @click="selectlight">
+    <div v-else class="leafcategoryfilter" id="animal" @click="selectanimal()">
+      반려동물 안전한
+    </div>
+    <div
+      v-if="islight"
+      class="leafcategoryfilter-active"
+      id="light"
+      @click="selectlight()"
+    >
       빛이 적어도 되는
     </div>
-    <div class="leafcategoryfilter" id="fruit" @click="selectfruit">
+    <div v-else class="leafcategoryfilter" id="light" @click="selectlight()">
+      빛이 적어도 되는
+    </div>
+    <div
+      v-if="isfruit"
+      class="leafcategoryfilter-active"
+      id="fruit"
+      @click="selectfruit()"
+    >
       열매 맺는
     </div>
-    <div class="leafcategoryfilter" id="stick" @click="selectstick">
+    <div v-else class="leafcategoryfilter" id="fruit" @click="selectfruit()">
+      열매 맺는
+    </div>
+    <div
+      v-if="isstick"
+      class="leafcategoryfilter-active"
+      id="stick"
+      @click="selectstick()"
+    >
       목대 있는
     </div>
-    <div class="leafcategoryfilter" id="bottom" @click="selectbottom">
+    <div v-else class="leafcategoryfilter" id="stick" @click="selectstick()">
+      목대 있는
+    </div>
+    <div
+      v-if="isbottom"
+      class="leafcategoryfilter-active"
+      id="bottom"
+      @click="selectbottom()"
+    >
       밑이 통통한
     </div>
-    <div class="leafcategoryfilter" id="flower" @click="selectflower">
+    <div v-else class="leafcategoryfilter" id="bottom" @click="selectbottom()">
+      밑이 통통한
+    </div>
+    <div
+      v-if="isflower"
+      class="leafcategoryfilter-active"
+      id="flower"
+      @click="selectflower()"
+    >
+      꽃이 피는
+    </div>
+    <div v-else class="leafcategoryfilter" id="flower" @click="selectflower()">
       꽃이 피는
     </div>
   </div>
@@ -35,142 +112,79 @@
 // import axios from "axios";
 
 export default {
-  name: "LeafCategory",
+  name: 'LeafCategory',
 
   data: () => {
     return {
-      filter : 0,
-    }
+      isleafType: false,
+      isair: false,
+      issmell: false,
+      isflower: false,
+      islight: false,
+      isanimal: false,
+      isfruit: false,
+      isstick: false,
+      isbottom: false,
+    };
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
-    selectleaftype(){
+    selectleaftype() {
       this.$emit('callLeaftype');
+      this.isleafType = !this.isleafType;
     },
 
-    selectair(){
+    selectair() {
       this.$emit('callAir');
+      this.isair = !this.isair;
     },
 
-    selectsmell(){
+    selectsmell() {
       this.$emit('callSmell');
+      this.issmell = !this.issmell;
     },
 
-    selectanimal(){
+    selectanimal() {
       this.$emit('callAnimal');
+      this.isanimal = !this.isanimal;
     },
 
-    selectlight(){
+    selectlight() {
       this.$emit('callLight');
+      this.islight = !this.islight;
     },
 
-    selectfruit(){
+    selectfruit() {
       this.$emit('callFruit');
+      this.isfruit = !this.isfruit;
     },
 
-    selectstick(){
+    selectstick() {
       this.$emit('callStick');
+      this.isstick = !this.isstick;
     },
 
-    selectbottom(){
+    selectbottom() {
       this.$emit('callBottom');
+      this.isbottom = !this.isbottom;
     },
 
-    selectflower(){
+    selectflower() {
       this.$emit('callFlower');
+      this.isflower = !this.isflower;
     },
   },
-  created(){
-    
+  created() {
+    this.isleafType = false;
+    this.isair = false;
+    this.issmell = false;
+    this.isflower = false;
+    this.islight = false;
+    this.isanimal = false;
+    this.isfruit = false;
+    this.isstick = false;
+    this.isbottom = false;
   },
 };
 </script>
-<style>
-  #leafcategory {
-    width: 375px;
-    height: 115px;
-  }
-
-  .leafcategoryfilter {
-    width: 82px;
-    height: 28px;
-
-    background: #242424;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    font-family: Binggrae Melona;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 25px;
-
-    color: #FFFFFF;
-
-    float:left;
-    vertical-align: center;
-    margin: 0 0 2% 2%;
-  }
-
-  .dashedline {
-    width: 330px;
-    height: 0px;
-    margin: 4% auto 0 auto;
-
-    border: 0.25px dashed #FFFFFF;
-  }
-
-  #leaftype {
-    /* width: 66px; */
-    float: left;
-    margin-left: 5%;
-    margin-top: 2%;
-  }
-
-  #air {
-    width: 82px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #smell {
-    width: 82px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #animal {
-    width: 109px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #light {
-    width: 109px;
-    float: left;
-  }
-
-  #fruit {
-    width: 82px;
-    float: left;
-  }
-
-  #stick {
-    width: 82px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #bottom {
-    width: 82px;
-    float: left;
-  }
-
-  #flower {
-    width: 82px;
-    float: left;
-  }
-</style>
+<style></style>

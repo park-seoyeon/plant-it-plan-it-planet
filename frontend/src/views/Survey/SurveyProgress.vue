@@ -16,16 +16,16 @@
         {{ this.question_list[this.where].question }}
       </div>
 
-      <div class="buttons" id="select1" @click="select(1)">
+      <div class="survey-buttons" @click="select(1)">
         {{ this.question_list[this.where].answer_01 }}
       </div>
-      <div class="buttons" id="select2" @click="select(2)">
+      <div class="survey-buttons" @click="select(2)">
         {{ this.question_list[this.where].answer_02 }}
       </div>
-      <div class="buttons" id="select3" @click="select(3)">
+      <div class="survey-buttons" @click="select(3)">
         {{ this.question_list[this.where].answer_03 }}
       </div>
-      <div class="buttons" id="select4" @click="select(4)">
+      <div class="survey-buttons" @click="select(4)">
         {{ this.question_list[this.where].answer_04 }}
       </div>
     </div>
