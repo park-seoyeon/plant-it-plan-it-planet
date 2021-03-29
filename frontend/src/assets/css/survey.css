@@ -1,0 +1,268 @@
+/* survay_progress */
+.content #icons {
+  padding: 20% 0 0 0;
+}
+
+.content #icons img {
+  width: 20%;
+  height: 20%;
+  margin: 0 2% 0 0;
+}
+
+.content #progressbar {
+  height: 5px;
+  background: white;
+  width: 300px;
+  margin: 5% auto 0 auto;
+}
+
+.content #mybar {
+  height: 5px;
+  background: #00b564;
+  width: 0%;
+}
+
+.content #ask {
+  color: white;
+  margin: 20% 5% 20% 5%;
+  font-size: 17px;
+}
+
+.content .buttons {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 338px;
+  height: 77px;
+  margin: 10% auto 0 auto;
+  padding: 0 2% 0 2%;
+  color: white;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 520%;
+}
+
+.content .buttons:hover {
+  border: 2px solid #00b564;
+  border-radius: 10px;
+  width: 338px;
+  height: 77px;
+  margin: 10% auto 0 auto;
+  padding: 0 2% 0 2%;
+  color: #00b564;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 520%;
+}
+
+/* survay_start */
+.content #logo img {
+  margin: 30% 0 0 0;
+}
+
+.content #ask_start {
+  color: white;
+  margin: 20% 0 0 0;
+}
+
+.content #ask_ok_button {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 80%;
+  height: 60px;
+  margin: 15% auto 0 auto;
+  color: white;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.content #ask_no_button {
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 80%;
+  height: 60px;
+  margin: 10% auto 0 auto;
+  color: white;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.content #ask_ok_button:hover {
+  border: 2px solid #00b564;
+  border-radius: 10px;
+  width: 80%;
+  height: 60px;
+  margin: 15% auto 0 auto;
+  color: #00b564;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.content #ask_no_button:hover {
+  border: 2px solid #00b564;
+  border-radius: 10px;
+  width: 80%;
+  height: 60px;
+  margin: 10% auto 0 auto;
+  color: #00b564;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+/* survay_result */
+.content #resulticons {
+  padding: 7% 0 0 0;
+}
+
+.content #resulticons img {
+  width: 20%;
+  height: 20%;
+  margin: 0 2% 0 0;
+}
+
+.content #resultbar {
+  height: 2px;
+  width: 250px;
+  background: white;
+  margin: 1% auto 0 auto;
+}
+
+.content .result-detail #expression {
+  color: white;
+  font-size: 20px;
+  margin-top: 10%;
+}
+
+.content .result-detail #division-bar {
+  width: 307px;
+  height: 1px;
+  background: rgb(133, 133, 133);
+  margin: 2% auto 0 auto;
+}
+
+.content .result-detail #result-img {
+  margin: 5% 0;
+}
+
+.content .result-detail #result-img img {
+  width: 70%;
+  height: 70%;
+}
+
+.content .result-detail #recommend {
+  color: white;
+  text-align: left;
+  margin: 5% 0 5% 7%;
+}
+
+.content .result-detail #recommend #title {
+  font-size: 15px;
+}
+
+.content .result-detail #recommend #desc {
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.content .result-detail #recommend #desc:hover {
+  margin-top: 5%;
+  color: #00b564;
+  cursor: pointer;
+}
+
+.content .result-detail #recommend #desc img {
+  width: 25%;
+  height: 25%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.content .result-detail #recommend #desc #text {
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.content .result-detail #recommend #desc #text #name {
+  font-size: 13px;
+}
+
+.content .result-detail #recommend #desc #text #division {
+  height: 1px;
+  width: 200px;
+  margin: 3% 0;
+  background: rgb(133, 133, 133);
+}
+
+.content .result-detail #recommend #desc #text #intro {
+  font-size: 11px;
+  max-width: 220px;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content .result-detail #friend {
+  color: white;
+  text-align: left;
+  margin: 0 0 5% 7%;
+  padding-bottom: 3%;
+}
+
+.content .result-detail #friend #partner {
+  margin: 10% 0 5% 0;
+}
+
+.content .result-detail #friend #partner img {
+  width: 20%;
+  height: 20%;
+}
+
+.content .result-detail #friend #partner #cont {
+  display: inline-block;
+  margin-left: 7%;
+  padding-left: 6%;
+  border-left: 1px solid #ffffff;
+}
+
+.content .result-detail #friend #partner #cont #title {
+  color: #f6f5c7;
+  font-size: 15px;
+}
+
+.content .result-detail #friend #partner #cont #division {
+  height: 1px;
+  width: 73px;
+  margin: 10% 0;
+  background: rgb(133, 133, 133);
+}
+
+.content .result-detail #friend #partner #cont #mbti {
+  font-size: 13px;
+}
+
+.content .result-detail #start-tool {
+  color: white;
+  padding-bottom: 10%;
+  cursor: pointer;
+}
+
+.content .result-detail #start-tool #start {
+  cursor: pointer;
+  font-size: 14px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding: 1% 5%;
+}
+
+.content .result-detail #start-tool #start:hover {
+  cursor: pointer;
+  font-size: 14px;
+  color: #00b564;
+  border: 3px solid #00b564;
+  border-radius: 10px;
+  padding: 1% 5%;
+}

@@ -12,4 +12,5 @@ from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('login/', user.kakaoLogin ),
+    path('delete/', user.deleteUser),
 ]
