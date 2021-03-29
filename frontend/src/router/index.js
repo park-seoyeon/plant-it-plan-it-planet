@@ -7,6 +7,8 @@ import SurveyStart from '@/views/Survey/SurveyStart.vue';
 import SurveyProgress from '@/views/Survey/SurveyProgress.vue';
 import SurveyResult from '@/views/Survey/SurveyResult.vue';
 
+import SearchDetail from '@/views/Search/SearchDetail.vue';
+
 import Main from '@/views/Main.vue';
 
 Vue.use(VueRouter);
@@ -36,6 +38,11 @@ const routes = [
     path: '/survey/result',
     name: 'SurveyResult',
     component: SurveyResult,
+  },
+  {
+    path: '/search/detail/search:searchnumber',
+    name: 'SearchDetail',
+    component: SearchDetail,
   },
 ];
 
