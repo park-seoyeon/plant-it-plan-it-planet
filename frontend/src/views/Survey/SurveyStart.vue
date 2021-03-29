@@ -13,8 +13,8 @@
     <div id="ask_start">
       설문 조사를 통해<br />나에게 맞는 식물을 알아볼까요?
     </div>
-    <div id="ask_ok_button" @click="goSurvey">네, 그렇게 할게요</div>
-    <div id="ask_no_button" @click="goMain">아니요, 괜찮아요</div>
+    <div id="ask_ok_button" @click="goSurvey()">네, 그렇게 할게요</div>
+    <div id="ask_no_button" @click="goSearch()">아니요, 괜찮아요</div>
   </div>
 </template>
 <script>
@@ -47,8 +47,8 @@ export default {
         }
       });
     },
-    goMain() {
-      this.$router.push({ name: 'Main' }).catch((error) => {
+    goSearch() {
+      this.$router.push({ name: 'Search' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
         }
