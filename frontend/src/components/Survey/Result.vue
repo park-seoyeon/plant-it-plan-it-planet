@@ -16,8 +16,8 @@
       <div id="division-bar"></div>
       <div id="recommend">
         <div id="title">당신에게 어울리는 식물</div>
-        <div id="desc">
-          <img src="@/assets/img/plant/1_1.jpg" />
+        <div id="desc" @click="plantDetail(result.recommanded_plant_1_id)">
+          <img :src="Download_1()" />
           <div id="text">
             <div id="name">
               {{ result.recommanded_plant_1_name }}
@@ -28,8 +28,8 @@
             </div>
           </div>
         </div>
-        <div id="desc">
-          <img src="@/assets/img/plant/2_1.jpg" />
+        <div id="desc" @click="plantDetail(result.recommanded_plant_2_id)">
+          <img :src="Download_2()" />
           <div id="text">
             <div id="name">
               {{ result.recommanded_plant_2_name }}
@@ -40,8 +40,8 @@
             </div>
           </div>
         </div>
-        <div id="desc">
-          <img src="@/assets/img/plant/3_1.jpg" />
+        <div id="desc" @click="plantDetail(result.recommanded_plant_3_id)">
+          <img :src="Download_3()" />
           <div id="text">
             <div id="name">
               {{ result.recommanded_plant_3_name }}
@@ -85,6 +85,7 @@
 import planticon from '@/assets/img/plantit_icon.png';
 import planicon from '@/assets/img/planit_icon.png';
 import planeticon from '@/assets/img/planet_icon.png';
+import firebase from 'firebase';
 
 export default {
   name: 'Result',
@@ -93,6 +94,9 @@ export default {
       planticon: planticon,
       planicon: planicon,
       planeticon: planeticon,
+      plantImg_1: null,
+      plantImg_2: null,
+      plantImg_3: null,
     };
   },
 
@@ -109,6 +113,54 @@ export default {
     },
     getWorstImgPath() {
       return require(`@/assets/img/mbti/${this.result.worst_partner}.png`);
+    },
+    Download_1() {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+      var starsRef = storageRef.child(
+        `plant_images/${this.result.recommanded_plant_1_id}_1.jpg`
+      );
+      starsRef.getDownloadURL().then((url) => {
+        this.plantImg_1 = url;
+      });
+      return this.plantImg_1;
+    },
+    Download_2() {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+      var starsRef = storageRef.child(
+        `plant_images/${this.result.recommanded_plant_2_id}_1.jpg`
+      );
+      starsRef.getDownloadURL().then((url) => {
+        this.plantImg_2 = url;
+      });
+      return this.plantImg_2;
+    },
+    Download_3() {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+      var starsRef = storageRef.child(
+        `plant_images/${this.result.recommanded_plant_3_id}_1.jpg`
+      );
+      starsRef.getDownloadURL().then((url) => {
+        this.plantImg_3 = url;
+      });
+      return this.plantImg_3;
+    },
+    plantDetail(id) {
+      this.$router
+        .push({ name: 'SearchDetail', params: { searchnumber: id } })
+        .catch((error) => {
+          if (error.name === 'NavigationDuplicated') {
+            location.reload();
+          }
+        });
     },
   },
 };

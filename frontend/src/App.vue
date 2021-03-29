@@ -15,6 +15,7 @@
 @import './assets/css/login.css';
 @import './assets/css/survey.css';
 @import './assets/css/loading.css';
+@import './assets/css/searchDetail.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;

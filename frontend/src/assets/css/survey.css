@@ -164,6 +164,13 @@
 
 .content .result-detail #recommend #desc {
   margin-top: 5%;
+  cursor: pointer;
+}
+
+.content .result-detail #recommend #desc:hover {
+  margin-top: 5%;
+  color: #00b564;
+  cursor: pointer;
 }
 
 .content .result-detail #recommend #desc img {
@@ -240,11 +247,22 @@
 .content .result-detail #start-tool {
   color: white;
   padding-bottom: 10%;
+  cursor: pointer;
 }
 
 .content .result-detail #start-tool #start {
+  cursor: pointer;
   font-size: 14px;
   border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding: 1% 5%;
+}
+
+.content .result-detail #start-tool #start:hover {
+  cursor: pointer;
+  font-size: 14px;
+  color: #00b564;
+  border: 3px solid #00b564;
   border-radius: 10px;
   padding: 1% 5%;
 }
