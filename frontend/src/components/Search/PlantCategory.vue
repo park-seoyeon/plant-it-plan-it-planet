@@ -52,6 +52,14 @@ export default {
 };
 </script>
 <style>
+  /* #leaf:hover {
+    border: 2px solid #00b564;
+    color: #00b564;
+    font-size: 12px;
+    line-height: 25px;
+    vertical-align: middle;
+  } */
+
   #plantcategory {
     width: 375px;
     height: 56px;

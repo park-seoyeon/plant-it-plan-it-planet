@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="plantitlogo">
+    <div class="plantitlogo" style="text-align: left;">
         <img :src="Plantitimg" />
     </div>
 
@@ -11,15 +11,20 @@
         식물을 찾고 있나요?
     </div>
 
-    <button @click="reset">
-        리셋
-    </button>
-    <button @click="usename">
-        검색하기
-    </button>
-    <button @click="usefilter">
-        필터
-    </button>
+    <div class="searchicons">
+        <!-- <button @click="reset">
+            리셋
+        </button> -->
+        <img :src="Reseticon" @click="reset" />
+        <!-- <button @click="usename">
+            검색하기
+        </button> -->
+        <img :src="Searchicon" @click="usename" style="margin-left: 3%;" />
+        <!-- <button @click="usefilter">
+            필터
+        </button> -->
+        <img :src="Filtericon" @click="usefilter" style="margin-left: 3%;" />
+    </div>
 
     <div v-if="isStatusOn">
       <SearchFilter
@@ -59,6 +64,7 @@
     <div v-else>
       <SearchName 
         @callParent="getplantname"
+        ref="resetfilter"
         style="float: left;"
       />
     </div>
@@ -72,6 +78,9 @@
 import axios from 'axios';
 
 import Plantitimg from '@/assets/img/PLANTIT.png';
+import Reseticon from '@/assets/img/reseticon.png';
+import Searchicon from '@/assets/img/searchicon.png';
+import Filtericon from '@/assets/img/filtericon.png';
 
 import SearchName from '@/components/Search/SearchName.vue';
 import SearchFilter from '@/components/Search/SearchFilter.vue';
@@ -85,6 +94,9 @@ export default {
     return {
 
         Plantitimg : Plantitimg,
+        Reseticon : Reseticon,
+        Searchicon : Searchicon,
+        Filtericon : Filtericon,
 
         isStatusOn : true,
 
@@ -179,7 +191,7 @@ export default {
 
         this.addfiltertolist(getdata);
 
-        alert(this.selected_list);
+        // alert(this.selected_list);
 
         axios
             .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
@@ -196,7 +208,7 @@ export default {
 
         this.addfiltertolistdelete(getdata);
 
-        alert(this.selected_list);
+        // alert(this.selected_list);
 
         axios
             .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
@@ -213,7 +225,7 @@ export default {
 
         this.addfiltertolistdeleteleaftype(getdata);
 
-        alert(this.selected_list);
+        // alert(this.selected_list);
 
         axios
             .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
@@ -280,9 +292,15 @@ export default {
 };
 </script>
 <style>
-    /* .content {
+    .searchicons {
         text-align: left;
-    } */
+        margin: 0 0 0 5%;
+    }
+
+    .searchicons img {
+        width: 10%;
+        height: 10%;
+    }
 
     .plantitlogo img {
         width: 154px;
