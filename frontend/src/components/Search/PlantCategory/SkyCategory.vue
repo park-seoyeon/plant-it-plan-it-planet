@@ -1,25 +1,86 @@
 <template>
   <div id="skycategory">
     <div class="dashedline"></div>
-    <div class="skycategoryfilter" id="leaftype" @click="selectleaftype">
+    <div
+      v-if="isleafType"
+      class="skycategoryfilter-active"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
       잎 모양
     </div>
-    <div class="skycategoryfilter" id="air2" @click="selectair">
+    <div
+      v-else
+      class="skycategoryfilter"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
+      잎 모양
+    </div>
+    <div
+      v-if="isair"
+      class="skycategoryfilter-active"
+      id="air2"
+      @click="selectair()"
+    >
       공기정화
     </div>
-    <div class="skycategoryfilter" id="flower2" @click="selectflower">
+    <div v-else class="skycategoryfilter" id="air2" @click="selectair()">
+      공기정화
+    </div>
+    <div
+      v-if="isflower"
+      class="skycategoryfilter-active"
+      id="flower2"
+      @click="selectflower()"
+    >
       꽃 피는
     </div>
-    <div class="skycategoryfilter" id="light2" @click="selectlight">
+    <div v-else class="skycategoryfilter" id="flower2" @click="selectflower()">
+      꽃 피는
+    </div>
+    <div
+      v-if="islight"
+      class="skycategoryfilter-active"
+      id="light2"
+      @click="selectlight()"
+    >
       빛이 적어도 되는
     </div>
-    <div class="skycategoryfilter" id="animal2" @click="selectanimal">
+    <div v-else class="skycategoryfilter" id="light2" @click="selectlight()">
+      빛이 적어도 되는
+    </div>
+    <div
+      v-if="isanimal"
+      class="skycategoryfilter-active"
+      id="animal2"
+      @click="selectanimal()"
+    >
       반려동물 안전한
     </div>
-    <div class="skycategoryfilter" id="fruit2" @click="selectfruit">
+    <div v-else class="skycategoryfilter" id="animal2" @click="selectanimal()">
+      반려동물 안전한
+    </div>
+    <div
+      v-if="isfruit"
+      class="skycategoryfilter-active"
+      id="fruit2"
+      @click="selectfruit()"
+    >
       열매 맺는
     </div>
-    <div class="skycategoryfilter" id="soil2" @click="selectsoil">
+    <div v-else class="skycategoryfilter" id="fruit2" @click="selectfruit()">
+      열매 맺는
+    </div>
+    <div
+      v-if="issoil"
+      class="skycategoryfilter-active"
+      id="soil2"
+      @click="selectsoil()"
+    >
+      흙이 필요 없는
+    </div>
+    <div v-else class="skycategoryfilter" id="soil2" @click="selectsoil()">
       흙이 필요 없는
     </div>
   </div>
@@ -29,124 +90,65 @@
 // import axios from "axios";
 
 export default {
-  name: "SkyCategory",
+  name: 'SkyCategory',
 
   data: () => {
     return {
-      
-    }
+      isleafType: false,
+      isair: false,
+      isflower: false,
+      islight: false,
+      isanimal: false,
+      isfruit: false,
+      issoil: false,
+    };
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
-    selectleaftype(){
+    selectleaftype() {
       this.$emit('callLeaftype');
+      this.isleafType = !this.isleafType;
     },
 
-    selectair(){
+    selectair() {
       this.$emit('callAir');
+      this.isair = !this.isair;
     },
 
-    selectflower(){
+    selectflower() {
       this.$emit('callFlower');
+      this.isflower = !this.isflower;
     },
 
-    selectlight(){
+    selectlight() {
       this.$emit('callLight');
+      this.islight = !this.islight;
     },
 
-    selectanimal(){
+    selectanimal() {
       this.$emit('callAnimal');
+      this.isanimal = !this.isanimal;
     },
 
-    selectfruit(){
+    selectfruit() {
       this.$emit('callFruit');
+      this.isfruit = !this.isfruit;
     },
 
-    selectsoil(){
+    selectsoil() {
       this.$emit('callSoil');
+      this.issoil = !this.issoil;
     },
   },
-  created(){
-    
+  created() {
+    this.isleafType = false;
+    this.isair = false;
+    this.isflower = false;
+    this.islight = false;
+    this.isanimal = false;
+    this.isfruit = false;
+    this.issoil = false;
   },
 };
 </script>
-<style>
-  #skycategory {
-    width: 375px;
-    height: 115px;
-  }
-
-  .skycategoryfilter {
-    width: 82px;
-    height: 28px;
-
-    background: #242424;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    font-family: Binggrae Melona;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 25px;
-
-    color: #FFFFFF;
-
-    float:left;
-    vertical-align: center;
-    margin: 0 0 2% 2%;
-  }
-
-  /* .dashedline {
-    width: 330px;
-    height: 0px;
-    margin: 4% auto 0 auto;
-
-    border: 0.25px dashed #FFFFFF;
-  } */
-
-  /* #leaftype {
-    float: left;
-    margin-left: 5%;
-    margin-top: 2%;
-  } */
-
-  #air2 {
-    width: 82px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #flower2 {
-    width: 72px;
-    float: left;
-    margin-top: 2%;
-    margin-right: 20px;
-  }
-
-  #light2 {
-    width: 122px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #animal2 {
-    width: 112px;
-    float: left;
-  }
-
-  #fruit2 {
-    width: 82px;
-    float: left;
-  }
-
-  #soil2 {
-    width: 112px;
-    float: left;
-    margin-left: 5%;
-  }
-</style>
+<style></style>

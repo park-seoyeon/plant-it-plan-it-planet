@@ -15,6 +15,13 @@
 @import './assets/css/login.css';
 @import './assets/css/survey.css';
 @import './assets/css/loading.css';
+@import './assets/css/search.css';
+@import './assets/css/plantCategory.css';
+@import './assets/css/skyCategory.css';
+@import './assets/css/leafCategory.css';
+@import './assets/css/dungulCategory.css';
+@import './assets/css/cactusCategory.css';
+@import './assets/css/leafType.css';
 @import './assets/css/searchDetail.css';
 
 #app {

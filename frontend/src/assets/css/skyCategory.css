@@ -1,0 +1,95 @@
+.content #skycategory {
+  width: 375px;
+  height: 115px;
+}
+
+.content #skycategory .skycategoryfilter {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #skycategory .skycategoryfilter-active {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #00b564;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #skycategory .dashedline {
+  width: 330px;
+  height: 0px;
+  margin: 4% auto 0 auto;
+
+  border: 1px dashed #ffffff;
+}
+
+.content #skycategory #leaftype {
+  float: left;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.content #skycategory #air2 {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+}
+
+.content #skycategory #flower2 {
+  width: 72px;
+  float: left;
+  margin-top: 2%;
+  margin-right: 20px;
+}
+
+.content #skycategory #light2 {
+  width: 122px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #skycategory #animal2 {
+  width: 112px;
+  float: left;
+}
+
+.content #skycategory #fruit2 {
+  width: 82px;
+  float: left;
+}
+
+.content #skycategory #soil2 {
+  width: 112px;
+  float: left;
+  margin-left: 5%;
+}
