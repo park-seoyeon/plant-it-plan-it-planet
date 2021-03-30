@@ -23,6 +23,10 @@
 @import './assets/css/cactusCategory.css';
 @import './assets/css/leafType.css';
 @import './assets/css/searchDetail.css';
+@import './assets/css/planit.css';
+@import './assets/css/planit-myplant.css';
+@import './assets/css/planit-foryou.css';
+@import './assets/css/planit-magazine.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;

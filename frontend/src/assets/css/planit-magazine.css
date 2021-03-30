@@ -1,0 +1,106 @@
+.main_component_magazine_title {
+  text-align: left;
+  margin: 3% 0 0 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+}
+
+.main_component_magazine_sub {
+  text-align: left;
+  margin: 0 0 3% 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 7px;
+  color: white;
+}
+
+.main_component_magazine_content {
+  height: 200px;
+}
+
+.main_component_magazine_content img {
+  position: relative;
+  width: 85%;
+  height: 85%;
+}
+
+.main_component_magazine_content_story {
+  position: relative;
+  top: -150px;
+  left: 60px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  color: white;
+  height: 120px;
+  width: 270px;
+  /* background: yellow; */
+}
+
+.main_component_magazine_content_story_title {
+  /* background: red; */
+  height: 20px;
+  margin: 10px 0 0 0;
+}
+
+.main_component_magazine_content_story_content {
+  /* background: green; */
+  height: 80px;
+  margin: 10px 0 0 0;
+}
+
+.main_component_magazine_content_story_title_text {
+  height: 20px;
+  width: 200px;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  float: left;
+  font-weight: bold;
+}
+
+.main_component_magazine_content_story_title_back {
+  /* background: yellow; */
+  width: 25px;
+  float: left;
+  height: 20px;
+  margin: -8px 0 0 45px;
+}
+
+.main_component_magazine_content_story_title_back img {
+  width: 60%;
+}
+
+.main_component_magazine_content_story_content_img {
+  /* background: blue; */
+  width: 100px;
+  height: 80px;
+  float: left;
+}
+
+.main_component_magazine_content_story_content_img img {
+  width: 100px;
+}
+
+.main_component_magazine_content_story_content_text {
+  /* background: purple; */
+  width: 150px;
+  height: 60px;
+  float: left;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 14px;
+  color: white;
+  text-align: left;
+  margin: 10px 0 0 10px;
+}

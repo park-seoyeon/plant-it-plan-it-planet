@@ -1,0 +1,73 @@
+.myplants {
+  height: 200px;
+}
+
+.main_component_myplant_title {
+  text-align: left;
+  margin: 0 0 0 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+}
+
+.main_component_myplant_sub {
+  text-align: left;
+  margin: 0 0 3% 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 7px;
+  color: white;
+}
+
+.myplantscard img {
+  width: 80%;
+  height: 200px;
+  opacity: 0.5;
+  border-radius: 15px;
+  position: relative;
+}
+
+#myplants_name {
+  position: relative;
+  top: -140px;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: white;
+}
+
+.plantsname_detail {
+  position: relative;
+  top: -130px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  color: white;
+}
+
+.gallery {
+  background: #eee;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
