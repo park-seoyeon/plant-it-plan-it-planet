@@ -42,6 +42,7 @@ html {
 
 body {
   background-color: #252525;
+  font-family: 'Noto Sans KR', sans-serif;
   margin: 0px;
   height: 100%;
 }

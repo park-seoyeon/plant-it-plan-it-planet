@@ -4,7 +4,7 @@
       <div class="delete" @click="deletePlant()">ㅡ</div>
     </div>
     <div v-if="isAdd" class="myplant">
-      <img :src="myPlantImg" />
+      <img :src="plantImg" />
       <div class="cont">
         <div id="day">함께한지 {{ myplant.add_day_count }}일</div>
         <div id="name">
@@ -27,15 +27,16 @@
         </div>
       </div>
     </div>
+
     <div v-else class="wantplant">
-      <img :src="plantImg" />
+      <img :src="plantImg" @click="goSearchDetail()" />
       <div class="cont">
         <div id="name">{{ myplant.plant_name }}</div>
         <div id="btn">
           <a v-bind:href="myplant.buy_link" target="_blank" id="buyit"
             >BUY IT</a
           >
-          <div id="plantit" @click="addPlant()">PLANT IT</div>
+          <div id="plantit" @click="addPlantModal()">PLANT IT</div>
         </div>
       </div>
     </div>
@@ -45,7 +46,6 @@
 <script>
 import axios from 'axios';
 import firebase from 'firebase';
-import myPlantImg from '@/assets/img/default-img.png';
 import AddPlant from '@/components/Modal/AddPlant.vue';
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
@@ -59,7 +59,6 @@ export default {
     return {
       isAdd: false,
       plantImg: null,
-      myPlantImg: myPlantImg,
     };
   },
   methods: {
@@ -100,43 +99,59 @@ export default {
     },
 
     downloadMyPlantImg() {
-      // var storage = firebase.storage();
-      // var storageRef = storage.ref();
-      // // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
-      // // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      // var starsRef = storageRef.child(
-      //   `my_plant_images/${this.myplant.user_number}_${this.myplant.id}.jpg`
-      // );
-      // if (starsRef != null) {
-      //   starsRef.getDownloadURL().then((url) => {
-      //     this.myPlantImg = url;
-      //   });
-      // }
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+      var starsRef = storageRef.child(
+        `my_plant_images/${localStorage.getItem('user_number')}_${
+          this.myplant.id
+        }.jpg`
+      );
+      if (starsRef != null) {
+        starsRef.getDownloadURL().then((url) => {
+          this.plantImg = url;
+        });
+      }
     },
-    addPlant() {
+    addPlantModal() {
       this.$modal.show(
         AddPlant,
         {
           modal: this.$modal,
           myplant_id: this.myplant.id,
           plant_name: this.myplant.plant_name,
+          plant_img: this.plantImg,
         },
         {
           name: 'dynamic-modal',
           width: '300px',
-          height: '243px',
+          height: '250px',
           draggable: false,
-        },
-        {
-          closed: this.setLikes,
         }
       );
+    },
+    goSearchDetail() {
+      this.$router
+        .push({
+          name: 'SearchDetail',
+          params: { searchnumber: this.myplant.plant_id },
+        })
+        .catch((error) => {
+          if (error.name === 'NavigationDuplicated') {
+            location.reload();
+          }
+        });
     },
   },
   created() {
     if (this.myplant.is_add == 1) {
       this.isAdd = true;
-      this.downloadMyPlantImg();
+      if (this.myplant.is_upload == 1) {
+        this.downloadMyPlantImg();
+      } else {
+        this.downloadPlantImg();
+      }
     } else {
       this.isAdd = false;
       this.downloadPlantImg();
@@ -145,4 +160,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.vm--modal {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background-color: #242424;
+  border-radius: 10px;
+  box-shadow: 0 0 0 0;
+  border: 2px solid #ffffff;
+}
+</style>
