@@ -128,6 +128,7 @@
 }
 
 .content .plant-card .wantplant img {
+  cursor: pointer;
   width: 106px;
   height: 106px;
 }
