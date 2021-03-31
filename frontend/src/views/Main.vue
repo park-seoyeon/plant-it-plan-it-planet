@@ -3,7 +3,8 @@
     <div class="head" id="planit">
       <img class="planit_logo" :src="Planitimg" />
       <div class="planit_profile">
-        {{ this.mypage_list }}
+        
+
       </div>
     </div>
     <div class="division" id="planit_division"></div>
@@ -18,6 +19,7 @@
     <div class="planit_magazine">
       <MainMagazine />
     </div>
+
   </div>
 
 </template>
@@ -30,6 +32,11 @@ import Planitimg from '@/assets/img/PLANIT.png';
 import MainMyplant from '@/components/PlanIt/MyPlant.vue';
 import MainForyou from '@/components/PlanIt/ForYou.vue';
 import MainMagazine from '@/components/PlanIt/Magazine.vue';
+
+
+// import { Carousel3d, Slide } from 'vue-carousel-3d';
+
+
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
@@ -50,6 +57,13 @@ export default {
     MainMagazine,
   },
   methods: {
+
+    goToSlide(index) {
+      this.$refs.mycarousel.goSlide(index)
+    },
+
+
+
     async getmyplant(){
       // const login_usernumber = localStorage.getItem('user_number');
 
@@ -72,16 +86,16 @@ export default {
           alert('서버와 통신할 수 없습니다.');
         });
 
-      // await axios
-      //   .post(`${SERVER_URL}/mypage/`, { user_number : localStorage.getItem('user_number') })
+      await axios
+        .post(`${SERVER_URL}/mypage/`, { user_number : localStorage.getItem('user_number') })
 
-      //   .then((response) => {
-      //     alert(response.data);
-      //     this.mypage_list = response.data.profile_image;
-      //   })
-      //   .catch(() => {
-      //     alert('서버와 통신할 수 없습니다.');
-      //   });
+        .then((response) => {
+          alert(response.data);
+          this.mypage_list = response.data;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
       
     },
     

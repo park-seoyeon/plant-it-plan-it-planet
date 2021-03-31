@@ -9,19 +9,19 @@
     <div class="main_component_foryou_content">
          
          <!-- <div class="main_component_foryou_recommands" v-on:[this.recommend_plant_1_id_check]="plantDetail"> -->
-          <div class="main_component_foryou_recommands" @click="plantDetail(this.recommend_plant_1_id_check)">
+          <div class="main_component_foryou_recommands" @click="plantDetail(recommend_list.recommanded_plant_1_id)">
              <img :src="plantImg_1" />
              <div class="main_component_foryou_name">
                  {{ this.recommend_list['recommanded_plant_1_name'] }}
              </div>
          </div>
-         <div class="main_component_foryou_recommands">
+         <div class="main_component_foryou_recommands" @click="plantDetail(recommend_list.recommanded_plant_2_id)">
              <img :src="plantImg_2" />
              <div class="main_component_foryou_name">
                  {{ this.recommend_list['recommanded_plant_2_name'] }}
              </div>
          </div>
-         <div class="main_component_foryou_recommands">
+         <div class="main_component_foryou_recommands" @click="plantDetail(recommend_list.recommanded_plant_3_id)">
              <img :src="plantImg_3" />
              <div class="main_component_foryou_name">
                  {{ this.recommend_list['recommanded_plant_3_name'] }}
@@ -62,8 +62,6 @@ export default {
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
       var input_plant_id = this.recommend_list['recommanded_plant_1_id'];
-      // 왜 alert를 하면 되는거???.,?????ㅁㅇㄹ?ㅁ?ㅇㄹ?ㅁㄴㅇ?ㄻㄴ?ㅇㄹ?
-      alert("firebase 이미지를 띄우기 위한 alert");
       var starsRef = storageRef.child(`plant_images/${input_plant_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_1 = url;
@@ -95,7 +93,6 @@ export default {
     },
 
     plantDetail(id) {
-      alert(id);
       this.$router
         .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
@@ -118,11 +115,15 @@ export default {
       });
     }
     else{
-        this.Download_1();
-        this.Download_2();
-        this.Download_3();
+        
         this.start();
     }
   },
+
+  beforeUpdate(){
+    this.Download_1();
+        this.Download_2();
+        this.Download_3();
+  }
 };
 </script>

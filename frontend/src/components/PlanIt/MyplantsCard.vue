@@ -1,5 +1,7 @@
 <template>
   <div class="myplants">
+
+
     <div class="myplantscard">
       <img :src="plantImg" />
       <div class="plantsname" id="myplants_name">
@@ -17,6 +19,8 @@ import firebase from 'firebase';
 
 import PlantsDefault from '@/assets/img/plantsdefault.png';
 
+// import { Slide } from 'vue-carousel-3d';
+
 export default {
   name: 'MyplantsCard',
 
@@ -29,7 +33,9 @@ export default {
       plantImg: null,
     };
   },
-  components: {},
+  components: {
+    // Slide,
+  },
   methods: {
     Download() {
       var storage = firebase.storage();

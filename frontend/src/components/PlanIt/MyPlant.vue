@@ -7,24 +7,33 @@
           식물들을 관리해주세요
       </div>
 
-      <!-- <p><code>wrapAround: true</code></p> -->
+      <carousel-3d>
+        <slide class="myplant_slides" :index="0">
+          Slide 1 Content
+        </slide>
+        <slide class="myplant_slides" :index="1">
+          Slide 1 Content
+        </slide>
+        <slide class="myplant_slides" :index="2">
+          Slide 1 Content
+        </slide>
+      </carousel-3d>
 
-      <!-- Flickity HTML init -->
-      <!-- <div class="gallery js-flickity"
-        data-flickity-options='{ "wrapAround": true }'>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-      </div> -->
-
+      <!-- <carousel-3d>
+          <MyplantsCard
+          v-for="(myplants, idx) in myplant_list"
+          :key="idx"
+          :myplants="myplants"
+        />
+      </carousel-3d> -->
 
     <MyplantsCard
       v-for="(myplants, idx) in myplant_list"
       :key="idx"
       :myplants="myplants"
     />  
+
+
   </div>
 </template>
 
@@ -32,6 +41,8 @@
 // import axios from "axios";
 
 import MyplantsCard from '@/components/PlanIt/MyplantsCard.vue';
+
+import { Carousel3d, Slide } from 'vue-carousel-3d';
 
 export default {
   name: "MainMyplant",
@@ -41,10 +52,13 @@ export default {
   data: () => {
     return {
       where : 1,
+      slides: 5,
     }
   },
   components: {
     MyplantsCard,
+    Carousel3d,
+    Slide,
   },
   methods: {
     

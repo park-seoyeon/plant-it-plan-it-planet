@@ -8775,6 +8775,14 @@
   "resolved" "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz"
   "version" "1.1.2"
 
+"vue-carousel-3d@^1.0.1":
+  "integrity" "sha512-Q50gIEB6plLdqYd3jLxte8RJsXNPQBcrRsgUey7nnaQ7TvtFoRu/4rpPP1FiihahE0v+IzVv8LLSSJxD+XrQVQ=="
+  "resolved" "https://registry.npmjs.org/vue-carousel-3d/-/vue-carousel-3d-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "core-js" "^3.6.5"
+    "vue" "^2.6.11"
+
 "vue-eslint-parser@^7.0.0":
   "integrity" "sha512-QXxqH8ZevBrtiZMZK0LpwaMfevQi9UL7lY6Kcp+ogWHC88AuwUPwwCIzkOUc1LR4XsYAt/F9yHXAB/QoD17QXA=="
   "resolved" "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-7.6.0.tgz"
