@@ -10,12 +10,16 @@
     <div class="problem-name">혹시 식물이 아파요?</div>
     <div class="problem-division"></div>
     <PlantProblem v-for="(problem, idx) in sos" :key="idx" :problem="problem" />
+    <div class="back">
+      <div class="back-icon" @click="goBack()"><img :src="Backimg" /></div>
+    </div>
     <div style="padding-bottom: 3%"></div>
   </div>
 </template>
 
 <script>
 import planticon from '@/assets/img/PLANTIT.png';
+import backicon from '@/assets/img/arrows/left-arrow.png';
 import axios from 'axios';
 import PlantInfo from '@/components/SearchDetail/PlantInfo.vue';
 import PlantCare from '@/components/SearchDetail/PlantCare.vue';
@@ -28,6 +32,7 @@ export default {
   data: () => {
     return {
       Plantitimg: planticon,
+      Backimg: backicon,
       plant_detail: {},
       sos: [],
     };
@@ -83,6 +88,10 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+    },
+
+    goBack() {
+      history.back();
     },
   },
 

@@ -39,6 +39,28 @@
   margin: 3% auto;
 }
 
+.content .back {
+  text-align: right;
+  margin-right: 5%;
+}
+
+.content .back .back-icon {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 15px;
+  width: 44px;
+  height: 44px;
+}
+
+.content .back .back-icon img {
+  /* vertical-align: bottom; */
+  padding-top: 22%;
+  width: 50%;
+  height: 50%;
+}
+
 /* search detail info */
 .content .detail-img {
   margin-bottom: 3%;
@@ -142,6 +164,11 @@
   text-align: left;
   font-size: 14px;
   margin: 0 0 3% 7%;
+}
+
+.content .problem img {
+  width: 3%;
+  height: 3%;
 }
 
 .content .problem .title-active {

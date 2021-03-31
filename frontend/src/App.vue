@@ -23,6 +23,8 @@
 @import './assets/css/cactusCategory.css';
 @import './assets/css/leafType.css';
 @import './assets/css/searchDetail.css';
+@import './assets/css/myplant.css';
+@import './assets/css/modal.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;
