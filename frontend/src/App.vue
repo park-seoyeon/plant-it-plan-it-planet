@@ -28,6 +28,8 @@
 @import './assets/css/planit-myplant.css';
 @import './assets/css/planit-foryou.css';
 @import './assets/css/planit-magazine.css';
+@import './assets/css/myplant.css';
+@import './assets/css/modal.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;
