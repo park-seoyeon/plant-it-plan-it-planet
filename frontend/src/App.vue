@@ -30,6 +30,7 @@
 @import './assets/css/planit-magazine.css';
 @import './assets/css/myplant.css';
 @import './assets/css/modal.css';
+@import './assets/css/magazine.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;
