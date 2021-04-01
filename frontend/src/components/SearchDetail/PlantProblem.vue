@@ -2,11 +2,11 @@
   <div class="problem">
     <div v-if="isOpen" class="title-active" @click="openAccodian()">
       Q. {{ problem.title }}
-      <i class="fas fa-angle-down"></i>
+      <img src="@/assets/img/arrows/up-arrow.png" />
     </div>
     <div v-else class="title" @click="openAccodian()">
       Q. {{ problem.title }}
-      <i class="fas fa-angle-up"></i>
+      <img src="@/assets/img/arrows/down-arrow.png" />
     </div>
     <div v-if="isOpen" class="desc">{{ problem.detail }}</div>
     <div class="problem-division"></div>

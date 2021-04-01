@@ -1,0 +1,91 @@
+.modal {
+  color: #ffffff;
+  text-align: left;
+}
+
+.modal .modal-head {
+  text-align: right;
+}
+
+.modal .modal-head #close {
+  cursor: pointer;
+  margin: 2% 2% 0 0;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 25px;
+  height: 24px;
+}
+
+.modal .modal-body {
+  margin-left: 5%;
+  margin-top: 2%;
+  font-size: 14px;
+}
+
+/* .modal .modal-body #upload-img img {
+  width: 82px;
+  height: 82px;
+  margin-bottom: 2%;
+} */
+
+.modal .modal-body #upload-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 4%;
+  text-align: center;
+  vertical-align: top;
+
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+.modal .modal-body #upload-btn #upload-img {
+  width: 80%;
+  height: 80%;
+}
+
+.modal .modal-body #upload-btn #default-img {
+  width: 50%;
+  height: 50%;
+  margin-top: 25%;
+}
+
+.modal .modal-body #plant-name {
+  margin-bottom: 2%;
+}
+
+.modal .modal-body #plant-nickname {
+  margin-bottom: 2%;
+}
+
+.modal .modal-body #plant-nickname #plant-nickname-input {
+  background: #242424;
+  border-bottom: 2px solid white;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  color: #ffffff;
+  padding-bottom: 1%;
+}
+
+.modal .modal-body #plant-date {
+  margin-bottom: 2%;
+}
+
+.modal .modal-footer {
+  text-align: right;
+}
+
+.modal .modal-footer #add {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3% 4% 0;
+  font-size: 11px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 1% 2%;
+}

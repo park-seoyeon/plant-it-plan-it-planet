@@ -7,11 +7,6 @@
     <!-- <meta name="viewport" content="width=640, user-scalable=yes" /> -->
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-
     <title><%= htmlWebpackPlugin.options.title %></title>
     
   </head>
@@ -26,4 +21,16 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <style type="text/css">
+    .vm--modal {
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+
+      background-color: #242424;
+      border-radius: 10px;
+      box-shadow: 0 0 0 0;
+      border: 2px solid #ffffff;
+    }
+  </style>
 </html>
