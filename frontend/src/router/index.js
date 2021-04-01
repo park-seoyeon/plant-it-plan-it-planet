@@ -11,6 +11,7 @@ import Search from '@/views/Search/Search.vue';
 import SearchDetail from '@/views/Search/SearchDetail.vue';
 
 import MyPlant from '@/views/MyPlant/MyPlant.vue';
+import MyplantDetail from '@/views/MyPlant/MyPlantDetail.vue';
 
 import Main from '@/views/Main.vue';
 
@@ -57,6 +58,11 @@ const routes = [
     name: 'MyPlant',
     component: MyPlant,
   },
+  {
+    path: '/myplant/detail/detail:detailnumber',
+    name: 'MyplantDetail',
+    component: MyplantDetail,
+  }
 ];
 
 const router = new VueRouter({

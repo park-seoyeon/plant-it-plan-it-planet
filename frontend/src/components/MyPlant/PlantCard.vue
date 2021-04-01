@@ -3,7 +3,7 @@
     <div class="delete-plant">
       <div class="delete" @click="deletePlant()">ㅡ</div>
     </div>
-    <div v-if="isAdd" class="myplant">
+    <div v-if="isAdd" class="myplant" @click="detailPlant()">
       <img :src="plantImg" />
       <div class="cont">
         <div id="day">함께한지 {{ myplant.add_day_count }}일</div>
@@ -143,6 +143,16 @@ export default {
           }
         });
     },
+
+    detailPlant() {
+      this.$router
+        .push({ name: 'MyplantDetail', params: { detailnumber: this.myplant.id } })
+        .catch((error) => {
+          if (error.name === 'NavigationDuplicated') {
+            location.reload();
+          }
+        });
+    },    
   },
   created() {
     if (this.myplant.is_add == 1) {
