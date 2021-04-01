@@ -22,10 +22,17 @@
   width: 0%;
 }
 
+.content #numbering {
+  color: #ffffff;
+  /* font-family: 'Nanum Pen Script', cursive; */
+  font-size: 18px;
+  margin-top: 20%;
+}
+
 .content #ask {
   color: white;
-  margin: 20% 5% 20% 5%;
-  font-size: 17px;
+  margin: 2% 5% 20% 5%;
+  font-size: 16px;
 }
 
 .content .survey-buttons {
@@ -152,6 +159,13 @@
   height: 70%;
 }
 
+.content .result-detail #flower-description {
+  font-size: 20px;
+  font-family: 'Nanum Pen Script', cursive;
+  color: #ffffff;
+  margin-bottom: 3%;
+}
+
 .content .result-detail #recommend {
   color: white;
   text-align: left;
@@ -255,6 +269,7 @@
   font-size: 14px;
   border: 3px solid #ffffff;
   border-radius: 10px;
+  margin-left: 1%;
   padding: 1% 5%;
 }
 
@@ -264,5 +279,6 @@
   color: #00b564;
   border: 3px solid #00b564;
   border-radius: 10px;
+  margin-left: 1%;
   padding: 1% 5%;
 }
