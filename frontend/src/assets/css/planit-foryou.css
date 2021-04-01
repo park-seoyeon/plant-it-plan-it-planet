@@ -1,0 +1,41 @@
+.main_component_foryou_title {
+  text-align: left;
+  margin: 3% 0 0 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+}
+
+.main_component_foryou_sub {
+  text-align: left;
+  margin: 0 0 3% 8%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 7px;
+  color: white;
+}
+
+.main_component_foryou_content {
+  height: 145px;
+  text-align: left;
+  margin: 0 0 0 6%;
+}
+
+.main_component_foryou_content img {
+  width: 95px;
+  height: 100px;
+}
+
+.main_component_foryou_recommands {
+  width: 33%;
+  float: left;
+  color: white;
+  font-size: 13px;
+}
+
+.main_component_foryou_name {
+  width: 90px;
+}
