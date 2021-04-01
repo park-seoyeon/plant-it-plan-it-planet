@@ -2,10 +2,7 @@
   <div class="content">
     <div class="head" id="planit">
       <img class="planit_logo" :src="Planitimg" />
-      <div class="planit_profile">
-        
-
-      </div>
+      <div class="planit_profile"></div>
     </div>
     <div class="division" id="planit_division"></div>
     <div class="planit_myplant">
@@ -13,43 +10,38 @@
     </div>
     <div class="planit_divisionbar"></div>
     <div class="planit_foryou">
-      <MainForyou :recommend_list="recommend_list"/>
+      <MainForyou :recommend_list="recommend_list" />
     </div>
     <div class="planit_divisionbar"></div>
     <div class="planit_magazine">
       <MainMagazine />
     </div>
-
   </div>
-
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 import Planitimg from '@/assets/img/PLANIT.png';
 
 import MainMyplant from '@/components/PlanIt/MyPlant.vue';
 import MainForyou from '@/components/PlanIt/ForYou.vue';
-import MainMagazine from '@/components/PlanIt/Magazine.vue';
-
+import MainMagazine from '@/components/PlanIt/MagazineCard.vue';
 
 // import { Carousel3d, Slide } from 'vue-carousel-3d';
-
-
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {
-  name: "Main",
+  name: 'Main',
   data: () => {
     return {
       Planitimg: Planitimg,
 
-      myplant_list : '',
+      myplant_list: '',
       recommend_list: '',
       mypage_list: '',
-    }
+    };
   },
   components: {
     MainMyplant,
@@ -57,18 +49,17 @@ export default {
     MainMagazine,
   },
   methods: {
-
     goToSlide(index) {
-      this.$refs.mycarousel.goSlide(index)
+      this.$refs.mycarousel.goSlide(index);
     },
 
-
-
-    async getmyplant(){
+    async getmyplant() {
       // const login_usernumber = localStorage.getItem('user_number');
 
       await axios
-        .post(`${SERVER_URL}/myplant/`, { user_number : localStorage.getItem('user_number') })
+        .post(`${SERVER_URL}/myplant/`, {
+          user_number: localStorage.getItem('user_number'),
+        })
 
         .then((response) => {
           this.myplant_list = response.data;
@@ -78,7 +69,9 @@ export default {
         });
 
       await axios
-        .post(`${SERVER_URL}/detail/`, { user_number : localStorage.getItem('user_number') })
+        .post(`${SERVER_URL}/detail/`, {
+          user_number: localStorage.getItem('user_number'),
+        })
         .then((response) => {
           this.recommend_list = response.data;
         })
@@ -87,7 +80,9 @@ export default {
         });
 
       await axios
-        .post(`${SERVER_URL}/mypage/`, { user_number : localStorage.getItem('user_number') })
+        .post(`${SERVER_URL}/mypage/`, {
+          user_number: localStorage.getItem('user_number'),
+        })
 
         .then((response) => {
           alert(response.data);
@@ -96,12 +91,8 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
-      
     },
-    
   },
-
-  
 
   // Mount 이전에, localStorage값이 1인 경우 ( 로그인 안해서 storage에 정보가 들어가지 않은 경우 ) Intro로 돌아가라.
   created() {
@@ -113,8 +104,7 @@ export default {
           location.reload();
         }
       });
-    }
-    else{
+    } else {
       this.getmyplant();
     }
   },

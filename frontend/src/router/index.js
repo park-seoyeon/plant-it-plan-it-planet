@@ -13,6 +13,7 @@ import SearchDetail from '@/views/Search/SearchDetail.vue';
 import MyPlant from '@/views/MyPlant/MyPlant.vue';
 
 import Main from '@/views/Main.vue';
+import Magazine from '@/views/Magazine/Magazine.vue';
 
 Vue.use(VueRouter);
 
@@ -56,6 +57,11 @@ const routes = [
     path: '/myplant',
     name: 'MyPlant',
     component: MyPlant,
+  },
+  {
+    path: '/magazine',
+    name: 'Magazine',
+    component: Magazine,
   },
 ];
 
