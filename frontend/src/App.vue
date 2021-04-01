@@ -10,6 +10,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import './assets/css/display.css';
 @import './assets/css/intro.css';
 @import './assets/css/login.css';

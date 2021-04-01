@@ -12,9 +12,11 @@
     </div>
 
     <div v-if="this.question_list[this.where] !== undefined">
-      <div id="ask">
-        {{ this.question_list[this.where].question }}
-      </div>
+      <div id="numbering">&lt; {{ where + 1 }} &gt;</div>
+      <div
+        id="ask"
+        v-html="handleNewLine(this.question_list[this.where].question)"
+      ></div>
 
       <div class="survey-buttons" @click="select(1)">
         {{ this.question_list[this.where].answer_01 }}
@@ -105,6 +107,10 @@ export default {
       }
       this.width += 100 / 12;
       document.getElementById('mybar').style.width = this.width + '%';
+    },
+
+    handleNewLine(str) {
+      return String(str).replace(/(?:\r\n|\r|\n)/g, '</br>');
     },
   },
 

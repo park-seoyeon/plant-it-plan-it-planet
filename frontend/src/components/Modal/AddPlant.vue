@@ -55,6 +55,7 @@ export default {
       nickname: '',
       isImg: '',
       isFile: '',
+      uploadValue: 0,
     };
   },
   props: ['myplant_id', 'plant_name', 'plant_img'],
@@ -73,14 +74,6 @@ export default {
       var is_upload = 0;
       if (this.isImg != '') {
         is_upload = 1;
-        firebase
-          .storage()
-          .ref(
-            `my_plant_images/${localStorage.getItem('user_number')}_${
-              this.myplant_id
-            }.jpg`
-          )
-          .put(this.isFile);
       }
       axios
         .put(`${SERVER_URL}/myplant/add/`, {
@@ -93,11 +86,31 @@ export default {
         .then(({ data }) => {
           let msg = '등록에 실패하였습니다.';
           if (data.message === 'success') {
-            this.$emit('close');
-            location.reload();
+            const storageRef = firebase
+              .storage()
+              .ref(
+                `my_plant_images/${localStorage.getItem('user_number')}_${
+                  this.myplant_id
+                }.jpg`
+              )
+              .put(this.isFile);
+            storageRef.on(
+              `state_changed`,
+              (snapshot) => {
+                this.uploadValue =
+                  (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              },
+              (error) => {
+                console.log(error.message);
+              },
+              () => {
+                this.uploadValue = 100;
+                this.$emit('close');
+                location.reload();
+              }
+            );
           } else {
             alert(msg);
-            location.reload();
           }
         })
         .catch(() => {
