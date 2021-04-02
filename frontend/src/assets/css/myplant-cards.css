@@ -178,6 +178,26 @@
   cursor: pointer;
 }
 
+.myplants_card .plantscard .title .modifyconfirm {
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  float: right;
+  width: 50px;
+  height: 15px;
+  line-height: 13px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  margin-top: -20px;
+  margin-right: 42px;
+  color: white;
+
+  cursor: pointer;
+}
+
 .myplants_card .plantscard .title .delete {
   background: #242424;
   border: 1px solid #ffffff;
@@ -226,4 +246,79 @@
   color: white;
   text-align: left;
   margin-left: 4%;
+}
+
+.myplants_card .plantscard .title2 {
+  width: 99%;
+  height: 20px;
+  float: left;
+  margin-top: 1%;
+}
+
+.myplants_card .plantscard .title2 .titlename2 {
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  width: 180px;
+  border: none;
+  border-bottom: 2px solid white;
+  height: 15px;
+  text-align: left;
+  color: white;
+  background: #242424;
+}
+
+.myplants_card .plantscard .title2 .modifyconfirm {
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  float: right;
+  width: 60px;
+  height: 15px;
+  line-height: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  color: white;
+  margin-top: 1px;
+
+  cursor: pointer;
+}
+
+.myplants_card .plantscard .title2 .delete {
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  float: right;
+  width: 34px;
+  height: 15px;
+  line-height: 13px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  color: white;
+  margin-top: 1px;
+  margin-right: 5px;
+
+  cursor: pointer;
+}
+
+.myplants_card .plantscard .contents2 {
+  width: 95%;
+  height: 80px;
+  margin: 2% 0 0 3%;
+  background: #242424;
+  box-sizing: border-box;
+  border-radius: 8px;
+  float: left;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  color: white;
 }

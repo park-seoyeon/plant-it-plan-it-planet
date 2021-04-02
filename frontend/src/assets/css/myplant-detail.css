@@ -23,9 +23,221 @@
 .myplant_functions {
   height: 100px;
   width: 84%;
-  background: yellow;
+  /* background: yellow; */
   float: left;
   margin: 3% 0 0 8%;
+}
+
+.myplant_functions .watering {
+  width: 33%;
+  float: left;
+  height: 100%;
+  /* background: red; */
+}
+
+.myplant_functions .watering .button {
+  background: #242424;
+  border: 2px solid #6298e9;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  width: 75%;
+  height: 75%;
+
+  margin: 6% 0 0 10%;
+
+  cursor: pointer;
+}
+
+.myplant_functions .watering .button .img {
+  height: 50%;
+  width: 80%;
+  margin-left: 11%;
+  margin-top: 4%;
+}
+
+.myplant_functions .watering .button .img img {
+  width: 70%;
+  height: 100%;
+}
+
+.myplant_functions .watering .button .text {
+  height: 18%;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #6298e9;
+}
+
+.myplant_functions .watering .button .point {
+  height: 25%;
+  width: 80%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #6298e9;
+}
+
+.myplant_functions .repotting {
+  width: 33%;
+  float: left;
+  height: 100%;
+}
+
+.myplant_functions .repotting:after {
+  content: '';
+  display: block;
+  height: 25px;
+  border-left: 1px solid #bcbcbc;
+  margin: -55px 0px;
+}
+
+.myplant_functions .repotting .button {
+  background: #242424;
+  border: 2px solid #feab2d;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  width: 75%;
+  height: 75%;
+
+  margin: 6% 0 0 14%;
+
+  cursor: pointer;
+}
+
+.myplant_functions .repotting .button .img {
+  height: 50%;
+  width: 80%;
+  margin-left: 11%;
+  margin-top: 4%;
+}
+
+.myplant_functions .repotting .button .img img {
+  width: 70%;
+  height: 100%;
+}
+
+.myplant_functions .repotting .button .text {
+  height: 18%;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #feab2d;
+}
+
+.myplant_functions .repotting .button .point {
+  height: 25%;
+  width: 80%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #feab2d;
+}
+
+.myplant_functions .chatting {
+  width: 33%;
+  float: left;
+  height: 100%;
+}
+
+.myplant_functions .chatting:after {
+  content: '';
+  display: block;
+  height: 25px;
+  border-left: 1px solid #bcbcbc;
+  margin: -55px 0px;
+}
+
+.myplant_functions .chatting .button {
+  background: #242424;
+  border: 2px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  width: 75%;
+  height: 75%;
+
+  margin: 6% 0 0 18%;
+
+  cursor: pointer;
+}
+
+.myplant_functions .chatting .button .img {
+  height: 50%;
+  width: 80%;
+  margin-left: 11%;
+  margin-top: 14%;
+}
+
+.myplant_functions .chatting .button .img img {
+  width: 70%;
+  height: 100%;
+}
+
+.myplant_functions .chatting .button .text {
+  height: 18%;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #00b564;
+}
+
+.myplant_functions .chatting .button .point {
+  height: 25%;
+  width: 80%;
+  margin-left: 11%;
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #00b564;
 }
 
 .myplant_details {
@@ -52,6 +264,15 @@
   font-weight: normal;
   font-size: 9px;
   margin-bottom: 1%;
+}
+
+.myplant_details .more .changenickname {
+  margin-right: 15%;
+  float: right;
+}
+
+.myplant_details .more .detail {
+  float: right;
 }
 
 .myplant_details .information .img {
@@ -86,6 +307,39 @@
   float: left;
   text-align: left;
   color: white;
+}
+
+.myplant_details .information .text .top .title .nickname {
+  font-family: Binggrae Melona;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  width: 120px;
+  border: none;
+  border-bottom: 2px solid white;
+  height: 15px;
+  text-align: left;
+  color: white;
+  background: #242424;
+}
+
+.myplant_details .information .text .top .title .nicknameconfirm {
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  float: right;
+  width: 60px;
+  height: 15px;
+  line-height: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  color: white;
+  margin-top: 1px;
+
+  cursor: pointer;
 }
 
 .myplant_details .information .text .top .title .level {

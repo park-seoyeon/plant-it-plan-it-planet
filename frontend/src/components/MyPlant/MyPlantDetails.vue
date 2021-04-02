@@ -2,8 +2,20 @@
   <div class="detailscontent">
 
     <div class="myplant_details">
-      <div class="more" @click="goDetail()">
-        + 자세히 보기
+      <div class="more">
+        <div class="detail" @click="goDetail()">
+          + 자세히 보기
+        </div>
+        <div v-if="!nicknameOn">
+          <div class="changenickname" @click="togglenickname()">
+            + 닉네임 변경하기
+          </div>
+        </div>
+        <div v-else>
+          <div class="changenickname" @click="togglenickname()">
+            - 닉네임 변경취소
+          </div>
+        </div>
       </div>
       <div class="information">
         <div class="img">
@@ -12,12 +24,25 @@
         <div class="text">
           <div class="top">
             <div class="title">
-              {{ this.myplant_detail.plant_nickname }}
-              <div class="level">
-                Lv.{{ this.myplant_detail.level }}
+              <div v-if="nicknameOn">
+                <form @submit.prevent="changenickname">
+                  <input class="nickname"
+                    type="text"
+                    v-model="nickname.name"
+                    placeholder="별명을 새로 정해보세요!"
+                  />
+                  <button class="nicknameconfirm" type="submit">
+                    변경완료
+                  </button>
+                </form>
+              </div>
+              <div v-else>
+                {{ this.myplant_detail.plant_nickname }}
+                <div class="level">
+                  Lv.{{ this.myplant_detail.level }}
+                </div>
               </div>
             </div>
-            
             <div class="date">
               {{ this.myplant_detail.add_date }} ~ 
             </div>
@@ -95,12 +120,30 @@ export default {
     return {
       isAdd: false,
       plantImg: null,
+      nicknameOn: false,
+      nickname: {
+        name: '',
+      },
     };
   },
   components: {
 
   },
   methods: {
+
+    changenickname() {
+      this.$emit('callnickname', this.nickname );
+    },
+
+    togglenickname(){
+      if(this.nicknameOn){
+        this.nicknameOn = false;
+      }
+      else{
+        this.nickname.name = this.myplant_detail.plant_nickname;
+        this.nicknameOn = true;
+      }
+    },
 
     downloadPlantImg() {
       var storage = firebase.storage();

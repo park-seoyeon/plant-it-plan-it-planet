@@ -41,6 +41,7 @@
         :key="idx"
         :myplants="myplants"
         @calldelete="deletediary"
+        @callmodify="modifydiary"
       />
     </div>
   </div>
@@ -83,9 +84,6 @@ export default {
     },
 
     creatediarys() {
-      // this.creatediary.creatediary_title = this.$refs.titlename.value;
-      // this.creatediary.creatediary_contents = this.$refs.contents.value;
-
       this.$emit('callParent', this.creatediary );
       document.getElementById('diary_title').value = '';
       document.getElementById('diary_contents').value = '';
@@ -99,6 +97,10 @@ export default {
     deletediary(getdata){
       this.$emit('calldelete', getdata);
     },
+
+    modifydiary(getdata){
+      this.$emit('callmodify', getdata);
+    }
   },
 
   created() {
