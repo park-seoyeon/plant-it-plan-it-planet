@@ -32,6 +32,7 @@ export default {
     toggleOnOff: function () {
       if (this.isLogin) {
         this.isStatusOn = true;
+        axios;
         this.$router.push({ name: 'SurveyStart' }).catch((error) => {
           if (error.name === 'NavigationDuplicated') {
             location.reload();

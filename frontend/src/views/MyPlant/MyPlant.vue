@@ -13,7 +13,7 @@
       :key="idx"
       :myplant="myplant"
     />
-    <div style="padding-bottom: 1%"></div>
+    <div style="padding-bottom: 75px"></div>
   </div>
 </template>
 

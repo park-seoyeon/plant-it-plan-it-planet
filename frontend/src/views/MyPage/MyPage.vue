@@ -18,9 +18,15 @@
       <div id="care">미션을 수행하고 뱃지를 모아보세요</div>
     </div>
     <div class="myreward">
-      <MyReward v-for="(myreward, idx) in reward_status" :key="idx" :myreward="myreward" :index="idx" />
+      <MyReward
+        v-for="(myreward, idx) in reward_status"
+        :key="idx"
+        :myreward="myreward"
+        :index="idx"
+      />
     </div>
     <div id="reward-bottom-full"></div>
+    <div style="padding-bottom: 75px"></div>
   </div>
 </template>
 
