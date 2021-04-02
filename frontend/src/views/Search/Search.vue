@@ -59,9 +59,7 @@
       />
     </div>
 
-    <SearchList :plant_list="plant_list['plant_list']" 
-      ref="resetlist"
-    />
+    <SearchList :plant_list="plant_list['plant_list']" ref="resetlist" />
   </div>
 </template>
 <script>
@@ -171,8 +169,6 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
-
-      this.$refs.resetlist.resetlists();
     },
 
     getplantname(getdata) {
@@ -249,7 +245,6 @@ export default {
     },
 
     addfiltertolistdelete(getdata) {
-
       this.selected_list = [];
       this.idx = 0;
       this.selected_list[this.idx] = getdata;
@@ -257,7 +252,6 @@ export default {
     },
 
     addfiltertolistdeleteleaftype(getdata) {
-
       const where = this.selected_list.indexOf(getdata);
       this.selected_list.splice(where, 1);
       this.idx = this.idx - 1;

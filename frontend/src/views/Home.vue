@@ -32,12 +32,19 @@ export default {
     toggleOnOff: function () {
       if (this.isLogin) {
         this.isStatusOn = true;
-        axios;
-        this.$router.push({ name: 'SurveyStart' }).catch((error) => {
-          if (error.name === 'NavigationDuplicated') {
-            location.reload();
-          }
-        });
+        if (localStorage.getItem('is_survey') == 1) {
+          this.$router.push({ name: 'Main' }).catch((error) => {
+            if (error.name === 'NavigationDuplicated') {
+              location.reload();
+            }
+          });
+        } else {
+          this.$router.push({ name: 'SurveyStart' }).catch((error) => {
+            if (error.name === 'NavigationDuplicated') {
+              location.reload();
+            }
+          });
+        }
       } else {
         this.isStatusOn = false;
         // this.$router.push({ name: 'Login' })
@@ -57,6 +64,7 @@ export default {
           localStorage.setItem('name', response.data['name']);
           localStorage.setItem('jwt', response.data['access_token']);
           localStorage.setItem('user_number', response.data['user_number']);
+          localStorage.setItem('is_survey', response.data['is_servey']);
 
           location.reload();
           // this.$router.push({ name: 'SurveyStart' });

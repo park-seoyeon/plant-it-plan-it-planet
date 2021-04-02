@@ -12,3 +12,7 @@
   left: 0;
   right: 0;
 }
+
+.nav img {
+  cursor: pointer;
+}

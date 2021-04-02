@@ -2,7 +2,14 @@
   <div class="content">
     <div class="head" id="planit">
       <img class="planit_logo" :src="Planitimg" />
-      <div class="planit_profile"></div>
+      <div class="planit_profile">
+        <img
+          @click="goMyPage()"
+          v-if="mypage_list.profile_image"
+          :src="mypage_list.profile_image"
+        />
+        <img @click="goMyPage()" v-else :src="getDefaultProfileImg()" />
+      </div>
     </div>
     <div class="division" id="planit_division"></div>
     <div class="planit_myplant">
@@ -50,6 +57,16 @@ export default {
     MainMagazine,
   },
   methods: {
+    getDefaultProfileImg() {
+      return require(`@/assets/img/profile/basic_profile_img.png`);
+    },
+    goMyPage() {
+      this.$router.push({ name: 'MyPage' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
     goToSlide(index) {
       this.$refs.mycarousel.goSlide(index);
     },
@@ -86,7 +103,7 @@ export default {
         })
 
         .then((response) => {
-          alert(response.data);
+          // alert(response.data);
           this.mypage_list = response.data;
         })
         .catch(() => {

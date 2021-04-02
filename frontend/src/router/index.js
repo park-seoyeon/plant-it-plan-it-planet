@@ -52,7 +52,7 @@ const routes = [
     component: Search,
   },
   {
-    path: '/search/detail/search:searchnumber',
+    path: '/search/detail/search/:searchnumber',
     name: 'SearchDetail',
     component: SearchDetail,
   },
@@ -62,7 +62,7 @@ const routes = [
     component: MyPlant,
   },
   {
-    path: '/myplant/detail/detail:detailnumber',
+    path: '/myplant/detail/detail/:detailnumber',
     name: 'MyplantDetail',
     component: MyplantDetail,
   },

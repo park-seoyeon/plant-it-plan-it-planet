@@ -5,56 +5,54 @@
     </div>
     <div class="division"></div>
     <div class="myplant_functions">
-        <div class="watering">
-          <div class="button" @click="watering">
-            <div class="img">
-              <img :src="Wateringimg" />
-            </div>
-            <div class="text">
-              물주기
-            </div>
-            <div class="point">
-              +10p
-            </div>
+      <div class="watering">
+        <div class="button" @click="watering">
+          <div class="img">
+            <img :src="Wateringimg" />
           </div>
+          <div class="text">물주기</div>
+          <div class="point">+10p</div>
         </div>
-        <div class="repotting">
-          <div class="button" @click="repotting">
-            <div class="img">
-              <img :src="Repottingimg" />
-            </div>
-            <div class="text">
-              분갈이
-            </div>
-            <div class="point">
-              +100p
-            </div>
+      </div>
+      <div class="repotting">
+        <div class="button" @click="repotting">
+          <div class="img">
+            <img :src="Repottingimg" />
           </div>
+          <div class="text">분갈이</div>
+          <div class="point">+100p</div>
         </div>
-        <div class="chatting" @click="chatting">
-          <div class="button">
-            <div class="img">
-              <img :src="Chattingimg" />
-            </div>
-            <div class="text">
-              말걸기
-            </div>
+      </div>
+      <div class="chatting" @click="chatting">
+        <div class="button">
+          <div class="img">
+            <img :src="Chattingimg" />
           </div>
+          <div class="text">말걸기</div>
         </div>
+      </div>
     </div>
     <div class="myplant_divisionbar"></div>
     <div class="myplant_details" id="myplant_details_content">
-        <MyPlantDetails :myplant_detail="myplant_detail" 
-          @callnickname="changenickname"
-        />
+      <MyPlantDetails
+        :myplant_detail="myplant_detail"
+        @callnickname="changenickname"
+      />
     </div>
     <div class="myplant_divisionbar"></div>
     <div class="myplant_diarydetails">
-        <MyPlantDiary :diary="diary" 
-          @callParent="getdiarycreate"
-          @calldelete="deletediary"
-          @callmodify="modifydiary"
-        />
+      <MyPlantDiary
+        :diary="diary"
+        @callParent="getdiarycreate"
+        @calldelete="deletediary"
+        @callmodify="modifydiary"
+      />
+    </div>
+    <div
+      class="morewidth"
+      style="width: 100%; height: 50px; float: left; padding-bottom: 30px"
+    >
+      <div class="morebutton" style="border: 0px"></div>
     </div>
   </div>
 </template>
@@ -77,12 +75,12 @@ export default {
 
   data: () => {
     return {
-        Plantitimg : Plantitimg,
-        Wateringimg : Wateringimg,
-        Repottingimg : Repottingimg,
-        Chattingimg : Chattingimg,
-        myplant_detail : '',
-        diary: '',
+      Plantitimg: Plantitimg,
+      Wateringimg: Wateringimg,
+      Repottingimg: Repottingimg,
+      Chattingimg: Chattingimg,
+      myplant_detail: '',
+      diary: '',
     };
   },
   components: {
@@ -107,8 +105,8 @@ export default {
 
       await axios
         .post(`${SERVER_URL}/diary/`, {
-            myplant_id: this.myplant_detail.id,
-         })
+          myplant_id: this.myplant_detail.id,
+        })
 
         .then((response) => {
           this.diary = response.data.diary_list;
@@ -116,138 +114,134 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
-
     },
 
-    watering(){
-      if(this.myplant_detail.watering_d_day != 0){
-        alert("지금 물을 주면 식물은 배가 터져버릴 거에요..");
-      }
-      else{
+    watering() {
+      if (this.myplant_detail.watering_d_day != 0) {
+        alert('지금 물을 주면 배가 터져버릴 거에요..');
+      } else {
         axios
-        .put(`${SERVER_URL}/myplant/watering/`, {
-          user_number : localStorage.getItem('user_number'),
-          myplant_id : this.myplant_detail.id,
-        })
+          .put(`${SERVER_URL}/myplant/watering/`, {
+            user_number: localStorage.getItem('user_number'),
+            myplant_id: this.myplant_detail.id,
+          })
 
-        .then((response) => {
-          let msg = '물주기에 실패하였습니다.';
+          .then((response) => {
+            let msg = '물주기에 실패하였습니다.';
             if (response.data.message === 'success') {
               location.reload();
             } else {
               alert(msg);
               location.reload();
             }
-        })
-        .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
-        });
+          })
+          .catch(() => {
+            alert('서버와 통신할 수 없습니다.');
+          });
       }
-
     },
 
-    repotting(){
-      if(this.myplant_detail.repotting_d_day != 0){
-        alert("지금 분갈이해버리면 식물은 집을 잃어서 슬플 거에요..");
-      }
-      else{
+    repotting() {
+      if (this.myplant_detail.repotting_d_day != 0) {
+        alert('지금 분갈이해버리면 집을 잃어서 슬플 거에요..');
+      } else {
         axios
-        .put(`${SERVER_URL}/myplant/repotting/`, {
-          user_number : localStorage.getItem('user_number'),
-          myplant_id : this.myplant_detail.id,
-        })
+          .put(`${SERVER_URL}/myplant/repotting/`, {
+            user_number: localStorage.getItem('user_number'),
+            myplant_id: this.myplant_detail.id,
+          })
 
-        .then((response) => {
-          let msg = '분갈이에 실패하였습니다.';
+          .then((response) => {
+            let msg = '분갈이에 실패하였습니다.';
             if (response.data.message === 'success') {
               location.reload();
             } else {
               alert(msg);
               location.reload();
             }
-        })
-        .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
-        });
+          })
+          .catch(() => {
+            alert('서버와 통신할 수 없습니다.');
+          });
       }
-      
     },
 
-    chatting(){
+    chatting() {
       axios
         .post(`${SERVER_URL}/myplant/chat/`, {
-          user_number : localStorage.getItem('user_number'),
-          id : this.myplant_detail.id,
+          user_number: localStorage.getItem('user_number'),
+          id: this.myplant_detail.id,
         })
 
         .then((response) => {
           let msg = '말걸기에 실패하였습니다.';
-            if (response.data.message === 'success') {
-              location.reload();
-            } else {
-              alert(msg);
-              location.reload();
-            }
+          if (response.data.message === 'success') {
+            location.reload();
+          } else {
+            alert(msg);
+            location.reload();
+          }
         })
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
     },
 
-    changenickname(getdata){
+    changenickname(getdata) {
       axios
         .put(`${SERVER_URL}/myplant/mod/nickname/`, {
-          user_number : localStorage.getItem('user_number'),
-          myplant_id : this.myplant_detail.id,
-          plant_nickname : getdata.name,
+          user_number: localStorage.getItem('user_number'),
+          myplant_id: this.myplant_detail.id,
+          plant_nickname: getdata.name,
         })
 
         .then((response) => {
           let msg = '별명수정에 실패하였습니다.';
-            if (response.data.message === 'success') {
-              location.reload();
-            } else {
-              alert(msg);
-              location.reload();
-            }
+          if (response.data.message === 'success') {
+            location.reload();
+          } else {
+            alert(msg);
+            location.reload();
+          }
         })
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
     },
 
-    getdiarycreate(getdata){
+    getdiarycreate(getdata) {
       axios
         .post(`${SERVER_URL}/diary/add/`, {
-          user_number : localStorage.getItem('user_number'),
-          myplant_id : this.myplant_detail.id,
-          title : getdata.creatediary_title,
-          content : getdata.creatediary_contents,
+          user_number: localStorage.getItem('user_number'),
+          myplant_id: this.myplant_detail.id,
+          title: getdata.creatediary_title,
+          content: getdata.creatediary_contents,
         })
 
         .then((response) => {
           let msg = '등록에 실패하였습니다.';
-            if (response.data.message === 'success') {
-              location.reload();
-            } else {
-              alert(msg);
-              location.reload();
-            }
+          if (response.data.message === 'success') {
+            location.reload();
+          } else {
+            alert(msg);
+            location.reload();
+          }
         })
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
     },
 
-    deletediary(getdata){
-      axios
-        .delete(`${SERVER_URL}/diary/del/`, {
-          data: {
+    deletediary(getdata) {
+      if (confirm('정말 삭제하시겠습니까?')) {
+        axios
+          .delete(`${SERVER_URL}/diary/del/`, {
+            data: {
               diary_id: getdata,
             },
-        })
+          })
 
-        .then(({ data }) => {
+          .then(({ data }) => {
             let msg = '삭제에 실패하였습니다.';
             if (data.message === 'success') {
               location.reload();
@@ -256,33 +250,39 @@ export default {
               location.reload();
             }
           })
-        .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
-        });
+          .catch(() => {
+            alert('서버와 통신할 수 없습니다.');
+          });
+      } else {
+        location.reload();
+      }
     },
 
-    modifydiary(getdata){
-      axios
-        .put(`${SERVER_URL}/diary/mod/`, {
-          diary_id : getdata.modifydiary_id,
-          title : getdata.modifydiary_title,
-          content : getdata.modifydiary_contents,
-        })
+    modifydiary(getdata) {
+      if (confirm('정말 수정하시겠습니까?')) {
+        axios
+          .put(`${SERVER_URL}/diary/mod/`, {
+            diary_id: getdata.modifydiary_id,
+            title: getdata.modifydiary_title,
+            content: getdata.modifydiary_contents,
+          })
 
-        .then((response) => {
-          let msg = '수정에 실패하였습니다.';
+          .then((response) => {
+            let msg = '수정에 실패하였습니다.';
             if (response.data.message === 'success') {
               location.reload();
             } else {
               alert(msg);
               location.reload();
             }
-        })
-        .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
-        });
-    }
-
+          })
+          .catch(() => {
+            alert('서버와 통신할 수 없습니다.');
+          });
+      } else {
+        location.reload();
+      }
+    },
   },
 
   // created 할 때 jwt가 없다면 home으로 보내기

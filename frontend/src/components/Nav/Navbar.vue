@@ -1,24 +1,53 @@
 <template>
   <div>
-    <div v-if="this.$route.path == '/'"></div>
-    <div v-else-if="this.$route.path == '/survey/start'"></div>
-    <div v-else-if="this.$route.path == '/survey/progress'"></div>
-    <div v-else-if="this.$route.path == '/survey/result'"></div>
+    <div v-if="this.$route.name == 'Home'"></div>
+    <div v-else-if="this.$route.name == 'SurveyStart'"></div>
+    <div v-else-if="this.$route.name == 'SurveyProgress'"></div>
+    <div v-else-if="this.$route.name == 'SurveyResult'"></div>
     <div v-else class="nav">
-      <img v-if="this.$route.path == '/main'" :src="indoorActiveIcon" />
+      <!-- main -->
       <img
-        v-else-if="this.$route.path == '/magazine'"
+        @click="goMain()"
+        v-if="this.$route.name == 'Main'"
         :src="indoorActiveIcon"
       />
-      <img v-else :src="indoorIcon" />
-      <img v-if="this.$route.path == '/search'" :src="searchActiveIcon" />
       <img
-        v-else-if="this.$route.path == '/search/detail/search:searchnumber'"
+        @click="goMain()"
+        v-else-if="this.$route.name == 'Magazine'"
+        :src="indoorActiveIcon"
+      />
+      <img @click="goMain()" v-else :src="indoorIcon" />
+      <!-- search -->
+      <img
+        @click="goSearch()"
+        v-if="this.$route.name == 'Search'"
         :src="searchActiveIcon"
       />
-      <img v-else :src="searchIcon" />
-      <img :src="ecologyIcon" />
-      <img :src="planetIcon" />
+      <img
+        @click="goSearch()"
+        v-else-if="this.$route.name == 'SearchDetail'"
+        :src="searchActiveIcon"
+      />
+      <img @click="goSearch()" v-else :src="searchIcon" />
+      <!-- myplant -->
+      <img
+        @click="goMyPlant()"
+        v-if="this.$route.name == 'MyPlant'"
+        :src="ecologyActiveIcon"
+      />
+      <img
+        @click="goMyPlant()"
+        v-else-if="this.$route.name == 'MyplantDetail'"
+        :src="ecologyActiveIcon"
+      />
+      <img @click="goMyPlant()" v-else :src="ecologyIcon" />
+      <!-- mypage -->
+      <img
+        @click="goMyPage()"
+        v-if="this.$route.name == 'MyPage'"
+        :src="planetActiveIcon"
+      />
+      <img @click="goMyPage()" v-else :src="planetIcon" />
     </div>
   </div>
 </template>
@@ -45,6 +74,36 @@ export default {
       ecologyActiveIcon: ecologyActiveIcon,
       planetActiveIcon: planetActiveIcon,
     };
+  },
+  methods: {
+    goMain() {
+      this.$router.push({ name: 'Main' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
+    goSearch() {
+      this.$router.push({ name: 'Search' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
+    goMyPlant() {
+      this.$router.push({ name: 'MyPlant' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
+    goMyPage() {
+      this.$router.push({ name: 'MyPage' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
   },
 };
 </script>
