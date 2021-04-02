@@ -74,7 +74,7 @@
         <div class="back-icon" @click="goBack()"><img :src="Backimg" /></div>
       </div>
     </div>
-    <div style="padding-bottom: 3%"></div>
+    <div style="padding-bottom: 75px"></div>
   </div>
 </template>
 

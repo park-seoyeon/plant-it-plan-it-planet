@@ -15,6 +15,7 @@
     <div class="planit_divisionbar"></div>
     <div class="planit_magazine">
       <MainMagazine />
+      <div style="padding-bottom: 75px"></div>
     </div>
   </div>
 </template>
