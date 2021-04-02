@@ -132,6 +132,7 @@ export default {
     LeafType,
   },
   methods: {
+
     resetfilters() {
       if (this.isLeafcategoryOn) {
         this.isLeafcategoryOn = false;
@@ -148,6 +149,7 @@ export default {
       if (this.isLeaftypeOn) {
         this.isLeaftypeOn = false;
       }
+      
     },
 
     getleafcategory() {

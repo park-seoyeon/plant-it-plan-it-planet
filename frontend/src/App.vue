@@ -32,6 +32,8 @@
 @import './assets/css/planit-magazine.css';
 @import './assets/css/myplant.css';
 @import './assets/css/modal.css';
+@import './assets/css/myplant-detail.css';
+@import './assets/css/myplant-cards.css';
 @import './assets/css/mypage.css';
 @import './assets/css/magazine.css';
 

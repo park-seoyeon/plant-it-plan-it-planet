@@ -59,7 +59,9 @@
       />
     </div>
 
-    <SearchList :plant_list="plant_list['plant_list']" />
+    <SearchList :plant_list="plant_list['plant_list']" 
+      ref="resetlist"
+    />
   </div>
 </template>
 <script>
@@ -119,6 +121,8 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     usename() {
@@ -134,6 +138,8 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     usefilter() {
@@ -151,6 +157,8 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     startsearch() {
@@ -163,6 +171,8 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     getplantname(getdata) {
@@ -175,13 +185,13 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     getfilterlist(getdata) {
       this.addfiltertolist(getdata);
 
-      // alert(this.selected_list);
-
       axios
         .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
@@ -191,13 +201,13 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     getfilterlistdelete(getdata) {
       this.addfiltertolistdelete(getdata);
 
-      // alert(this.selected_list);
-
       axios
         .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
@@ -207,13 +217,13 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     getfilterlistdeleteleaftype(getdata) {
       this.addfiltertolistdeleteleaftype(getdata);
 
-      // alert(this.selected_list);
-
       axios
         .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
@@ -223,23 +233,22 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
     addfiltertolist(getdata) {
       if (this.selected_list.includes(getdata)) {
-        // alert("dete");
         const where = this.selected_list.indexOf(getdata);
         this.selected_list.splice(where, 1);
         this.idx = this.idx - 1;
       } else {
-        // alert("add");
         this.selected_list[this.idx] = getdata;
         this.idx = this.idx + 1;
       }
     },
 
     addfiltertolistdelete(getdata) {
-      //   alert("초기화");
 
       this.selected_list = [];
       this.idx = 0;
@@ -248,7 +257,6 @@ export default {
     },
 
     addfiltertolistdeleteleaftype(getdata) {
-      //   alert("잎 모양만 초기화");
 
       const where = this.selected_list.indexOf(getdata);
       this.selected_list.splice(where, 1);
