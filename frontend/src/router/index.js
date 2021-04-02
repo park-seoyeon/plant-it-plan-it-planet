@@ -66,6 +66,7 @@ const routes = [
     name: 'MyplantDetail',
     component: MyplantDetail,
   },
+  {
     path: '/mypage',
     name: 'MyPage',
     component: MyPage,
