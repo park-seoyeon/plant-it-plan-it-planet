@@ -15,6 +15,7 @@ import MyPlant from '@/views/MyPlant/MyPlant.vue';
 import MyPage from '@/views/MyPage/MyPage.vue';
 
 import Main from '@/views/Main.vue';
+import Magazine from '@/views/Magazine/Magazine.vue';
 
 Vue.use(VueRouter);
 
@@ -63,6 +64,11 @@ const routes = [
     path: '/mypage',
     name: 'MyPage',
     component: MyPage,
+  },
+  {
+    path: '/magazine',
+    name: 'Magazine',
+    component: Magazine,
   },
 ];
 

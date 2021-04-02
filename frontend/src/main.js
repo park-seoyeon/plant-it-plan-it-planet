@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import firebase from 'firebase';
+import VModal from 'vue-js-modal';
 
 const APP_KEY = process.env.VUE_APP_KAKAO_KEY;
 
@@ -15,7 +16,7 @@ const FIREBASE_APPID = process.env.VUE_APP_FIREBASE_APPID;
 const FIREBASE_MEASUREMENTID = process.env.VUE_APP_FIREBASE_MEASUREMENTID;
 
 Vue.config.productionTip = false;
-
+Vue.use(VModal, { dynamic: true });
 window.Kakao.init(APP_KEY);
 
 new Vue({

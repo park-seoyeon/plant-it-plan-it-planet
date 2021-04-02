@@ -11,6 +11,8 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 @import './assets/css/display.css';
 @import './assets/css/intro.css';
 @import './assets/css/login.css';
@@ -24,9 +26,14 @@
 @import './assets/css/cactusCategory.css';
 @import './assets/css/leafType.css';
 @import './assets/css/searchDetail.css';
+@import './assets/css/planit.css';
+@import './assets/css/planit-myplant.css';
+@import './assets/css/planit-foryou.css';
+@import './assets/css/planit-magazine.css';
 @import './assets/css/myplant.css';
 @import './assets/css/modal.css';
 @import './assets/css/mypage.css';
+@import './assets/css/magazine.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;
@@ -44,6 +51,7 @@ html {
 
 body {
   background-color: #252525;
+  font-family: 'Noto Sans KR', sans-serif;
   margin: 0px;
   height: 100%;
 }
