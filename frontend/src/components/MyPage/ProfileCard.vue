@@ -2,12 +2,17 @@
   <div>
     <div class="profile-card">
       <div id="sky-head"></div>
-      <div class="head">
+      <div class="profile-head">
         <img id="mypage-profile-image" v-if="myprofile.profile_image" :src="myprofile.profile_image" />
         <img id="mypage-profile-image" v-else :src="getDefaultProfileImg()" />
-        <div id="title">{{ myprofile.level.title }}</div>
+        <div class="head-right">
+          <img id="environmentday-image" v-if="this.planting_day" src="@/assets/img/profile/planting_day.png" />
+          <div id="environmentday-title" v-if="this.planting_day">식목일</div>
+          <div id="non-environmentday" v-else></div>
+          <div id="title">{{ myprofile.level.title }}</div>
+        </div>
       </div>
-      <div class="bottom">
+      <div class="profile-bottom">
         <div class="bottom-name">
           <div id="name">{{ myprofile.name }}</div>
           <img id="level-thumbnail-image" :src="getLevelThumbnail()" />
@@ -38,7 +43,9 @@ export default {
     myprofile: Object,
   },
   data: () => {
-    return {};
+    return {
+      planting_day: false,
+    };
   },
   methods: {
     getDefaultProfileImg() {
@@ -60,6 +67,15 @@ export default {
         return require(`@/assets/img/profile/level_5.png`);
       }
     },
+  },
+  created() {
+    let today = new Date();
+    let month = today.getMonth() + 1;
+    let date = today.getDate();
+    //식목일 : 4월 5일
+    if (month == 4 && date == 5) {
+      this.planting_day = true;
+    }
   },
 };
 </script>
