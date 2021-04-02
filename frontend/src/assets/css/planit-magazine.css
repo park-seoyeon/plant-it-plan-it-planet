@@ -76,6 +76,7 @@
 }
 
 .main_component_magazine_content_story_title_back img {
+  cursor: pointer;
   width: 60%;
 }
 

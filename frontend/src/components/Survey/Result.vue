@@ -84,7 +84,7 @@
             width="12px"
           />
           카카오로 공유하기</span
-        ><span id="start">플랜잇 시작하기</span>
+        ><span id="start" @click="goMain()">플랜잇 시작하기</span>
       </div>
     </div>
   </div>
@@ -209,6 +209,13 @@ export default {
             location.reload();
           }
         });
+    },
+    goMain() {
+      this.$router.push({ name: 'Main' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
     },
   },
 };
