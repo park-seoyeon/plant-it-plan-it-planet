@@ -68,6 +68,7 @@
   width: 100%;
   height: 50px;
   float: left;
+  padding-bottom: 75px;
 }
 
 .content #searchlist .morewidth .morebutton {

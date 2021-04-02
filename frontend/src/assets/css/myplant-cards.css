@@ -36,7 +36,7 @@
 
 .detailscontent .myplant_diary .diary_create {
   width: 310px;
-  height: 120px;
+  height: 160px;
 
   background: #242424;
   border: 2px dashed #ffffff;
@@ -50,19 +50,17 @@
   width: 99%;
   height: 20px;
   float: left;
-  margin-top: 1%;
+  margin: 3% 0;
 }
 
 .detailscontent .myplant_diary .diary_create .title .titlename {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   width: 180px;
   border: none;
   border-bottom: 2px solid white;
   height: 15px;
   margin: 0 0 0 -20px;
+  padding-bottom: 2%;
   text-align: left;
   color: white;
   background: #242424;
@@ -74,14 +72,14 @@
   box-sizing: border-box;
   border-radius: 2px;
   float: right;
-  width: 34px;
-  height: 15px;
+  width: 35px;
+  height: 17px;
   line-height: 10px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
   color: white;
+  cursor: pointer;
 }
 
 .detailscontent .myplant_diary .diary_create .title .cancel {
@@ -90,10 +88,9 @@
   box-sizing: border-box;
   border-radius: 2px;
   float: right;
-  width: 34px;
-  height: 15px;
+  width: 35px;
+  height: 17px;
   line-height: 13px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -105,7 +102,7 @@
 
 .detailscontent .myplant_diary .diary_create .text {
   width: 95%;
-  height: 80px;
+  height: 100px;
   margin: 2% 0 0 3%;
   background: #242424;
   border: 0.25px solid #ffffff;
@@ -115,7 +112,7 @@
   font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
+  font-size: 11px;
   color: white;
 }
 
@@ -239,10 +236,9 @@
   margin: 0 0 0 3%;
   background: #242424;
   float: left;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
+  font-size: 11px;
   color: white;
   text-align: left;
   margin-left: 4%;
