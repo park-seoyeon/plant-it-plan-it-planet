@@ -1,0 +1,211 @@
+/* mypage.vue */
+.content .planet-title {
+  text-align: left;
+  color: #ffffff;
+  margin: 3% auto 5% auto;
+  margin-left: 8%;
+}
+
+.content .planet-title #mypage {
+  font-size: 24px;
+}
+
+.content .planet-title #care {
+  font-size: 10px;
+}
+
+.content #planet-division-bar {
+  width: 307px;
+  height: 1px;
+  background: rgb(133, 133, 133);
+  margin: 2% auto 0 auto;
+}
+
+.content .myreward {
+  width: 85%;
+  overflow: hidden;
+  height: auto;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 6%;
+  margin-bottom: 5%;
+}
+
+/* profilecard.vue */
+.content .profile-card {
+  width: 83%;
+  left: 40px;
+  top: 122px;
+
+  background: #242424;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 2% auto;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  color: #ffffff;
+}
+
+.content .profile-card:hover {
+  left: 83%;
+  border: 2px solid #00b564;
+  box-shadow: #ffffff;
+  animation: profile-card-move.2s;
+}
+
+@keyframes profile-card-move {
+  0% {
+    transition: rotate(-0.5deg);
+  }
+  50% {
+    transform: rotate(0.5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.content .profile-card #sky-head {
+  background-color: #ffffff;
+  margin-top: 7%;
+  width: 100%;
+  height: 28px;
+}
+
+.content .profile-card .head {
+  height: 60%;
+  margin: 0% 4% 0% 4%;
+  display: flex;
+}
+
+.content .profile-card .head #mypage-profile-image {
+  width: 30%;
+  border-radius: 70%;
+  margin: 4% 2% 0% 2%;
+  flex: 1;
+}
+
+.content .profile-card .head #title {
+  width: 65%;
+  font-size: 22px;
+  flex: 2;
+  margin: 12% 5%;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.content .profile-card .bottom {
+  height: 40%;
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.content .profile-card .bottom .bottom-name {
+  height: 40%;
+  display: flex;
+  margin-bottom: 6%;
+  flex: 1;
+}
+
+.content .profile-card .bottom .bottom-name #name {
+  font-size: 15px;
+  width: 75%;
+  text-align: right;
+  font-weight: bolder;
+  margin: 4% 2% 5% 10%;
+}
+
+.content .profile-card .bottom .bottom-name #level-thumbnail-image {
+  width: 20%;
+  height: 100%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.content .profile-card .bottom .level {
+  flex: 2;
+  width: 65%;
+}
+
+.content .profile-card .bottom .level .level-text {
+  display: flex;
+  font-size: 5px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.content .profile-card .bottom .level .level-text #next {
+  flex: 1;
+  padding-top: 1%;
+  margin-right: 9%;
+}
+
+.content .profile-card .bottom .level-text #number {
+  flex: 1;
+  margin-left: 9%;
+}
+
+.content .profile-card .bottom .level #level-bar {
+  width: 85%;
+  height: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  margin-left: 4%;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.content .profile-card .bottom .level #level-progress {
+  height: 8px;
+  background: #ffffff;
+  width: 0%;
+}
+
+/* myplanet.vue */
+.content .myplanet #planet-image {
+  width: 70%;
+  margin: 2% auto;
+}
+
+.content .myplanet #planet-image:hover {
+  animation: move.5s;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1.01) rotate(-1deg);
+  }
+  30% {
+    transform: scale(1.015);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  70% {
+    transform: scale(1.025);
+  }
+}
+
+/* myreward.vue */
+
+.content .myreward .reward {
+  width: 30%;
+  float: left;
+  margin: 5% auto;
+  margin-left: 3%;
+}
+
+.content .myreward .reward #badge img {
+  width: 60%;
+}
+
+.content .myreward .reward #reward-title {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.content #reward-bottom-full {
+  height: 30px;
+}

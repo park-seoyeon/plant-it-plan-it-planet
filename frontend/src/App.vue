@@ -10,6 +10,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 @import './assets/css/display.css';
 @import './assets/css/intro.css';
 @import './assets/css/login.css';
@@ -25,6 +26,7 @@
 @import './assets/css/searchDetail.css';
 @import './assets/css/myplant.css';
 @import './assets/css/modal.css';
+@import './assets/css/mypage.css';
 
 #app {
   font-family: 'Noto Sans KR', sans-serif;

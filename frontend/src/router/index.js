@@ -12,6 +12,8 @@ import SearchDetail from '@/views/Search/SearchDetail.vue';
 
 import MyPlant from '@/views/MyPlant/MyPlant.vue';
 
+import MyPage from '@/views/MyPage/MyPage.vue';
+
 import Main from '@/views/Main.vue';
 
 Vue.use(VueRouter);
@@ -56,6 +58,11 @@ const routes = [
     path: '/myplant',
     name: 'MyPlant',
     component: MyPlant,
+  },
+  {
+    path: '/mypage',
+    name: 'MyPage',
+    component: MyPage,
   },
 ];
 
