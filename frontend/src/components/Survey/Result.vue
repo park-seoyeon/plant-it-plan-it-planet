@@ -79,10 +79,7 @@
       </div>
       <div id="start-tool">
         <span id="start" @click="sendLink()">
-          <img
-            src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"
-            width="12px"
-          />
+          <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png" width="12px" />
           카카오로 공유하기</span
         ><span id="start" @click="goMain()">플랜잇 시작하기</span>
       </div>
@@ -120,9 +117,8 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var starsRef = storageRef.child(
-        `mbti_plant_images/${this.result.mbti_name}.png`
-      );
+
+      var starsRef = storageRef.child(`mbti_plant_images/${this.result.mbti_name}.png`);
       starsRef.getDownloadURL().then((url) => {
         this.mbtiPlantImg = url;
       });
@@ -131,27 +127,28 @@ export default {
     sendLink() {
       // 카카오톡 공유하기
       this.Download_mbti_plants_img();
-      console.log(this.mbtiPlantImg);
-      window.Kakao.Link.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: this.result.mbti_expression,
-          description: this.result.flower_description,
-          imageUrl: this.mbtiPlantImg,
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            androidExecParams: 'PlantIt',
-          },
-        },
-        buttons: [
-          {
-            title: '웹으로 이동',
+      setTimeout(() => {
+        window.Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: this.result.mbti_expression,
+            description: this.result.flower_description,
+            imageUrl: this.mbtiPlantImg,
             link: {
               mobileWebUrl: 'https://developers.kakao.com',
+              androidExecParams: 'PlantIt',
             },
           },
-        ],
-      });
+          buttons: [
+            {
+              title: '웹으로 이동',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+              },
+            },
+          ],
+        });
+      }, 1000);
     },
     getMbtiImgPath() {
       return require(`@/assets/img/mbti/${this.result.mbti_name}.png`);
@@ -167,9 +164,7 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var starsRef = storageRef.child(
-        `plant_images/${this.result.recommanded_plant_1_id}_1.jpg`
-      );
+      var starsRef = storageRef.child(`plant_images/${this.result.recommanded_plant_1_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_1 = url;
       });
@@ -180,9 +175,7 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var starsRef = storageRef.child(
-        `plant_images/${this.result.recommanded_plant_2_id}_1.jpg`
-      );
+      var starsRef = storageRef.child(`plant_images/${this.result.recommanded_plant_2_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_2 = url;
       });
@@ -193,22 +186,18 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var starsRef = storageRef.child(
-        `plant_images/${this.result.recommanded_plant_3_id}_1.jpg`
-      );
+      var starsRef = storageRef.child(`plant_images/${this.result.recommanded_plant_3_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_3 = url;
       });
       return this.plantImg_3;
     },
     plantDetail(id) {
-      this.$router
-        .push({ name: 'SearchDetail', params: { searchnumber: id } })
-        .catch((error) => {
-          if (error.name === 'NavigationDuplicated') {
-            location.reload();
-          }
-        });
+      this.$router.push({ name: 'SearchDetail', params: { searchnumber: id } }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
     },
     goMain() {
       this.$router.push({ name: 'Main' }).catch((error) => {

@@ -51,7 +51,6 @@
 }
 
 .content .profile-card:hover {
-  left: 83%;
   border: 2px solid #00b564;
   box-shadow: #ffffff;
   animation: profile-card-move.2s;
@@ -69,47 +68,74 @@
   }
 }
 
+.content .profile-card:hover #sky-head {
+  background-color: #00b564;
+}
+
 .content .profile-card #sky-head {
   background-color: #ffffff;
   margin-top: 7%;
   width: 100%;
-  height: 28px;
+  height: 20px;
 }
 
-.content .profile-card .head {
+.content .profile-card .profile-head {
   height: 60%;
-  margin: 0% 4% 0% 4%;
+  margin: 2% 4% 0% 4%;
   display: flex;
 }
 
-.content .profile-card .head #mypage-profile-image {
+.content .profile-card .profile-head #mypage-profile-image {
   width: 30%;
   border-radius: 70%;
   margin: 4% 2% 0% 2%;
   flex: 1;
 }
 
-.content .profile-card .head #title {
+.content .profile-card .profile-head .head-right {
   width: 65%;
+  flex: 2;
+}
+
+.content .profile-card .profile-head .head-right #environmentday-image {
+  width: 14%;
+  margin-left: 70%;
+  margin-top: 5%;
+  border: 2px solid #00b564;
+  border-radius: 70%;
+}
+
+.content .profile-card .profile-head .head-right #environmentday-title {
+  width: 30%;
+  margin-left: 70%;
+  font-size: 11px;
+  font-family: 'Do Hyeon', sans-serif;
+  color: #00b564;
+}
+
+.content .profile-card .profile-head .head-right #non-environmentday {
+  height: 40%;
+}
+.content .profile-card .profile-head .head-right #title {
   font-size: 22px;
   flex: 2;
-  margin: 12% 5%;
+  margin: 0% 4%;
   font-family: 'Do Hyeon', sans-serif;
 }
-.content .profile-card .bottom {
+.content .profile-card .profile-bottom {
   height: 40%;
   display: flex;
   margin-bottom: 3%;
 }
 
-.content .profile-card .bottom .bottom-name {
+.content .profile-card .profile-bottom .bottom-name {
   height: 40%;
   display: flex;
   margin-bottom: 6%;
   flex: 1;
 }
 
-.content .profile-card .bottom .bottom-name #name {
+.content .profile-card .profile-bottom .bottom-name #name {
   font-size: 15px;
   width: 75%;
   text-align: right;
@@ -117,36 +143,36 @@
   margin: 4% 2% 5% 10%;
 }
 
-.content .profile-card .bottom .bottom-name #level-thumbnail-image {
+.content .profile-card .profile-bottom .bottom-name #level-thumbnail-image {
   width: 20%;
   height: 100%;
   margin-right: 5%;
   margin-top: 5%;
 }
 
-.content .profile-card .bottom .level {
+.content .profile-card .profile-bottom .level {
   flex: 2;
   width: 65%;
 }
 
-.content .profile-card .bottom .level .level-text {
+.content .profile-card .profile-bottom .level .level-text {
   display: flex;
   font-size: 5px;
   font-family: 'Do Hyeon', sans-serif;
 }
 
-.content .profile-card .bottom .level .level-text #next {
+.content .profile-card .profile-bottom .level .level-text #next {
   flex: 1;
   padding-top: 1%;
   margin-right: 9%;
 }
 
-.content .profile-card .bottom .level-text #number {
+.content .profile-card .profile-bottom .level-text #number {
   flex: 1;
   margin-left: 9%;
 }
 
-.content .profile-card .bottom .level #level-bar {
+.content .profile-card .profile-bottom .level #level-bar {
   width: 85%;
   height: 8px;
   border: 1px solid #ffffff;
@@ -156,7 +182,7 @@
   margin-top: 2%;
 }
 
-.content .profile-card .bottom .level #level-progress {
+.content .profile-card .profile-bottom .level #level-progress {
   height: 8px;
   background: #ffffff;
   width: 0%;
@@ -169,10 +195,10 @@
 }
 
 .content .myplanet #planet-image:hover {
-  animation: move.5s;
+  animation: planet-image-move.5s;
 }
 
-@keyframes move {
+@keyframes planet-image-move {
   0% {
     transform: scale(1.01) rotate(-1deg);
   }
