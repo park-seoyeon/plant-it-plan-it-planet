@@ -21,6 +21,82 @@
   margin: 2% auto 0 auto;
 }
 
+.content .top-button {
+  display: flex;
+  margin-top: 5%;
+}
+
+.content .top-button #getsurveyresult {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 37%;
+}
+
+.content .top-button #getsurveyresult:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
+.content .top-button #gotosurvey {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 44%;
+}
+
+.content .top-button #gotosurvey:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
+.content .top-button #logout {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+
+  float: right;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 2%;
+}
+
+.content .top-button #logout:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
 .content .myreward {
   width: 85%;
   overflow: hidden;
@@ -36,8 +112,7 @@
 
 .content #deleteUser {
   cursor: pointer;
-  width: 60px;
-  height: 20px;
+  padding: 2px 10px 2px 10px;
 
   border: 1px solid #ffffff;
   box-sizing: border-box;
@@ -50,7 +125,9 @@
   color: #ffffff;
   vertical-align: center;
   margin: 8% 10% 3% 10%;
-  margin-left: 75%;
+  margin-left: 73%;
+
+  text-align: center;
 }
 
 .content #deleteUser:hover {
@@ -70,7 +147,7 @@
   box-sizing: border-box;
   border-radius: 15px;
   margin: 2% auto;
-  margin-top: 8%;
+  margin-top: 3%;
   margin-bottom: 8%;
   color: #ffffff;
 }
@@ -106,7 +183,7 @@
 
 .content .profile-card .profile-head {
   height: 60%;
-  margin: 2% 4% 0% 4%;
+  margin: 2% 4% 5% 4%;
   display: flex;
 }
 
@@ -119,7 +196,7 @@
   width: 100%;
   height: 100%;
   border-radius: 70%;
-  margin: 4% 2% 0% 2%;
+  margin: 15% 2% 0% 2%;
   flex: 1;
 }
 
@@ -151,7 +228,7 @@
 }
 
 .content .profile-card .profile-head .head-right .environment #non-environmentday {
-  height: 40%;
+  height: 40px;
 }
 .content .profile-card .profile-head .head-right #title {
   font-size: 22px;
@@ -161,7 +238,8 @@
 .content .profile-card .profile-bottom {
   height: 40%;
   display: flex;
-  margin-bottom: 0%;
+  margin-bottom: 6%;
+  margin-top: 3%;
 }
 
 .content .profile-card .profile-bottom .bottom-name {
@@ -221,33 +299,6 @@
   height: 8px;
   background: #ffffff;
   width: 0%;
-}
-
-.content .profile-card #logout {
-  cursor: pointer;
-  width: 60px;
-  height: 20px;
-
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 20px;
-
-  font-weight: bolder;
-  font-size: 10px;
-  line-height: 18px;
-
-  color: #ffffff;
-
-  float: left;
-  vertical-align: center;
-  margin: 0 0 3% 10%;
-}
-
-.content .profile-card #logout:hover {
-  border: 1px solid #86e57f;
-  background-color: #86e57f;
-  color: black;
-  font-weight: bolder;
 }
 
 /* myplanet.vue */

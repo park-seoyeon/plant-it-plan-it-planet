@@ -24,6 +24,33 @@
   margin: 0 0 0 6%;
 }
 
+.main_component_foryou_content .gotosurvey {
+  width: 180px;
+  height: 30px;
+  line-height: 28px;
+
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  margin: 15% 0 0 22%;
+
+  float: left;
+
+  cursor: pointer;
+}
+
+.main_component_foryou_content .gotosurvey:hover {
+  color: #00b564;
+  border: 1px solid #00b564;
+}
+
 .main_component_foryou_content img {
   width: 95px;
   height: 100px;
