@@ -34,6 +34,30 @@
   margin-bottom: 5%;
 }
 
+.content #deleteUser {
+  cursor: pointer;
+  width: 60px;
+  height: 20px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  vertical-align: center;
+  margin: 8% 10% 3% 10%;
+  margin-left: 75%;
+}
+
+.content #deleteUser:hover {
+  border: 1px solid #ff3636;
+  color: #ff3636;
+}
+
 /* profilecard.vue */
 .content .profile-card {
   width: 83%;
@@ -86,8 +110,14 @@
   display: flex;
 }
 
-.content .profile-card .profile-head #mypage-profile-image {
+.content .profile-card .profile-head .mypage-profile-image-class {
   width: 30%;
+  height: 85px;
+}
+
+.content .profile-card .profile-head .mypage-profile-image-class #mypage-profile-image {
+  width: 100%;
+  height: 100%;
   border-radius: 70%;
   margin: 4% 2% 0% 2%;
   flex: 1;
@@ -98,28 +128,33 @@
   flex: 2;
 }
 
-.content .profile-card .profile-head .head-right #environmentday-image {
-  width: 14%;
+.content .profile-card .profile-head .head-right .environment {
+  flex: 1;
   margin-left: 70%;
-  margin-top: 5%;
-  border: 2px solid #00b564;
-  border-radius: 70%;
 }
 
-.content .profile-card .profile-head .head-right #environmentday-title {
-  width: 30%;
-  margin-left: 70%;
+.content .profile-card .profile-head .head-right .environment #environmentday-image {
+  width: 45%;
+  height: 45%;
+  margin-top: 5%;
+  border: 2px solid #00b564;
+  border-radius: 50%;
+  margin-left: 2%;
+}
+
+.content .profile-card .profile-head .head-right .environment #environmentday-title {
+  width: 80%;
   font-size: 11px;
   font-family: 'Do Hyeon', sans-serif;
   color: #00b564;
+  margin-left: 11%;
 }
 
-.content .profile-card .profile-head .head-right #non-environmentday {
+.content .profile-card .profile-head .head-right .environment #non-environmentday {
   height: 40%;
 }
 .content .profile-card .profile-head .head-right #title {
   font-size: 22px;
-  flex: 2;
   margin: 0% 4%;
   font-family: 'Do Hyeon', sans-serif;
 }
@@ -205,7 +240,14 @@
 
   float: left;
   vertical-align: center;
-  margin: 0 0 2% 10%;
+  margin: 0 0 3% 10%;
+}
+
+.content .profile-card #logout:hover {
+  border: 1px solid #86e57f;
+  background-color: #86e57f;
+  color: black;
+  font-weight: bolder;
 }
 
 /* myplanet.vue */
@@ -242,7 +284,27 @@
   margin-left: 3%;
 }
 
-.content .myreward .reward #badge img {
+.content .myreward .reward #badge #badge-get {
+  width: 60%;
+}
+
+.content .myreward .reward #badge #badge-get:hover {
+  animation: badge-move.2s;
+}
+
+@keyframes badge-move {
+  0% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(-5deg);
+  }
+}
+
+.content .myreward .reward #badge #badge-nonget {
   width: 60%;
 }
 
