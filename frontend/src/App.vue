@@ -18,9 +18,34 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BMHANNAAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cafe24Oneprettynight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @import './assets/css/display.css';
 @import './assets/css/intro.css';
@@ -48,7 +73,7 @@ export default {
 @import './assets/css/nav-bar.css';
 
 #app {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
@@ -63,7 +88,7 @@ html {
 
 body {
   background-color: #252525;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   margin: 0px;
   height: 100%;
 }

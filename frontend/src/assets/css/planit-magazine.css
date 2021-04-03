@@ -1,9 +1,6 @@
 .main_component_magazine_title {
   text-align: left;
   margin: 3% 0 0 8%;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   color: white;
 }
@@ -11,9 +8,6 @@
 .main_component_magazine_sub {
   text-align: left;
   margin: 0 0 3% 8%;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 7px;
   color: white;
 }
@@ -32,9 +26,6 @@
   position: relative;
   top: -150px;
   left: 60px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 11px;
   color: white;
   height: 120px;
@@ -57,9 +48,6 @@
 .main_component_magazine_content_story_title_text {
   height: 20px;
   width: 200px;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   text-align: left;
@@ -96,9 +84,6 @@
   width: 150px;
   height: 60px;
   float: left;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 11px;
   line-height: 14px;
   color: white;

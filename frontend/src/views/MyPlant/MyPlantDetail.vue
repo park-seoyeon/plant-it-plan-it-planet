@@ -53,6 +53,10 @@
       style="width: 100%; height: 50px; float: left; padding-bottom: 30px"
     >
       <div class="morebutton" style="border: 0px"></div>
+      <div class="back">
+        <div class="back-icon" @click="goBack()"><img :src="Backimg" /></div>
+      </div>
+      <div style="padding-bottom: 75px"></div>
     </div>
   </div>
 </template>
@@ -64,6 +68,7 @@ import Plantitimg from '@/assets/img/PLANTIT.png';
 import Wateringimg from '@/assets/img/myplant-watering.png';
 import Repottingimg from '@/assets/img/myplant-repotting.png';
 import Chattingimg from '@/assets/img/myplant-chatting.png';
+import backicon from '@/assets/img/arrows/left-arrow.png';
 
 import MyPlantDetails from '@/components/MyPlant/MyPlantDetails.vue';
 import MyPlantDiary from '@/components/MyPlant/MyPlantDiary.vue';
@@ -79,6 +84,7 @@ export default {
       Wateringimg: Wateringimg,
       Repottingimg: Repottingimg,
       Chattingimg: Chattingimg,
+      Backimg: backicon,
       myplant_detail: '',
       diary: '',
     };

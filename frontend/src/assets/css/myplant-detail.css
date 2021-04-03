@@ -66,7 +66,6 @@
   width: 80%;
   margin-top: 5%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -82,7 +81,6 @@
   height: 25%;
   width: 80%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -139,7 +137,6 @@
   width: 80%;
   margin-top: 5%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -155,7 +152,6 @@
   height: 25%;
   width: 80%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -212,7 +208,6 @@
   width: 80%;
   margin-top: 5%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -228,7 +223,6 @@
   height: 25%;
   width: 80%;
   margin-left: 11%;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -259,7 +253,6 @@
   height: 20px;
   text-align: right;
   color: white;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -301,7 +294,6 @@
 }
 
 .myplant_details .information .text .top .title {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -312,7 +304,6 @@
 }
 
 .myplant_details .information .text .top .title .nickname {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -334,7 +325,6 @@
   width: 60px;
   height: 15px;
   line-height: 10px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -345,7 +335,6 @@
 }
 
 .myplant_details .information .text .top .title .level {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -355,7 +344,6 @@
 }
 
 .myplant_details .information .text .top .date {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -395,9 +383,6 @@
 }
 
 .myplant_details .information .text .level .title #title {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 7px;
   color: white;
   float: left;
@@ -405,9 +390,6 @@
 }
 
 .myplant_details .information .text .level .title #datepoint {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 7px;
   line-height: 9px;
   color: white;
@@ -442,9 +424,6 @@
 }
 
 .myplant_details .information .text .water .title #title {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 9px;
   color: white;
   float: left;
@@ -452,9 +431,6 @@
 }
 
 .myplant_details .information .text .water .title #datepoint {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 9px;
   line-height: 9px;
   color: white;
@@ -489,9 +465,6 @@
 }
 
 .myplant_details .information .text .soil .title #title {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 9px;
   color: white;
   float: left;
@@ -499,9 +472,6 @@
 }
 
 .myplant_details .information .text .soil .title #datepoint {
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 9px;
   line-height: 9px;
   color: white;
