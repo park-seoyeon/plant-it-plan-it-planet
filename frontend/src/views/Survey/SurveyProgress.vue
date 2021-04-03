@@ -66,7 +66,7 @@ export default {
   methods: {
     startSurvey() {
       axios
-        .get(`${SERVER_URL}/servey/list/`)
+        .get(`${SERVER_URL}/survey/list/`)
         .then((response) => {
           this.question_list = response.data.question_list;
         })
@@ -78,7 +78,7 @@ export default {
     // 설문이 끝나면 post로 값을 보내줌
     endSurvey() {
       axios
-        .post(`${SERVER_URL}/servey/result/`, { answer_list: this.answer_list })
+        .post(`${SERVER_URL}/survey/result/`, { answer_list: this.answer_list })
         .then(({ data }) => {
           let msg = '설문에 실패하였습니다.';
           if (data.message === 'success') {

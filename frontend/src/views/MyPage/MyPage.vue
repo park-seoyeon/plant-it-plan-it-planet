@@ -25,21 +25,22 @@
         :index="idx"
       />
     </div>
+    <div id="deleteUser" @click="deleteUser()"><span>회원탈퇴</span></div>
     <div id="reward-bottom-full"></div>
     <div style="padding-bottom: 75px"></div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Planetimg from '@/assets/img/PLANET.png';
-import ProfileCard from '@/components/MyPage/ProfileCard.vue';
-import MyPlanet from '@/components/MyPage/MyPlanet.vue';
-import MyReward from '@/components/MyPage/MyReward.vue';
+import axios from "axios";
+import Planetimg from "@/assets/img/PLANET.png";
+import ProfileCard from "@/components/MyPage/ProfileCard.vue";
+import MyPlanet from "@/components/MyPage/MyPlanet.vue";
+import MyReward from "@/components/MyPage/MyReward.vue";
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 export default {
-  name: 'MyPage',
+  name: "MyPage",
   data: () => {
     return {
       Planetimg: Planetimg,
@@ -75,19 +76,57 @@ export default {
     MyReward,
   },
   methods: {
+    logOut() {
+      localStorage.removeItem("email");
+      localStorage.removeItem("name");
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("user_number");
+      localStorage.removeItem("is_survey");
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
+          location.reload();
+        }
+      });
+    },
+    deleteUser() {
+      if (confirm("정말 지구 환경을 포기하고 탈퇴하시겠습니까?")) {
+        axios
+          .delete(`${SERVER_URL}/delete/`, {
+            data: {
+              user_number: localStorage.getItem("user_number"),
+            },
+          })
+
+          .then(({ data }) => {
+            let msg = "탈퇴에 실패하였습니다.";
+            if (data.message === "success") {
+              this.logOut();
+              location.reload();
+            } else {
+              alert(msg);
+              location.reload();
+            }
+          })
+          .catch(() => {
+            alert("서버와 통신할 수 없습니다.");
+          });
+      } else {
+        location.reload();
+      }
+    },
     getProfile() {
       axios
         .post(`${SERVER_URL}/mypage/`, {
-          user_number: localStorage.getItem('user_number'),
+          user_number: localStorage.getItem("user_number"),
         })
         .then((response) => {
           this.myprofile = response.data;
           this.reward_status = Object.values(this.myprofile.reward);
         })
         .catch(() => {
-          alert('결과를 가져오는 중에 오류가 발생했습니다');
-          this.$router.push({ name: 'Home' }).catch((error) => {
-            if (error.name === 'NavigationDuplicated') {
+          alert("결과를 가져오는 중에 오류가 발생했습니다");
+          this.$router.push({ name: "Home" }).catch((error) => {
+            if (error.name === "NavigationDuplicated") {
               location.reload();
             }
           });
@@ -95,11 +134,11 @@ export default {
     },
   },
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      alert("로그인 하고 이용해주세요.");
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
