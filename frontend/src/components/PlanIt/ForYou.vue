@@ -34,7 +34,9 @@
           </div>
         </div>
       </div>
-      <div v-else>MBTI 설문조사를 해주세여 니마</div>
+      <div class="gotosurvey" @click="surveystart()" v-else>
+        나만의 맞춤 식물 알아보기
+      </div>
     </div>
   </div>
 </template>

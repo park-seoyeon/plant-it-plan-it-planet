@@ -4,6 +4,15 @@
       <img :src="Planetimg" />
     </div>
     <div class="division"></div>
+    <div class="top-button">
+      <div id="getsurveyresult" @click="getSurveyResult()" v-if="isSurvey">
+        성향 및 추천식물 다시보기
+      </div>
+      <div id="gotosurvey" @click="moveToSurvey()" v-else>
+        나와 맞는 식물 찾기
+      </div>
+      <div id="logout" @click="logOut()">LOGOUT</div>
+    </div>
     <ProfileCard :myprofile="this.myprofile" />
     <div id="planet-division-bar"></div>
     <div class="planet-title">
@@ -69,6 +78,7 @@ export default {
         },
       },
       reward_status: [],
+      isSurvey: false,
     };
   },
   components: {
@@ -83,7 +93,22 @@ export default {
       localStorage.removeItem("jwt");
       localStorage.removeItem("user_number");
       localStorage.removeItem("is_survey");
+      alert("로그아웃 되었습니다.");
       this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
+          location.reload();
+        }
+      });
+    },
+    getSurveyResult() {
+      this.$router.push({ name: "SurveyResult" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
+          location.reload();
+        }
+      });
+    },
+    moveToSurvey() {
+      this.$router.push({ name: "SurveyProgress" }).catch((error) => {
         if (error.name === "NavigationDuplicated") {
           location.reload();
         }
@@ -101,7 +126,16 @@ export default {
           .then(({ data }) => {
             let msg = "탈퇴에 실패하였습니다.";
             if (data.message === "success") {
-              this.logOut();
+              localStorage.removeItem("email");
+              localStorage.removeItem("name");
+              localStorage.removeItem("jwt");
+              localStorage.removeItem("user_number");
+              localStorage.removeItem("is_survey");
+              this.$router.push({ name: "Home" }).catch((error) => {
+                if (error.name === "NavigationDuplicated") {
+                  location.reload();
+                }
+              });
               location.reload();
             } else {
               alert(msg);
@@ -145,6 +179,9 @@ export default {
       });
     } else {
       this.getProfile();
+      if (localStorage.getItem("is_survey") == 1) {
+        this.isSurvey = true;
+      }
     }
   },
 };

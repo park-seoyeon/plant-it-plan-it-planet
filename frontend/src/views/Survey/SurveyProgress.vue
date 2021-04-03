@@ -34,16 +34,16 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from "axios";
 
-import planticon from '@/assets/img/plantit_icon.png';
-import planicon from '@/assets/img/planit_icon.png';
-import planeticon from '@/assets/img/planet_icon.png';
+import planticon from "@/assets/img/plantit_icon.png";
+import planicon from "@/assets/img/planit_icon.png";
+import planeticon from "@/assets/img/planet_icon.png";
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {
-  name: 'SurveyProgress',
+  name: "SurveyProgress",
   data: () => {
     return {
       planticon: planticon,
@@ -71,19 +71,20 @@ export default {
           this.question_list = response.data.question_list;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
     },
 
     // 설문이 끝나면 post로 값을 보내줌
     endSurvey() {
+      localStorage.setItem("is_survey", 1);
       axios
         .post(`${SERVER_URL}/survey/result/`, { answer_list: this.answer_list })
         .then(({ data }) => {
-          let msg = '설문에 실패하였습니다.';
-          if (data.message === 'success') {
-            this.$router.push({ name: 'SurveyResult' }).catch((error) => {
-              if (error.name === 'NavigationDuplicated') {
+          let msg = "설문에 실패하였습니다.";
+          if (data.message === "success") {
+            this.$router.push({ name: "SurveyResult" }).catch((error) => {
+              if (error.name === "NavigationDuplicated") {
                 location.reload();
               }
             });
@@ -93,7 +94,7 @@ export default {
           }
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
     },
 
@@ -102,25 +103,25 @@ export default {
       this.answer_list[this.where] = now;
       this.where += 1;
       if (this.where == 12) {
-        this.answer_list[12] = localStorage.getItem('user_number');
+        this.answer_list[12] = localStorage.getItem("user_number");
         this.endSurvey();
       }
       this.width += 100 / 12;
-      document.getElementById('mybar').style.width = this.width + '%';
+      document.getElementById("mybar").style.width = this.width + "%";
     },
 
     handleNewLine(str) {
-      return String(str).replace(/(?:\r\n|\r|\n)/g, '</br>');
+      return String(str).replace(/(?:\r\n|\r|\n)/g, "</br>");
     },
   },
 
   // created 할 때 jwt가 없다면 home으로 보내기
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      alert("로그인 하고 이용해주세요.");
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
