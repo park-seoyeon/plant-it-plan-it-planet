@@ -269,10 +269,12 @@
 .myplant_details .more .changenickname {
   margin-right: 15%;
   float: right;
+  cursor: pointer;
 }
 
 .myplant_details .more .detail {
   float: right;
+  cursor: pointer;
 }
 
 .myplant_details .information .img {

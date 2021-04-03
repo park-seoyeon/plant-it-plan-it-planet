@@ -52,6 +52,7 @@
 .content .plant-card .myplant {
   text-align: left;
   margin-left: 2%;
+  cursor: pointer;
 }
 
 .content .plant-card .myplant img {
