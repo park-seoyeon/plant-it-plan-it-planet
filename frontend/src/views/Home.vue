@@ -64,7 +64,7 @@ export default {
           localStorage.setItem('name', response.data['name']);
           localStorage.setItem('jwt', response.data['access_token']);
           localStorage.setItem('user_number', response.data['user_number']);
-          localStorage.setItem('is_survey', response.data['is_servey']);
+          localStorage.setItem('is_survey', response.data['is_survey']);
 
           location.reload();
           // this.$router.push({ name: 'SurveyStart' });
