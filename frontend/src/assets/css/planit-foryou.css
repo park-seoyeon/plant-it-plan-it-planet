@@ -27,6 +27,7 @@
 .main_component_foryou_content img {
   width: 95px;
   height: 100px;
+  cursor: pointer;
 }
 
 .main_component_foryou_recommands {
