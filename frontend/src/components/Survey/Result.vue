@@ -77,6 +77,12 @@
           </div>
         </div>
       </div>
+      <div class="restart">
+        <span class="restart-btn" @click="restartSurvey()"
+          >나와 맞는 식물 다시 찾기</span
+        >
+      </div>
+      <div id="division-bar"></div>
       <div id="start-tool">
         <span id="start" @click="sendLink()">
           <img
@@ -84,23 +90,22 @@
             width="12px"
           />
           카카오로 공유하기</span
-        ><span id="start" @click="goMain()">플랜잇 시작하기</span>
-        <div class="restart" @click="restartSurvey()">
-          나와 맞는 식물 다시 찾기
-        </div>
+        ><span id="start" @click="goMain()" style="margin-left: 2%"
+          >플랜잇 시작하기</span
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import planticon from "@/assets/img/plantit_icon.png";
-import planicon from "@/assets/img/planit_icon.png";
-import planeticon from "@/assets/img/planet_icon.png";
-import firebase from "firebase";
+import planticon from '@/assets/img/plantit_icon.png';
+import planicon from '@/assets/img/planit_icon.png';
+import planeticon from '@/assets/img/planet_icon.png';
+import firebase from 'firebase';
 
 export default {
-  name: "Result",
+  name: 'Result',
   data: () => {
     return {
       planticon: planticon,
@@ -134,8 +139,8 @@ export default {
     },
 
     restartSurvey() {
-      this.$router.push({ name: "SurveyProgress" }).catch((error) => {
-        if (error.name === "NavigationDuplicated") {
+      this.$router.push({ name: 'SurveyProgress' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
           location.reload();
         }
       });
@@ -146,21 +151,21 @@ export default {
       this.Download_mbti_plants_img();
       setTimeout(() => {
         window.Kakao.Link.sendDefault({
-          objectType: "feed",
+          objectType: 'feed',
           content: {
             title: this.result.mbti_expression,
             description: this.result.flower_description,
             imageUrl: this.mbtiPlantImg,
             link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              androidExecParams: "PlantIt",
+              mobileWebUrl: 'https://developers.kakao.com',
+              androidExecParams: 'PlantIt',
             },
           },
           buttons: [
             {
-              title: "웹으로 이동",
+              title: '웹으로 이동',
               link: {
-                mobileWebUrl: "https://developers.kakao.com",
+                mobileWebUrl: 'https://developers.kakao.com',
               },
             },
           ],
@@ -217,16 +222,16 @@ export default {
     },
     plantDetail(id) {
       this.$router
-        .push({ name: "SearchDetail", params: { searchnumber: id } })
+        .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
-          if (error.name === "NavigationDuplicated") {
+          if (error.name === 'NavigationDuplicated') {
             location.reload();
           }
         });
     },
     goMain() {
-      this.$router.push({ name: "Main" }).catch((error) => {
-        if (error.name === "NavigationDuplicated") {
+      this.$router.push({ name: 'Main' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
           location.reload();
         }
       });

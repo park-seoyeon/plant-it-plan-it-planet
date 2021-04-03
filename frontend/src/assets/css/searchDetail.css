@@ -40,8 +40,13 @@
 }
 
 .content .back {
+  position: fixed;
   text-align: right;
   margin-right: 5%;
+  display: flex;
+  bottom: 75px;
+  right: 0;
+  z-index: 999;
 }
 
 .content .back .back-icon {

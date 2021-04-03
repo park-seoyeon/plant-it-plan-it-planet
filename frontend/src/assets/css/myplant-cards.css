@@ -5,7 +5,6 @@
 }
 
 .detailscontent .myplant_diary .diary_title .title {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -23,7 +22,6 @@
   border-radius: 5px;
   float: right;
   color: white;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
@@ -109,7 +107,6 @@
   box-sizing: border-box;
   border-radius: 8px;
   float: left;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
@@ -144,7 +141,6 @@
 }
 
 .myplants_card .plantscard .title .titlename {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -164,7 +160,6 @@
   width: 34px;
   height: 15px;
   line-height: 13px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -184,7 +179,6 @@
   width: 50px;
   height: 15px;
   line-height: 13px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -204,7 +198,6 @@
   width: 34px;
   height: 15px;
   line-height: 13px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -219,7 +212,6 @@
 .myplants_card .plantscard .date {
   width: 80%;
   height: 20px;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -252,7 +244,6 @@
 }
 
 .myplants_card .plantscard .title2 .titlename2 {
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -274,7 +265,6 @@
   width: 60px;
   height: 15px;
   line-height: 10px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -293,7 +283,6 @@
   width: 34px;
   height: 15px;
   line-height: 13px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 8px;
@@ -312,7 +301,6 @@
   box-sizing: border-box;
   border-radius: 8px;
   float: left;
-  font-family: Binggrae Melona;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;

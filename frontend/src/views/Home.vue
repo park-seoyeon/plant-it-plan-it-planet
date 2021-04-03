@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <div v-if="isStatusOn" @click="toggleOnOff" style="height: 100%">
+    <div
+      v-if="isStatusOn"
+      @click="toggleOnOff"
+      style="height: 100%; cursor: pointer"
+    >
       <Intro />
     </div>
     <div v-else style="height: 100%">

@@ -1,9 +1,6 @@
 .main_component_foryou_title {
   text-align: left;
   margin: 3% 0 0 8%;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   color: white;
 }
@@ -11,9 +8,6 @@
 .main_component_foryou_sub {
   text-align: left;
   margin: 0 0 3% 8%;
-  font-family: Binggrae Melona;
-  font-style: normal;
-  font-weight: normal;
   font-size: 7px;
   color: white;
 }
@@ -33,9 +27,6 @@
   border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 10px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   text-align: center;
   color: white;

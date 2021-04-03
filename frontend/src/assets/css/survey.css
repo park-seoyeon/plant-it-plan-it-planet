@@ -160,8 +160,8 @@
 }
 
 .content .result-detail #flower-description {
-  font-size: 20px;
-  font-family: 'Nanum Pen Script', cursive;
+  font-size: 15px;
+  font-family: 'KyoboHand';
   color: #ffffff;
   margin-bottom: 3%;
 }
@@ -260,33 +260,38 @@
 
 .content .result-detail #start-tool {
   color: white;
+  margin-top: 5%;
   padding-bottom: 10%;
   cursor: pointer;
 }
 
-.content .result-detail #start-tool .restart {
-  cursor: pointer;
-  width: 300px;
-  font-size: 14px;
-  border: 3px solid #ffffff;
-  border-radius: 10px;
-  margin-left: 1%;
-  margin: 5% 0 0 18px;
-  padding: 1% 5%;
+.content .result-detail .restart {
+  color: #ffffff;
+  margin-bottom: 6%;
 }
 
-.content .result-detail #start-tool .restart:hover {
+.content .result-detail .restart .restart-btn {
   cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  padding: 1% 3%;
+}
+
+.content .result-detail .restart .restart-btn:hover {
+  cursor: pointer;
+  font-size: 14px;
   color: #00b564;
-  border: 3px solid #00b564;
+  border: 1px solid #00b564;
+  border-radius: 15px;
+  padding: 1% 3%;
 }
 
 .content .result-detail #start-tool #start {
   cursor: pointer;
   font-size: 14px;
-  border: 3px solid #ffffff;
-  border-radius: 10px;
-  margin-left: 1%;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
   padding: 1% 5%;
 }
 
@@ -294,8 +299,7 @@
   cursor: pointer;
   font-size: 14px;
   color: #00b564;
-  border: 3px solid #00b564;
-  border-radius: 10px;
-  margin-left: 1%;
+  border: 1px solid #00b564;
+  border-radius: 15px;
   padding: 1% 5%;
 }
