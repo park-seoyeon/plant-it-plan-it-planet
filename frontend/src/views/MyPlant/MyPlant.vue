@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Plantitimg from '@/assets/img/PLANTIT.png';
-import PlantCard from '@/components/MyPlant/PlantCard.vue';
+import axios from "axios";
+import Plantitimg from "@/assets/img/PLANTIT.png";
+import PlantCard from "@/components/MyPlant/PlantCard.vue";
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 export default {
-  name: 'MyPlant',
+  name: "MyPlant",
   data: () => {
     return {
       Plantitimg: Plantitimg,
@@ -38,15 +38,15 @@ export default {
     getPlant() {
       axios
         .post(`${SERVER_URL}/myplant/`, {
-          user_number: localStorage.getItem('user_number'),
+          user_number: localStorage.getItem("user_number"),
         })
         .then((response) => {
           this.myplant_list = response.data.myplant_list;
         })
         .catch(() => {
-          alert('결과를 가져오는 중에 오류가 발생했습니다');
-          this.$router.push({ name: 'Home' }).catch((error) => {
-            if (error.name === 'NavigationDuplicated') {
+          alert("결과를 가져오는 중에 오류가 발생했습니다");
+          this.$router.push({ name: "Home" }).catch((error) => {
+            if (error.name === "NavigationDuplicated") {
               location.reload();
             }
           });
@@ -54,11 +54,11 @@ export default {
     },
   },
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      alert("로그인 하고 이용해주세요.");
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });

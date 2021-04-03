@@ -2,20 +2,21 @@
   <div class="main_component_myplant">
     <div class="main_component_myplant_title">MY PLANT</div>
     <div class="main_component_myplant_sub">식물들을 관리해주세요</div>
-
-    <flickity
-      v-if="Object.keys(myplant_list).length > 0"
-      ref="flickity"
-      class="carousel"
-      :options="flickityOptions"
-    >
-      <MyplantsCard
-        class="carousel-cell"
-        v-for="(myplants, idx) in myplant_list"
-        :key="idx"
-        :myplants="myplants"
-      />
-    </flickity>
+    <div v-if="myplant_list != undefined">
+      <flickity
+        v-if="Object.keys(myplant_list).length > 0"
+        ref="flickity"
+        class="carousel"
+        :options="flickityOptions"
+      >
+        <MyplantsCard
+          class="carousel-cell"
+          v-for="(myplants, idx) in myplant_list"
+          :key="idx"
+          :myplants="myplants"
+        />
+      </flickity>
+    </div>
   </div>
 </template>
 

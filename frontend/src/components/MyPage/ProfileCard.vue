@@ -3,20 +3,24 @@
     <div class="profile-card">
       <div id="sky-head"></div>
       <div class="profile-head">
-        <img
-          id="mypage-profile-image"
-          v-if="myprofile.profile_image"
-          :src="myprofile.profile_image"
-        />
-        <img id="mypage-profile-image" v-else :src="getDefaultProfileImg()" />
-        <div class="head-right">
+        <div class="mypage-profile-image-class">
           <img
-            id="environmentday-image"
-            v-if="this.planting_day"
-            src="@/assets/img/profile/planting_day.png"
+            id="mypage-profile-image"
+            v-if="myprofile.profile_image"
+            :src="myprofile.profile_image"
           />
-          <div id="environmentday-title" v-if="this.planting_day">식목일</div>
-          <div id="non-environmentday" v-else></div>
+          <img id="mypage-profile-image" v-else :src="getDefaultProfileImg()" />
+        </div>
+        <div class="head-right">
+          <div class="environment">
+            <img
+              id="environmentday-image"
+              v-if="this.planting_day"
+              src="@/assets/img/profile/planting_day.png"
+            />
+            <div id="environmentday-title" v-if="this.planting_day">식목일</div>
+            <div id="non-environmentday" v-else></div>
+          </div>
           <div id="title">{{ myprofile.level.title }}</div>
         </div>
       </div>

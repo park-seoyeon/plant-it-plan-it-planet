@@ -26,6 +26,7 @@
       />
     </div>
     <div id="deleteUser" @click="deleteUser()"><span>회원탈퇴</span></div>
+    <div id="planet-division-bar"></div>
     <div id="reward-bottom-full"></div>
     <div style="padding-bottom: 75px"></div>
   </div>
