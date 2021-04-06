@@ -164,7 +164,9 @@
 .content .result-detail #flower-description {
   font-size: 15px;
   font-family: 'KyoboHand';
+  text-align: left;
   color: #ffffff;
+  margin-left: 7%;
   margin-bottom: 3%;
 }
 
@@ -175,7 +177,7 @@
 }
 
 .content .result-detail #recommend #title {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .content .result-detail #recommend #desc {

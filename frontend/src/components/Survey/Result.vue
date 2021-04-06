@@ -14,7 +14,10 @@
       </div>
       <div id="division-bar"></div>
       <div id="result-img"><img :src="getMbtiImgPath()" /></div>
-      <div id="flower-description">{{ result.flower_description }}</div>
+      <div
+        id="flower-description"
+        v-html="handleNewLine(result.flower_description)"
+      ></div>
       <div id="division-bar"></div>
       <div id="recommend">
         <div id="title">이런 당신에게 추천하는 식물</div>
@@ -137,6 +140,10 @@ export default {
         this.mbtiPlantImg = url;
       });
       return this.mbtiPlantImg;
+    },
+
+    handleNewLine(str) {
+      return String(str).replace(/(?:\r\n|\r|\n)/g, '</br>');
     },
 
     restartSurvey() {
