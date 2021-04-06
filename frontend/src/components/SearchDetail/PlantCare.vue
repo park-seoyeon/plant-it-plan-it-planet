@@ -19,7 +19,7 @@
     <img src="@/assets/img/care_plant/repotting.png" />
     <div class="title">{{ care.repotting_title }}</div>
     <div class="desc" v-html="handleNewLine(care.repotting_desc)"></div>
-    <div id="dashed-division"></div>
+    <div id="dashed-division" style="width: 350px; margin: 4% auto"></div>
   </div>
 </template>
 

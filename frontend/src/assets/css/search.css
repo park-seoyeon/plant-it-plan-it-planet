@@ -4,7 +4,7 @@
   margin: 0 0 0 5%;
 }
 
-.content .searchicons .top-btn {
+.content .searchicons .top-btn-active {
   cursor: pointer;
   display: inline-block;
   background: #00b564;
@@ -12,6 +12,32 @@
   text-align: center;
   margin: 0 3% 1% 0;
   width: 15%;
+}
+
+.content .searchicons .top-btn {
+  cursor: pointer;
+  display: inline-block;
+  background: #747474;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 3% 1% 0;
+  width: 15%;
+}
+
+.content .searchicons .top-btn:hover {
+  cursor: pointer;
+  display: inline-block;
+  background: #00b564;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 3% 1% 0;
+  width: 15%;
+}
+
+.content .searchicons .top-btn-active img {
+  width: 45%;
+  height: 45%;
+  vertical-align: middle;
 }
 
 .content .searchicons .top-btn img {

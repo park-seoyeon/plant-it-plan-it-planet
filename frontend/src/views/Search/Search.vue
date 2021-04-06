@@ -13,8 +13,18 @@
 
     <div class="searchicons">
       <div class="top-btn" @click="reset"><img :src="Reseticon" /></div>
-      <div class="top-btn" @click="usename"><img :src="Searchicon" /></div>
-      <div class="top-btn" @click="usefilter"><img :src="Filtericon" /></div>
+      <div v-if="isUseName" class="top-btn-active" @click="usename">
+        <img :src="Searchicon" />
+      </div>
+      <div v-else class="top-btn" @click="usename">
+        <img :src="Searchicon" />
+      </div>
+      <div v-if="isUseFilter" class="top-btn-active" @click="usefilter">
+        <img :src="Filtericon" />
+      </div>
+      <div v-else class="top-btn" @click="usefilter">
+        <img :src="Filtericon" />
+      </div>
     </div>
 
     <div v-if="isStatusOn">
@@ -85,6 +95,9 @@ export default {
       Searchicon: Searchicon,
       Filtericon: Filtericon,
 
+      isUseName: false,
+      isUseFilter: true,
+
       isStatusOn: true,
 
       selected_list: [],
@@ -109,6 +122,8 @@ export default {
 
       this.$refs.resetfilter.resetfilters();
       this.isStatusOn = false;
+      this.isUseName = false;
+      this.isUseFilter = true;
       axios
         .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
@@ -125,6 +140,8 @@ export default {
 
     usename() {
       this.isStatusOn = false;
+      this.isUseName = true;
+      this.isUseFilter = false;
       this.selected_list = [];
 
       axios
@@ -144,6 +161,8 @@ export default {
       this.selected_list = [];
       this.$refs.resetfilter.resetfilters();
       this.isStatusOn = false;
+      this.isUseName = false;
+      this.isUseFilter = true;
 
       axios
         .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
