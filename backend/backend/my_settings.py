@@ -11,7 +11,7 @@ DATABASES = {
 
 
 SECRET_KEY = {
-    'secret':'5=u9qe^vfktc(hj=(d@44$y9uwckoay*+-y&-h(tu5-(zbf#su', # settings.py의 SECRET_KEY
+    'secret':'wosi+z@g^%a%y(c%qqc0c!1qkymn3&bvyu8srvhl+&7z3md-+c', # settings.py의 SECRET_KEY
 }
 
 KAKAO_API_KEY = 'f1b1aefa5d6dde0c28145a76f64461cc'

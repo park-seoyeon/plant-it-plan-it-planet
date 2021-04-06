@@ -4,7 +4,7 @@ import jwt
 import pymysql
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
-from config.settings import conn
+from backend.settings import conn
 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
@@ -43,7 +43,6 @@ def getFilterSearchList(request):
     sql = """ select id, plant_name
             from plants_property""" + filter_sql
 
-    print(sql)
     curs.execute(sql)
     plant_list = curs.fetchall()
     return JsonResponse({'plant_list':plant_list},status=200)

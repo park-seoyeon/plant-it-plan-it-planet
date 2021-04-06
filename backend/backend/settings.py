@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SECRET_KEY = my_settings.SECRET_KEY
 
@@ -22,8 +22,8 @@ conn = pymysql.connect(
     password=DATABASES['default']['PASSWORD'],
     db=DATABASES['default']['NAME'],
     charset='utf8'
-    )
-    
+)
+
 
 KAKAO_API_KEY = my_settings.KAKAO_API_KEY
 
@@ -37,15 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    
-    #apps
+
+    # apps
     'user',
-    'servey',
+    'survey',
     'search',
+    'alarm',
 
     # third party
     'django_extensions',
-    'drf_yasg', #swagger api
+    'drf_yasg',  # swagger api
     'rest_framework',
     'corsheaders',
 
@@ -66,14 +67,14 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'backend.urls'#
 
 TEMPLATES = [
     {
@@ -91,8 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
-
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Password validation
@@ -136,3 +136,16 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
+
+# scheduler
+SCHEDULER_CONFIG = {
+    "apscheduler.jobstores.default": {
+        "class": "django_apscheduler.jobstores:DjangoJobStore"
+    },
+    'apscheduler.executors.processpool': {
+        "type": "threadpool"
+    },
+}
+
+SCHEDULER_AUTOSTART = True
+# APSCHEDULER_DATETIME_FORMAT =  "N j, Y, f:s a"  # Default
