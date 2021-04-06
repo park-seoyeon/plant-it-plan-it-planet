@@ -11,10 +11,10 @@
   </div>
 </template>
 <script>
-import Logo from '@/assets/img/Logo.png';
+import Logo from "@/assets/img/Logo.png";
 
 export default {
-  name: 'SurveyStart',
+  name: "SurveyStart",
   data: () => {
     return {
       Logo: Logo,
@@ -22,15 +22,15 @@ export default {
   },
   methods: {
     goSurvey() {
-      this.$router.push({ name: 'SurveyProgress' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$router.push({ name: "SurveyProgress" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
     },
     goSearch() {
-      this.$router.push({ name: 'Search' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$router.push({ name: "Search" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
@@ -39,11 +39,14 @@ export default {
 
   // created 할 때 jwt가 없다면 home으로 보내기
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });

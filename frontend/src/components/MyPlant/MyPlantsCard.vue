@@ -42,21 +42,21 @@
 
 <script>
 export default {
-  name: 'MyPlantsCard',
+  name: "MyPlantsCard",
 
-  props: ['myplants'],
+  props: ["myplants"],
 
   data: () => {
     return {
-      today_date: '',
-      getid: '',
-      gettitle: '',
-      getcontents: '',
+      today_date: "",
+      getid: "",
+      gettitle: "",
+      getcontents: "",
       ismodifyon: false,
       modifydiary: {
-        modifydiary_id: '',
-        modifydiary_title: '',
-        modifydiary_contents: '',
+        modifydiary_id: "",
+        modifydiary_title: "",
+        modifydiary_contents: "",
       },
     };
   },
@@ -66,7 +66,7 @@ export default {
   components: {},
   methods: {
     diarydelete() {
-      this.$emit('calldelete', this.getid);
+      this.$emit("calldelete", this.getid);
     },
 
     changemodify() {
@@ -81,11 +81,11 @@ export default {
 
     modifydiarys() {
       this.modifydiary.modifydiary_id = this.getid;
-      this.$emit('callmodify', this.modifydiary);
+      this.$emit("callmodify", this.modifydiary);
     },
   },
   created() {
-    this.today_date = this.myplants.add_date.slice(0, 10).replace(/-/g, '.');
+    this.today_date = this.myplants.add_date.slice(0, 10).replace(/-/g, ".");
     this.getid = this.myplants.id;
     this.gettitle = this.myplants.title;
     this.getcontents = this.myplants.content;

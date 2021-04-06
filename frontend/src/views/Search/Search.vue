@@ -73,21 +73,21 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from "axios";
 
-import Plantitimg from '@/assets/img/PLANTIT.png';
-import Reseticon from '@/assets/img/reseticon.png';
-import Searchicon from '@/assets/img/searchicon.png';
-import Filtericon from '@/assets/img/filtericon.png';
+import Plantitimg from "@/assets/img/PLANTIT.png";
+import Reseticon from "@/assets/img/reseticon.png";
+import Searchicon from "@/assets/img/searchicon.png";
+import Filtericon from "@/assets/img/filtericon.png";
 
-import SearchName from '@/components/Search/SearchName.vue';
-import SearchFilter from '@/components/Search/SearchFilter.vue';
-import SearchList from '@/components/Search/SearchList.vue';
+import SearchName from "@/components/Search/SearchName.vue";
+import SearchFilter from "@/components/Search/SearchFilter.vue";
+import SearchList from "@/components/Search/SearchList.vue";
 
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {
-  name: 'Search',
+  name: "Search",
   data: () => {
     return {
       Plantitimg: Plantitimg,
@@ -103,7 +103,7 @@ export default {
       selected_list: [],
       last_selected: 0,
       filter_list: [],
-      plant_list: '',
+      plant_list: "",
 
       idx: 0,
 
@@ -132,7 +132,7 @@ export default {
           this.isStatusOn = true;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -151,7 +151,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -172,7 +172,7 @@ export default {
           this.isStatusOn = true;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -186,7 +186,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
     },
 
@@ -198,7 +198,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -214,7 +214,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -230,7 +230,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -246,7 +246,7 @@ export default {
           this.plant_list = response.data;
         })
         .catch(() => {
-          alert('서버와 통신할 수 없습니다.');
+          alert("서버와 통신할 수 없습니다.");
         });
 
       this.$refs.resetlist.resetlists();
@@ -286,11 +286,14 @@ export default {
   },
 
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });

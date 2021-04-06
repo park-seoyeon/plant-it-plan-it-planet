@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import PlantsCard from '@/components/Search/PlantsCard.vue';
+import PlantsCard from "@/components/Search/PlantsCard.vue";
 
 export default {
-  name: 'SearchList',
+  name: "SearchList",
 
-  props: ['plant_list'],
+  props: ["plant_list"],
 
   data: () => {
     return {
@@ -39,7 +39,6 @@ export default {
   methods: {
     resetlists() {
       this.end_point = 20;
-      // alert(this.plant_list.length);
       if (this.plant_list.length < 20) {
         this.isend = true;
       } else {

@@ -93,7 +93,10 @@ export default {
       localStorage.removeItem("jwt");
       localStorage.removeItem("user_number");
       localStorage.removeItem("is_survey");
-      alert("로그아웃 되었습니다.");
+      this.$swal.fire({
+        icon: "success",
+        title: "로그아웃 되었습니다.",
+      });
       this.$router.push({ name: "Home" }).catch((error) => {
         if (error.name === "NavigationDuplicated") {
           location.reload();
@@ -115,47 +118,48 @@ export default {
       });
     },
     deleteUser() {
+      this.$swal
+        .fire({
+          title: "정말 지구 환경을 포기하고 탈퇴하시겠습니까?",
+          icon: "warning",
+          showCancelButton: true,
+          cancelButtonText: "아뇨, 참아볼게요",
+          confirmButtonText: "네. 미안해요 :(",
+          reverseButtons: true,
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            axios
+              .delete(`${SERVER_URL}/delete/`, {
+                data: {
+                  user_number: localStorage.getItem("user_number"),
+                },
+              })
 
-      this.$swal.fire({
-            title: '정말 지구 환경을 포기하고 탈퇴하시겠습니까?',
-            icon: 'warning',
-            showCancelButton: true,
-            cancelButtonText: '아뇨, 참아볼게요',
-            confirmButtonText: '네. 미안해요 :(',
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-              axios
-                .delete(`${SERVER_URL}/delete/`, {
-                  data: {
-                    user_number: localStorage.getItem("user_number"),
-                  },
-                })
-
-                .then(({ data }) => {
-                  let msg = "탈퇴에 실패하였습니다.";
-                  if (data.message === "success") {
-                    localStorage.removeItem("email");
-                    localStorage.removeItem("name");
-                    localStorage.removeItem("jwt");
-                    localStorage.removeItem("user_number");
-                    localStorage.removeItem("is_survey");
-                    this.$router.push({ name: "Home" }).catch((error) => {
-                      if (error.name === "NavigationDuplicated") {
-                        location.reload();
-                      }
-                    });
-                    location.reload();
-                  } else {
-                    alert(msg);
-                    location.reload();
-                  }
-                })
-                .catch(() => {
-                  alert("서버와 통신할 수 없습니다.");
-                });
-            }
-          })
+              .then(({ data }) => {
+                let msg = "탈퇴에 실패하였습니다.";
+                if (data.message === "success") {
+                  localStorage.removeItem("email");
+                  localStorage.removeItem("name");
+                  localStorage.removeItem("jwt");
+                  localStorage.removeItem("user_number");
+                  localStorage.removeItem("is_survey");
+                  this.$router.push({ name: "Home" }).catch((error) => {
+                    if (error.name === "NavigationDuplicated") {
+                      location.reload();
+                    }
+                  });
+                  location.reload();
+                } else {
+                  alert(msg);
+                  location.reload();
+                }
+              })
+              .catch(() => {
+                alert("서버와 통신할 수 없습니다.");
+              });
+          }
+        });
     },
     getProfile() {
       axios
@@ -179,7 +183,10 @@ export default {
   created() {
     const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert("로그인 하고 이용해주세요.");
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
       this.$router.push({ name: "Home" }).catch((error) => {
         if (error.name === "NavigationDuplicated") {
           location.reload();

@@ -79,26 +79,25 @@ export default {
           plant_id: this.plant_detail.id,
         })
         .then(() => {
-
-          this.$swal.fire({
-            title: '식물이 MYPLANT에 등록되었습니다',
-            text: "해당 페이지로 이동하시겠습니까?",
-            icon: 'success',
-            showCancelButton: true,
-            cancelButtonText: '아뇨, 좀 더 구경할래요',
-            confirmButtonText: '네. 이동할게요',
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-              this.$router.push({ name: "MyPlant" }).catch((error) => {
-                if (error.name === "NavigationDuplicated") {
-                  location.reload();
-                }
-              });
-            }
-          })
-
-
+          this.$swal
+            .fire({
+              title: "식물이 MYPLANT에 등록되었습니다",
+              text: "해당 페이지로 이동하시겠습니까?",
+              icon: "success",
+              showCancelButton: true,
+              cancelButtonText: "아뇨, 좀 더 구경할래요",
+              confirmButtonText: "네. 이동할게요",
+              reverseButtons: true,
+            })
+            .then((result) => {
+              if (result.isConfirmed) {
+                this.$router.push({ name: "MyPlant" }).catch((error) => {
+                  if (error.name === "NavigationDuplicated") {
+                    location.reload();
+                  }
+                });
+              }
+            });
         })
         .catch(() => {
           alert("서버와 통신할 수 없습니다.");
@@ -115,7 +114,10 @@ export default {
   created() {
     const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert("로그인 하고 이용해주세요.");
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
       this.$router.push({ name: "Home" }).catch((error) => {
         if (error.name === "NavigationDuplicated") {
           location.reload();

@@ -66,7 +66,10 @@ export default {
   created() {
     const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert("로그인 하고 이용해주세요.");
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
       this.$router.push({ name: "Home" }).catch((error) => {
         if (error.name === "NavigationDuplicated") {
           location.reload();

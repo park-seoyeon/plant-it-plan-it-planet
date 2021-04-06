@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import Magazinebox from '@/assets/img/magazinebox.png';
-import Magazineexample from '@/assets/img/magazineexample.png';
-import Magazineback from '@/assets/img/magazineback.png';
+import Magazinebox from "@/assets/img/magazinebox.png";
+import Magazineexample from "@/assets/img/magazineexample.png";
+import Magazineback from "@/assets/img/magazineback.png";
 
 export default {
-  name: 'MainMagazine',
+  name: "MainMagazine",
   data: () => {
     return {
       Magazinebox: Magazinebox,
@@ -47,8 +47,8 @@ export default {
   methods: {
     goMagazine() {
       document.documentElement.scrollTop = 0;
-      this.$router.push({ name: 'Magazine' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$router.push({ name: "Magazine" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
@@ -57,11 +57,14 @@ export default {
 
   // Mount 이전에, localStorage값이 1인 경우 ( 로그인 안해서 storage에 정보가 들어가지 않은 경우 ) Intro로 돌아가라.
   created() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem("jwt");
     if (token == null) {
-      alert('로그인 하고 이용해주세요.');
-      this.$router.push({ name: 'Home' }).catch((error) => {
-        if (error.name === 'NavigationDuplicated') {
+      this.$swal.fire({
+        icon: "error",
+        title: "로그인 하고 이용해주세요.",
+      });
+      this.$router.push({ name: "Home" }).catch((error) => {
+        if (error.name === "NavigationDuplicated") {
           location.reload();
         }
       });
