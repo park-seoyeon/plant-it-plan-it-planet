@@ -9,14 +9,15 @@
     <div id="resultbar"></div>
     <div class="result-detail">
       <div id="expression">
-        {{ result.mbti_expression }}
+        당신의 성향은 <br />
+        <b>{{ result.mbti_expression }}</b>
       </div>
       <div id="division-bar"></div>
       <div id="result-img"><img :src="getMbtiImgPath()" /></div>
       <div id="flower-description">{{ result.flower_description }}</div>
       <div id="division-bar"></div>
       <div id="recommend">
-        <div id="title">이런 당신에게 어울리는 식물</div>
+        <div id="title">이런 당신에게 추천하는 식물</div>
         <div id="desc" @click="plantDetail(result.recommanded_plant_1_id)">
           <img :src="Download_1()" />
           <div id="text">

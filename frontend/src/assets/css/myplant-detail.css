@@ -255,12 +255,12 @@
   color: white;
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
+  font-size: 12px;
   margin-bottom: 1%;
 }
 
 .myplant_details .more .changenickname {
-  margin-right: 15%;
+  margin-right: 7%;
   float: right;
   cursor: pointer;
 }
@@ -383,14 +383,14 @@
 }
 
 .myplant_details .information .text .level .title #title {
-  font-size: 7px;
+  font-size: 11px;
   color: white;
   float: left;
   margin-top: 1%;
 }
 
 .myplant_details .information .text .level .title #datepoint {
-  font-size: 7px;
+  font-size: 11px;
   line-height: 9px;
   color: white;
   float: right;
@@ -424,14 +424,14 @@
 }
 
 .myplant_details .information .text .water .title #title {
-  font-size: 9px;
+  font-size: 11px;
   color: white;
   float: left;
   margin-top: 1%;
 }
 
 .myplant_details .information .text .water .title #datepoint {
-  font-size: 9px;
+  font-size: 11px;
   line-height: 9px;
   color: white;
   float: right;
@@ -465,14 +465,14 @@
 }
 
 .myplant_details .information .text .soil .title #title {
-  font-size: 9px;
+  font-size: 11px;
   color: white;
   float: left;
   margin-top: 1%;
 }
 
 .myplant_details .information .text .soil .title #datepoint {
-  font-size: 9px;
+  font-size: 11px;
   line-height: 9px;
   color: white;
   float: right;

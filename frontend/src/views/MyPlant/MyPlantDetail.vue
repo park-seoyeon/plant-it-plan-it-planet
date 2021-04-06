@@ -289,6 +289,9 @@ export default {
         location.reload();
       }
     },
+    goBack() {
+      history.back();
+    },
   },
 
   // created 할 때 jwt가 없다면 home으로 보내기

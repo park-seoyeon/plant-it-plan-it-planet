@@ -88,13 +88,14 @@
   color: #ffffff;
   text-align: left;
   margin: 3% 0 0 9%;
-  font-size: 11px;
+  font-size: 12px;
   width: 307px;
+  line-height: 1.7;
 }
 
 .content #dashed-division {
   border: 1px dashed #aaaaaa;
-  width: 307px;
+  width: 310px;
   margin: 3% 0 3% 9%;
 }
 
@@ -113,6 +114,7 @@
   display: inline-block;
   color: #ffffff;
   margin-left: 5%;
+  line-height: 1.5;
 }
 
 .content .info .info-cont #title {
@@ -146,9 +148,10 @@
 
 .content .care .desc {
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   margin: 0 0 3% 7%;
   width: 320px;
+  line-height: 1.7;
 }
 /* search detail problem */
 .content .problem {
@@ -187,8 +190,9 @@
 .content .problem .desc {
   color: #ffffff;
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   margin: 0 10%;
+  line-height: 1.6;
 }
 
 .content .problem-division {
