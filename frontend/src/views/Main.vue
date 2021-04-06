@@ -36,8 +36,6 @@ import MainMyplant from "@/components/PlanIt/MyPlant.vue";
 import MainForyou from "@/components/PlanIt/ForYou.vue";
 import MainMagazine from "@/components/PlanIt/MagazineCard.vue";
 
-// import { Carousel3d, Slide } from 'vue-carousel-3d';
-
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {

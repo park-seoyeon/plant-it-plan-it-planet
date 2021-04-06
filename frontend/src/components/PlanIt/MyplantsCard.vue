@@ -36,7 +36,8 @@ export default {
   },
   components: {},
   methods: {
-    Download() {
+
+    downloadPlantImg() {
       var storage = firebase.storage();
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
@@ -47,6 +48,23 @@ export default {
       starsRef.getDownloadURL().then((url) => {
         this.plantImg = url;
       });
+    },
+
+    downloadMyPlantImg() {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+      var starsRef = storageRef.child(
+        `my_plant_images/${localStorage.getItem('user_number')}_${
+          this.myplants.id
+        }.jpg`
+      );
+      if (starsRef != null) {
+        starsRef.getDownloadURL().then((url) => {
+          this.plantImg = url;
+        });
+      }
     },
 
     detailPlant() {
@@ -72,7 +90,18 @@ export default {
   },
 
   created() {
-    this.Download();
+    // this.Download();
+    if (this.myplants.is_add == 1) {
+      this.isAdd = true;
+      if (this.myplants.is_upload == 1) {
+        this.downloadMyPlantImg();
+      } else {
+        this.downloadPlantImg();
+      }
+    } else {
+      this.isAdd = false;
+      this.downloadPlantImg();
+    }
   },
 };
 </script>
