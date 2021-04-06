@@ -235,7 +235,7 @@ def sender(email, text, name):
                 margin: 2% 2%;
                 "
             >
-                FROM. 크리스티나
+                FROM. """ + name + """
             </div>
             <div
                 style="
@@ -256,7 +256,7 @@ def sender(email, text, name):
                     line-height: 1.5;
                 "
                 >
-                아임 구르트
+                """+ text +"""
                 </div>
             </div>
             </div>
