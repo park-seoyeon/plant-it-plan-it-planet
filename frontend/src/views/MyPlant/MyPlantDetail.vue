@@ -129,10 +129,10 @@ export default {
         this.$swal.fire({
           icon: 'error',
           title: '물주기 실패 :(',
-          // text: '지금 물을 주면 배가 터져버릴 거에요..',
-          text: '물 주기까지 D-' + this.myplant_detail.watering_d_day + '\n 지금 물을 주면 배가 터져버릴 거에요..',
+          text: '물 주기까지 ' + this.myplant_detail.watering_d_day + '일 전... \r\n지금 물을 주면 배가 터져버릴 거에요..',
         })
       } else {
+        
         axios
           .put(`${SERVER_URL}/myplant/watering/`, {
             user_number: localStorage.getItem('user_number'),
@@ -159,10 +159,10 @@ export default {
         this.$swal.fire({
           icon: 'error',
           title: '분갈이 실패 :(',
-          // text: '지금 분갈이해버리면 집을 잃어서 슬플 거에요..',
-          text: '분갈이까지 D-' + this.myplant_detail.repotting_d_day + '\n 지금 분갈이해버리면 집을 잃어서 슬플 거에요..',
+          text: '분갈이까지 ' + this.myplant_detail.repotting_d_day + '일 전... 지금 분갈이해버리면 집을 잃어서 슬플 거에요..',
         })
       } else {
+        
         axios
           .put(`${SERVER_URL}/myplant/repotting/`, {
             user_number: localStorage.getItem('user_number'),
@@ -185,6 +185,11 @@ export default {
     },
 
     chatting() {
+      this.$swal.fire({
+          icon: 'success',
+          title: '저 부르셨어요?',
+          text: '카카오톡, 이메일을 확인해보세요!',
+      })
       axios
         .post(`${SERVER_URL}/myplant/chat/`, {
           user_number: localStorage.getItem('user_number'),
@@ -194,7 +199,7 @@ export default {
         .then((response) => {
           let msg = '말걸기에 실패하였습니다.';
           if (response.data.message === 'success') {
-            location.reload();
+            // location.reload();
           } else {
             alert(msg);
             location.reload();
@@ -302,6 +307,7 @@ export default {
       }
     },
     goBack() {
+      document.documentElement.scrollTop = 0;
       history.back();
     },
   },

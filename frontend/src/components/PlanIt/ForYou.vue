@@ -104,6 +104,7 @@ export default {
     },
 
     plantDetail(id) {
+      document.documentElement.scrollTop = 0;
       this.$router
         .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
@@ -113,6 +114,7 @@ export default {
         });
     },
     goSurvey() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'SurveyProgress' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
