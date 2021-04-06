@@ -46,6 +46,7 @@ export default {
   components: {},
   methods: {
     goMagazine() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'Magazine' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();

@@ -77,6 +77,7 @@ export default {
   },
   methods: {
     goMain() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'Main' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
@@ -84,6 +85,7 @@ export default {
       });
     },
     goSearch() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'Search' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
@@ -91,6 +93,7 @@ export default {
       });
     },
     goMyPlant() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'MyPlant' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
@@ -98,6 +101,7 @@ export default {
       });
     },
     goMyPage() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'MyPage' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
