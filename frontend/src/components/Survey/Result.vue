@@ -9,7 +9,7 @@
     <div id="resultbar"></div>
     <div class="result-detail">
       <div id="expression">
-        당신의 성향은 <br />
+        <span style="font-size: 25px">당신의 성향</span> <br />
         <b>{{ result.mbti_expression }}</b>
       </div>
       <div id="division-bar"></div>
