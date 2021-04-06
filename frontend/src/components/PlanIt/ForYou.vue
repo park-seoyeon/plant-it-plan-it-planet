@@ -12,7 +12,7 @@
         >
           <img :src="plantImg_1" />
           <div class="main_component_foryou_name">
-            {{ this.recommend_list["recommanded_plant_1_name"] }}
+            {{ this.recommend_list['recommanded_plant_1_name'] }}
           </div>
         </div>
         <div
@@ -21,7 +21,7 @@
         >
           <img :src="plantImg_2" />
           <div class="main_component_foryou_name">
-            {{ this.recommend_list["recommanded_plant_2_name"] }}
+            {{ this.recommend_list['recommanded_plant_2_name'] }}
           </div>
         </div>
         <div
@@ -30,11 +30,11 @@
         >
           <img :src="plantImg_3" />
           <div class="main_component_foryou_name">
-            {{ this.recommend_list["recommanded_plant_3_name"] }}
+            {{ this.recommend_list['recommanded_plant_3_name'] }}
           </div>
         </div>
       </div>
-      <div class="gotosurvey" @click="surveystart()" v-else>
+      <div class="gotosurvey" @click="goSurvey()" v-else>
         나만의 맞춤 식물 알아보기
       </div>
     </div>
@@ -42,19 +42,19 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from 'firebase';
 
 export default {
-  name: "MainForyou",
+  name: 'MainForyou',
 
-  props: ["recommend_list"],
+  props: ['recommend_list'],
 
   data: () => {
     return {
       plantImg_1: null,
       plantImg_2: null,
       plantImg_3: null,
-      recommend_plant_1_id_check: "",
+      recommend_plant_1_id_check: '',
       isSurvey: false,
     };
   },
@@ -63,7 +63,7 @@ export default {
   methods: {
     start() {
       this.recommend_plant_1_id_check = this.recommend_list[
-        "recommanded_plant_1_id"
+        'recommanded_plant_1_id'
       ];
     },
 
@@ -72,7 +72,7 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var input_plant_id = this.recommend_list["recommanded_plant_1_id"];
+      var input_plant_id = this.recommend_list['recommanded_plant_1_id'];
       var starsRef = storageRef.child(`plant_images/${input_plant_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_1 = url;
@@ -84,7 +84,7 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var input_plant_id = this.recommend_list["recommanded_plant_2_id"];
+      var input_plant_id = this.recommend_list['recommanded_plant_2_id'];
       var starsRef = storageRef.child(`plant_images/${input_plant_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_2 = url;
@@ -96,7 +96,7 @@ export default {
       var storageRef = storage.ref();
       // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
       // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
-      var input_plant_id = this.recommend_list["recommanded_plant_3_id"];
+      var input_plant_id = this.recommend_list['recommanded_plant_3_id'];
       var starsRef = storageRef.child(`plant_images/${input_plant_id}_1.jpg`);
       starsRef.getDownloadURL().then((url) => {
         this.plantImg_3 = url;
@@ -105,28 +105,35 @@ export default {
 
     plantDetail(id) {
       this.$router
-        .push({ name: "SearchDetail", params: { searchnumber: id } })
+        .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
-          if (error.name === "NavigationDuplicated") {
+          if (error.name === 'NavigationDuplicated') {
             location.reload();
           }
         });
+    },
+    goSurvey() {
+      this.$router.push({ name: 'SurveyProgress' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
     },
   },
 
   // Mount 이전에, localStorage값이 1인 경우 ( 로그인 안해서 storage에 정보가 들어가지 않은 경우 ) Intro로 돌아가라.
   created() {
-    const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem('jwt');
     if (token == null) {
-      alert("로그인 하고 이용해주세요.");
-      this.$router.push({ name: "Home" }).catch((error) => {
-        if (error.name === "NavigationDuplicated") {
+      alert('로그인 하고 이용해주세요.');
+      this.$router.push({ name: 'Home' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
           location.reload();
         }
       });
     } else {
       this.start();
-      if (localStorage.getItem("is_survey") == 1) {
+      if (localStorage.getItem('is_survey') == 1) {
         this.isSurvey = true;
       }
     }
