@@ -222,6 +222,7 @@ export default {
       return this.plantImg_3;
     },
     plantDetail(id) {
+      document.documentElement.scrollTop = 0;
       this.$router
         .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
@@ -231,6 +232,7 @@ export default {
         });
     },
     goMain() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'Main' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();

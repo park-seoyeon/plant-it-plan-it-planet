@@ -62,7 +62,6 @@ export default {
   methods: {
     uploagImg() {},
     selectedImg(event) {
-      // console.log(event);
       this.isFile = event.target.files[0];
       this.isImg = URL.createObjectURL(this.isFile);
     },
@@ -116,10 +115,17 @@ export default {
         .catch(() => {
           alert('서버와 통신할 수 없습니다.');
         });
+
+        this.$swal.fire({
+          icon: 'success',
+          title: '식물 심는 중...',
+          showConfirmButton: false,
+          timer: 1500
+        })
     },
   },
   created() {
-    // console.log(this.myplant_id);
+    
   },
 };
 </script>

@@ -63,26 +63,6 @@ export default {
   },
   methods: {
     deletePlant() {
-      // if (confirm('정말 삭제하시겠습니까?')) {
-      //   axios
-      //     .delete(`${SERVER_URL}/myplant/del/`, {
-      //       data: {
-      //         myplant_id: this.myplant.id,
-      //       },
-      //     })
-      //     .then(({ data }) => {
-      //       let msg = '삭제에 실패하였습니다.';
-      //       if (data.message === 'success') {
-      //         location.reload();
-      //       } else {
-      //         alert(msg);
-      //         location.reload();
-      //       }
-      //     })
-      //     .catch(() => {
-      //       alert('서버와 통신할 수 없습니다.');
-      //     });
-      // }
 
       this.$swal.fire({
             title: '정말 삭제하시나요?',
