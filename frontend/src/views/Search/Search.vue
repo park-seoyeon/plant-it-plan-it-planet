@@ -1,29 +1,30 @@
 <template>
   <div class="content">
-    <div class="plantitlogo" style="text-align: left;">
-        <img :src="Plantitimg" />
+    <div class="head">
+      <img :src="Plantitimg" />
     </div>
 
-    <div class="startline"></div>
+    <div class="division"></div>
 
     <div class="searchtitle">
-        어떤 종류의<br>
-        식물을 찾고 있나요?
+      어떤 종류의<br />
+      식물을 찾고 있나요?
     </div>
 
     <div class="searchicons">
-        <!-- <button @click="reset">
-            리셋
-        </button> -->
-        <img :src="Reseticon" @click="reset" />
-        <!-- <button @click="usename">
-            검색하기
-        </button> -->
-        <img :src="Searchicon" @click="usename" style="margin-left: 3%;" />
-        <!-- <button @click="usefilter">
-            필터
-        </button> -->
-        <img :src="Filtericon" @click="usefilter" style="margin-left: 3%;" />
+      <div class="top-btn" @click="reset"><img :src="Reseticon" /></div>
+      <div v-if="isUseName" class="top-btn-active" @click="usename">
+        <img :src="Searchicon" />
+      </div>
+      <div v-else class="top-btn" @click="usename">
+        <img :src="Searchicon" />
+      </div>
+      <div v-if="isUseFilter" class="top-btn-active" @click="usefilter">
+        <img :src="Filtericon" />
+      </div>
+      <div v-else class="top-btn" @click="usefilter">
+        <img :src="Filtericon" />
+      </div>
     </div>
 
     <div v-if="isStatusOn">
@@ -58,20 +59,17 @@
         @send14="getfilterlist"
         @send15="getfilterlist"
         ref="resetfilter"
-        style="float: left;"
       />
     </div>
     <div v-else>
-      <SearchName 
+      <SearchName
         @callParent="getplantname"
         ref="resetfilter"
-        style="float: left;"
+        style="float: left"
       />
     </div>
-    
-    <SearchList 
-        :plant_list="plant_list['plant_list']"
-    />
+
+    <SearchList :plant_list="plant_list['plant_list']" ref="resetlist" />
   </div>
 </template>
 <script>
@@ -92,22 +90,24 @@ export default {
   name: 'Search',
   data: () => {
     return {
+      Plantitimg: Plantitimg,
+      Reseticon: Reseticon,
+      Searchicon: Searchicon,
+      Filtericon: Filtericon,
 
-        Plantitimg : Plantitimg,
-        Reseticon : Reseticon,
-        Searchicon : Searchicon,
-        Filtericon : Filtericon,
+      isUseName: false,
+      isUseFilter: true,
 
-        isStatusOn : true,
+      isStatusOn: true,
 
-        selected_list : [],
-        last_selected : 0,
-        filter_list : [],
-        plant_list : '',
+      selected_list: [],
+      last_selected: 0,
+      filter_list: [],
+      plant_list: '',
 
-        idx : 0,
+      idx: 0,
 
-        getlist : [],
+      getlist: [],
     };
   },
   components: {
@@ -117,210 +117,187 @@ export default {
   },
 
   methods: {
-    reset(){
-        this.selected_list = [];
+    reset() {
+      this.selected_list = [];
 
-        this.$refs.resetfilter.resetfilters();
+      this.$refs.resetfilter.resetfilters();
+      this.isStatusOn = false;
+      this.isUseName = false;
+      this.isUseFilter = true;
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
+        .then((response) => {
+          this.plant_list = response.data;
+          this.isStatusOn = true;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
 
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+      this.$refs.resetlist.resetlists();
     },
 
-    usename(){
-        this.isStatusOn = false;
-        this.selected_list = [];
+    usename() {
+      this.isStatusOn = false;
+      this.isUseName = true;
+      this.isUseFilter = false;
+      this.selected_list = [];
 
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+        .then((response) => {
+          this.plant_list = response.data;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
+
+      this.$refs.resetlist.resetlists();
     },
 
-    usefilter(){
-        this.isStatusOn = true;
-        this.selected_list = [];
-        
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
+    usefilter() {
+      this.selected_list = [];
+      this.$refs.resetfilter.resetfilters();
+      this.isStatusOn = false;
+      this.isUseName = false;
+      this.isUseFilter = true;
 
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
+
+        .then((response) => {
+          this.plant_list = response.data;
+          this.isStatusOn = true;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
+
+      this.$refs.resetlist.resetlists();
     },
 
     startsearch() {
       axios
-        .post(`${SERVER_URL}/search/`, { selected_list : []  })
+        .post(`${SERVER_URL}/search/`, { selected_list: [] })
 
         .then((response) => {
-            this.plant_list = response.data;
+          this.plant_list = response.data;
         })
         .catch(() => {
-            alert('서버와 통신할 수 없습니다.');
+          alert('서버와 통신할 수 없습니다.');
         });
     },
 
-    getplantname(getdata){
-        axios
+    getplantname(getdata) {
+      axios
         .get(`${SERVER_URL}/search/${getdata}`)
 
         .then((response) => {
-            this.plant_list = response.data;
+          this.plant_list = response.data;
         })
         .catch(() => {
-            alert('서버와 통신할 수 없습니다.');
+          alert('서버와 통신할 수 없습니다.');
         });
+
+      this.$refs.resetlist.resetlists();
     },
 
-    getfilterlist(getdata){
+    getfilterlist(getdata) {
+      this.addfiltertolist(getdata);
 
-        this.addfiltertolist(getdata);
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
-        // alert(this.selected_list);
+        .then((response) => {
+          this.plant_list = response.data;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
 
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
-
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+      this.$refs.resetlist.resetlists();
     },
 
-    getfilterlistdelete(getdata){
+    getfilterlistdelete(getdata) {
+      this.addfiltertolistdelete(getdata);
 
-        this.addfiltertolistdelete(getdata);
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
-        // alert(this.selected_list);
+        .then((response) => {
+          this.plant_list = response.data;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
 
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
-
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+      this.$refs.resetlist.resetlists();
     },
 
-    getfilterlistdeleteleaftype(getdata){
+    getfilterlistdeleteleaftype(getdata) {
+      this.addfiltertolistdeleteleaftype(getdata);
 
-        this.addfiltertolistdeleteleaftype(getdata);
+      axios
+        .post(`${SERVER_URL}/search/`, { selected_list: this.selected_list })
 
-        // alert(this.selected_list);
+        .then((response) => {
+          this.plant_list = response.data;
+        })
+        .catch(() => {
+          alert('서버와 통신할 수 없습니다.');
+        });
 
-        axios
-            .post(`${SERVER_URL}/search/`, { selected_list : this.selected_list })
-
-            .then((response) => {
-                this.plant_list = response.data;
-            })
-            .catch(() => {
-                alert('서버와 통신할 수 없습니다.');
-            });
+      this.$refs.resetlist.resetlists();
     },
 
-    addfiltertolist(getdata){
-      if(this.selected_list.includes(getdata)){
-        // alert("dete");
-        const where =  this.selected_list.indexOf(getdata);
+    addfiltertolist(getdata) {
+      if (this.selected_list.includes(getdata)) {
+        const where = this.selected_list.indexOf(getdata);
         this.selected_list.splice(where, 1);
         this.idx = this.idx - 1;
-      }
-      else{
-        // alert("add");
+      } else {
         this.selected_list[this.idx] = getdata;
         this.idx = this.idx + 1;
       }
-      
     },
 
-    addfiltertolistdelete(getdata){
-    //   alert("초기화");
-
+    addfiltertolistdelete(getdata) {
       this.selected_list = [];
       this.idx = 0;
       this.selected_list[this.idx] = getdata;
       this.idx = this.idx + 1;
     },
 
-    addfiltertolistdeleteleaftype(getdata){
-    //   alert("잎 모양만 초기화");
-
-      const where =  this.selected_list.indexOf(getdata);
+    addfiltertolistdeleteleaftype(getdata) {
+      const where = this.selected_list.indexOf(getdata);
       this.selected_list.splice(where, 1);
       this.idx = this.idx - 1;
 
-      for(var i=14; i<29; i++){
-        if(this.selected_list.includes(i)){
-            const where =  this.selected_list.indexOf();
-            this.selected_list.splice(where, 1);
-            this.idx = this.idx - 1;
+      for (var i = 14; i < 29; i++) {
+        if (this.selected_list.includes(i)) {
+          const where = this.selected_list.indexOf();
+          this.selected_list.splice(where, 1);
+          this.idx = this.idx - 1;
         }
       }
     },
   },
 
   created() {
+    const token = localStorage.getItem('jwt');
+    if (token == null) {
+      alert('로그인 하고 이용해주세요.');
+      this.$router.push({ name: 'Home' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    } else {
       this.startsearch();
-  },
-
-  beforeMount(){
-    if(localStorage.length == 1){
-      alert("로그인 하고 이용해주세요.")
-      this.$router.push({ name: 'Home' });
     }
   },
 };
 </script>
-<style>
-    .searchicons {
-        text-align: left;
-        margin: 0 0 0 5%;
-    }
-
-    .searchicons img {
-        width: 10%;
-        height: 10%;
-    }
-
-    .plantitlogo img {
-        width: 154px;
-        height: 51px;
-        margin: 5% 0 2% 5%;
-    }
-
-    .startline {
-        width: 90%;
-        height: 0px;
-        border: 1px solid #FFFFFF;
-        margin: 0 auto 5% auto;
-    }
-    .searchtitle {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 22px;
-        line-height: 28px;
-        color: white;
-        text-align: left;
-        margin: 0 0 5% 5%;
-    }
-</style>
+<style></style>

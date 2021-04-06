@@ -9,13 +9,18 @@
     <div id="resultbar"></div>
     <div class="result-detail">
       <div id="expression">
-        {{ result.mbti_expression }}
+        <span style="font-size: 25px">당신의 성향</span> <br />
+        <b>{{ result.mbti_expression }}</b>
       </div>
       <div id="division-bar"></div>
       <div id="result-img"><img :src="getMbtiImgPath()" /></div>
+      <div
+        id="flower-description"
+        v-html="handleNewLine(result.flower_description)"
+      ></div>
       <div id="division-bar"></div>
       <div id="recommend">
-        <div id="title">당신에게 어울리는 식물</div>
+        <div id="title">이런 당신에게 추천하는 식물</div>
         <div id="desc" @click="plantDetail(result.recommanded_plant_1_id)">
           <img :src="Download_1()" />
           <div id="text">
@@ -76,7 +81,23 @@
           </div>
         </div>
       </div>
-      <div id="start-tool"><span id="start">플랜잇 시작하기</span></div>
+      <div class="restart">
+        <span class="restart-btn" @click="restartSurvey()"
+          >나와 맞는 식물 다시 찾기</span
+        >
+      </div>
+      <div id="division-bar"></div>
+      <div id="start-tool">
+        <span id="start" @click="sendLink()">
+          <img
+            src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"
+            width="12px"
+          />
+          카카오로 공유하기</span
+        ><span id="start" @click="goMain()" style="margin-left: 2%"
+          >플랜잇 시작하기</span
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -97,6 +118,7 @@ export default {
       plantImg_1: null,
       plantImg_2: null,
       plantImg_3: null,
+      mbtiPlantImg: null,
     };
   },
 
@@ -105,6 +127,59 @@ export default {
   },
 
   methods: {
+    Download_mbti_plants_img() {
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      // child안에 `불러오고 싶은 이미지 디렉토리/이미지 이름.jpg`로 불러오기
+      // 폴더명만 잘 설정해주세요. test -> plant_images, my_plant_images
+
+      var starsRef = storageRef.child(
+        `mbti_plant_images/${this.result.mbti_name}.png`
+      );
+      starsRef.getDownloadURL().then((url) => {
+        this.mbtiPlantImg = url;
+      });
+      return this.mbtiPlantImg;
+    },
+
+    handleNewLine(str) {
+      return String(str).replace(/(?:\r\n|\r|\n)/g, '</br>');
+    },
+
+    restartSurvey() {
+      this.$router.push({ name: 'SurveyProgress' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
+    },
+
+    sendLink() {
+      // 카카오톡 공유하기
+      this.Download_mbti_plants_img();
+      setTimeout(() => {
+        window.Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: this.result.mbti_expression,
+            description: this.result.flower_description,
+            imageUrl: this.mbtiPlantImg,
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com',
+              androidExecParams: 'PlantIt',
+            },
+          },
+          buttons: [
+            {
+              title: '웹으로 이동',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+              },
+            },
+          ],
+        });
+      }, 1000);
+    },
     getMbtiImgPath() {
       return require(`@/assets/img/mbti/${this.result.mbti_name}.png`);
     },
@@ -154,6 +229,7 @@ export default {
       return this.plantImg_3;
     },
     plantDetail(id) {
+      document.documentElement.scrollTop = 0;
       this.$router
         .push({ name: 'SearchDetail', params: { searchnumber: id } })
         .catch((error) => {
@@ -161,6 +237,14 @@ export default {
             location.reload();
           }
         });
+    },
+    goMain() {
+      document.documentElement.scrollTop = 0;
+      this.$router.push({ name: 'Main' }).catch((error) => {
+        if (error.name === 'NavigationDuplicated') {
+          location.reload();
+        }
+      });
     },
   },
 };

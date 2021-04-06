@@ -22,13 +22,20 @@
   width: 0%;
 }
 
-.content #ask {
-  color: white;
-  margin: 20% 5% 20% 5%;
-  font-size: 17px;
+.content #numbering {
+  color: #ffffff;
+  /* font-family: 'Nanum Pen Script', cursive; */
+  font-size: 18px;
+  margin-top: 20%;
 }
 
-.content .buttons {
+.content #ask {
+  color: white;
+  margin: 2% 5% 20% 5%;
+  font-size: 16px;
+}
+
+.content .survey-buttons {
   border: 2px solid white;
   border-radius: 10px;
   width: 338px;
@@ -41,7 +48,7 @@
   line-height: 520%;
 }
 
-.content .buttons:hover {
+.content .survey-buttons:hover {
   border: 2px solid #00b564;
   border-radius: 10px;
   width: 338px;
@@ -134,6 +141,8 @@
   color: white;
   font-size: 20px;
   margin-top: 10%;
+  margin-bottom: 7%;
+  line-height: 1.3;
 }
 
 .content .result-detail #division-bar {
@@ -152,6 +161,15 @@
   height: 70%;
 }
 
+.content .result-detail #flower-description {
+  font-size: 15px;
+  font-family: 'KyoboHand';
+  text-align: left;
+  color: #ffffff;
+  margin-left: 7%;
+  margin-bottom: 3%;
+}
+
 .content .result-detail #recommend {
   color: white;
   text-align: left;
@@ -159,7 +177,7 @@
 }
 
 .content .result-detail #recommend #title {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .content .result-detail #recommend #desc {
@@ -200,9 +218,10 @@
   max-width: 220px;
   display: -webkit-box;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-height: 1.8;
 }
 
 .content .result-detail #friend {
@@ -246,15 +265,38 @@
 
 .content .result-detail #start-tool {
   color: white;
+  margin-top: 5%;
   padding-bottom: 10%;
   cursor: pointer;
+}
+
+.content .result-detail .restart {
+  color: #ffffff;
+  margin-bottom: 6%;
+}
+
+.content .result-detail .restart .restart-btn {
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  padding: 1% 3%;
+}
+
+.content .result-detail .restart .restart-btn:hover {
+  cursor: pointer;
+  font-size: 14px;
+  color: #00b564;
+  border: 1px solid #00b564;
+  border-radius: 15px;
+  padding: 1% 3%;
 }
 
 .content .result-detail #start-tool #start {
   cursor: pointer;
   font-size: 14px;
-  border: 3px solid #ffffff;
-  border-radius: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
   padding: 1% 5%;
 }
 
@@ -262,7 +304,7 @@
   cursor: pointer;
   font-size: 14px;
   color: #00b564;
-  border: 3px solid #00b564;
-  border-radius: 10px;
+  border: 1px solid #00b564;
+  border-radius: 15px;
   padding: 1% 5%;
 }

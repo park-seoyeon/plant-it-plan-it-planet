@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <div v-if="isStatusOn" @click="toggleOnOff" style="height: 100%">
+    <div
+      v-if="isStatusOn"
+      @click="toggleOnOff"
+      style="height: 100%; cursor: pointer"
+    >
       <Intro />
     </div>
     <div v-else style="height: 100%">
@@ -32,11 +36,19 @@ export default {
     toggleOnOff: function () {
       if (this.isLogin) {
         this.isStatusOn = true;
-        this.$router.push({ name: 'SurveyStart' }).catch((error) => {
-          if (error.name === 'NavigationDuplicated') {
-            location.reload();
-          }
-        });
+        if (localStorage.getItem('is_survey') == 1) {
+          this.$router.push({ name: 'Main' }).catch((error) => {
+            if (error.name === 'NavigationDuplicated') {
+              location.reload();
+            }
+          });
+        } else {
+          this.$router.push({ name: 'SurveyStart' }).catch((error) => {
+            if (error.name === 'NavigationDuplicated') {
+              location.reload();
+            }
+          });
+        }
       } else {
         this.isStatusOn = false;
         // this.$router.push({ name: 'Login' })
@@ -56,6 +68,7 @@ export default {
           localStorage.setItem('name', response.data['name']);
           localStorage.setItem('jwt', response.data['access_token']);
           localStorage.setItem('user_number', response.data['user_number']);
+          localStorage.setItem('is_survey', response.data['is_survey']);
 
           location.reload();
           // this.$router.push({ name: 'SurveyStart' });

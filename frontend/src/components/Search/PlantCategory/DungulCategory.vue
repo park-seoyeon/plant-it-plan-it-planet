@@ -1,22 +1,85 @@
 <template>
   <div id="dungulcategory">
     <div class="dashedline"></div>
-    <div class="dungulcategoryfilter" id="leaftype" @click="selectleaftype">
+    <div
+      v-if="isleafType"
+      class="dungulcategoryfilter-active"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
       잎 모양
     </div>
-    <div class="dungulcategoryfilter" id="air3" @click="selectair">
+    <div
+      v-else
+      class="dungulcategoryfilter"
+      id="leaftype"
+      @click="selectleaftype()"
+    >
+      잎 모양
+    </div>
+    <div
+      v-if="isair"
+      class="dungulcategoryfilter-active"
+      id="air3"
+      @click="selectair()"
+    >
       공기정화
     </div>
-    <div class="dungulcategoryfilter" id="flower3" @click="selectflower">
+    <div v-else class="dungulcategoryfilter" id="air3" @click="selectair()">
+      공기정화
+    </div>
+    <div
+      v-if="isflower"
+      class="dungulcategoryfilter-active"
+      id="flower3"
+      @click="selectflower()"
+    >
       꽃 피는
     </div>
-    <div class="dungulcategoryfilter" id="light3" @click="selectlight">
+    <div
+      v-else
+      class="dungulcategoryfilter"
+      id="flower3"
+      @click="selectflower()"
+    >
+      꽃 피는
+    </div>
+    <div
+      v-if="islight"
+      class="dungulcategoryfilter-active"
+      id="light3"
+      @click="selectlight()"
+    >
       빛이 적어도 되는
     </div>
-    <div class="dungulcategoryfilter" id="animal3" @click="selectanimal">
+    <div v-else class="dungulcategoryfilter" id="light3" @click="selectlight()">
+      빛이 적어도 되는
+    </div>
+    <div
+      v-if="isanimal"
+      class="dungulcategoryfilter-active"
+      id="animal3"
+      @click="selectanimal()"
+    >
       반려동물 안전한
     </div>
-    <div class="dungulcategoryfilter" id="fruit3" @click="selectfruit">
+    <div
+      v-else
+      class="dungulcategoryfilter"
+      id="animal3"
+      @click="selectanimal()"
+    >
+      반려동물 안전한
+    </div>
+    <div
+      v-if="isfruit"
+      class="dungulcategoryfilter-active"
+      id="fruit3"
+      @click="selectfruit()"
+    >
+      열매 맺는
+    </div>
+    <div v-else class="dungulcategoryfilter" id="fruit3" @click="selectfruit()">
       열매 맺는
     </div>
   </div>
@@ -26,100 +89,58 @@
 // import axios from "axios";
 
 export default {
-  name: "DungulCategory",
+  name: 'DungulCategory',
 
   data: () => {
     return {
-      
-    }
+      isleafType: false,
+      isair: false,
+      isflower: false,
+      islight: false,
+      isanimal: false,
+      isfruit: false,
+    };
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
-    selectleaftype(){
+    selectleaftype() {
       this.$emit('callLeaftype');
+      this.isleafType = !this.isleafType;
     },
 
-    selectair(){
+    selectair() {
       this.$emit('callAir');
+      this.isair = !this.isair;
     },
 
-    selectflower(){
+    selectflower() {
       this.$emit('callFlower');
+      this.isflower = !this.isflower;
     },
 
-    selectlight(){
+    selectlight() {
       this.$emit('callLight');
+      this.islight = !this.islight;
     },
 
-    selectanimal(){
+    selectanimal() {
       this.$emit('callAnimal');
+      this.isanimal = !this.isanimal;
     },
 
-    selectfruit(){
+    selectfruit() {
       this.$emit('callFruit');
+      this.isfruit = !this.isfruit;
     },
   },
-  created(){
-    
+  created() {
+    this.isleafType = false;
+    this.isair = false;
+    this.isflower = false;
+    this.islight = false;
+    this.isanimal = false;
+    this.isfruit = false;
   },
 };
 </script>
-<style>
-  #dungulcategory {
-    width: 375px;
-    height: 80px;
-  }
-
-  .dungulcategoryfilter {
-    width: 82px;
-    height: 28px;
-
-    background: #242424;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    font-family: Binggrae Melona;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 25px;
-
-    color: #FFFFFF;
-
-    float:left;
-    vertical-align: center;
-    margin: 0 0 2% 2%;
-  }
-
-  #air3 {
-    width: 82px;
-    float: left;
-    margin-top: 2%;
-  }
-
-  #flower3 {
-    width: 72px;
-    float: left;
-    margin-top: 2%;
-    margin-right: 20px;
-  }
-
-  #light3 {
-    width: 122px;
-    float: left;
-    margin-left: 5%;
-  }
-
-  #animal3 {
-    width: 112px;
-    float: left;
-  }
-
-  #fruit3 {
-    width: 82px;
-    float: left;
-  }
-</style>
+<style></style>
