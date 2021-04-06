@@ -115,39 +115,47 @@ export default {
       });
     },
     deleteUser() {
-      if (confirm("정말 지구 환경을 포기하고 탈퇴하시겠습니까?")) {
-        axios
-          .delete(`${SERVER_URL}/delete/`, {
-            data: {
-              user_number: localStorage.getItem("user_number"),
-            },
-          })
 
-          .then(({ data }) => {
-            let msg = "탈퇴에 실패하였습니다.";
-            if (data.message === "success") {
-              localStorage.removeItem("email");
-              localStorage.removeItem("name");
-              localStorage.removeItem("jwt");
-              localStorage.removeItem("user_number");
-              localStorage.removeItem("is_survey");
-              this.$router.push({ name: "Home" }).catch((error) => {
-                if (error.name === "NavigationDuplicated") {
-                  location.reload();
-                }
-              });
-              location.reload();
-            } else {
-              alert(msg);
-              location.reload();
+      this.$swal.fire({
+            title: '정말 지구 환경을 포기하고 탈퇴하시겠습니까?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: '아뇨, 참아볼게요',
+            confirmButtonText: '네. 미안해요 :(',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              axios
+                .delete(`${SERVER_URL}/delete/`, {
+                  data: {
+                    user_number: localStorage.getItem("user_number"),
+                  },
+                })
+
+                .then(({ data }) => {
+                  let msg = "탈퇴에 실패하였습니다.";
+                  if (data.message === "success") {
+                    localStorage.removeItem("email");
+                    localStorage.removeItem("name");
+                    localStorage.removeItem("jwt");
+                    localStorage.removeItem("user_number");
+                    localStorage.removeItem("is_survey");
+                    this.$router.push({ name: "Home" }).catch((error) => {
+                      if (error.name === "NavigationDuplicated") {
+                        location.reload();
+                      }
+                    });
+                    location.reload();
+                  } else {
+                    alert(msg);
+                    location.reload();
+                  }
+                })
+                .catch(() => {
+                  alert("서버와 통신할 수 없습니다.");
+                });
             }
           })
-          .catch(() => {
-            alert("서버와 통신할 수 없습니다.");
-          });
-      } else {
-        location.reload();
-      }
     },
     getProfile() {
       axios

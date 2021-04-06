@@ -61,6 +61,7 @@ export default {
       return require(`@/assets/img/profile/basic_profile_img.png`);
     },
     goMyPage() {
+      document.documentElement.scrollTop = 0;
       this.$router.push({ name: 'MyPage' }).catch((error) => {
         if (error.name === 'NavigationDuplicated') {
           location.reload();
@@ -72,8 +73,6 @@ export default {
     },
 
     async getmyplant() {
-      // const login_usernumber = localStorage.getItem('user_number');
-
       await axios
         .post(`${SERVER_URL}/myplant/`, {
           user_number: localStorage.getItem('user_number'),

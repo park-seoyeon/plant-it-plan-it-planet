@@ -77,6 +77,7 @@ const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 
 export default {
   name: 'MyPlantDetail',
+  
 
   data: () => {
     return {
@@ -93,6 +94,7 @@ export default {
     MyPlantDetails,
     MyPlantDiary,
   },
+
   methods: {
     async getDetail() {
       await axios
@@ -124,7 +126,12 @@ export default {
 
     watering() {
       if (this.myplant_detail.watering_d_day != 0) {
-        alert('지금 물을 주면 배가 터져버릴 거에요..');
+        this.$swal.fire({
+          icon: 'error',
+          title: '물주기 실패 :(',
+          // text: '지금 물을 주면 배가 터져버릴 거에요..',
+          text: '물 주기까지 D-' + this.myplant_detail.watering_d_day + '\n 지금 물을 주면 배가 터져버릴 거에요..',
+        })
       } else {
         axios
           .put(`${SERVER_URL}/myplant/watering/`, {
@@ -149,7 +156,12 @@ export default {
 
     repotting() {
       if (this.myplant_detail.repotting_d_day != 0) {
-        alert('지금 분갈이해버리면 집을 잃어서 슬플 거에요..');
+        this.$swal.fire({
+          icon: 'error',
+          title: '분갈이 실패 :(',
+          // text: '지금 분갈이해버리면 집을 잃어서 슬플 거에요..',
+          text: '분갈이까지 D-' + this.myplant_detail.repotting_d_day + '\n 지금 분갈이해버리면 집을 잃어서 슬플 거에요..',
+        })
       } else {
         axios
           .put(`${SERVER_URL}/myplant/repotting/`, {

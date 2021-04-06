@@ -39,6 +39,7 @@ export default {
       });
     },
     goDetail() {
+      document.documentElement.scrollTop = 0;
       this.$router
         .push({
           name: 'SearchDetail',
