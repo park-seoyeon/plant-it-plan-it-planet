@@ -145,189 +145,190 @@ def sender(email, text, name):
     server.login('plantitplanitplanet@gmail.com', 'dkdcuyjeaslswoxv')
 
     body = """
-    <!DOCTYPE html>
-    <html lang="" style="margin: 0px; height: 100%">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
-        />
-        <title>플랜잇</title>
-    </head>
+   <!DOCTYPE html>
+<html lang="" style="margin: 0px; height: 100%">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
+    />
+    <title>플랜잇</title>
+  </head>
 
-    <body
-        style="
-        font-family: 'NanumSquare', sans-serif;
-        margin: 0px;
-        height: 100%;
+  <body
+    style="
+      font-family: 'NanumSquare', sans-serif;
+      margin: 0px;
+      height: 100%;
+      text-align: center;
+    "
+  >
+    <div
+      class="content"
+      style="
+        width: 50%;
+        background: rgb(36, 36, 36) no-repeat center center fixed;
         text-align: center;
-        "
+        margin: 0 auto;
+        min-height: 100%;
+      "
     >
-        <div
-        class="content"
-        style="
-            width: 50%;
-            background: rgb(36, 36, 36) no-repeat center center fixed;
-            text-align: center;
-            margin: 0 auto;
-            min-height: 100%;
-        "
-        >
-        <div style="text-align: center">
-            <div style="padding: 30px 0 0 0; text-align: center">
-            <img
-                src="https://postfiles.pstatic.net/MjAyMTA0MDZfMTIg/MDAxNjE3Njc2MzYxNzM3.yovCiL1vzLRZ917IBze46mMEP72PzZ5PURc3XucDQ_sg.szE_sDyohaNMPLlYQODBwlQtOzADNn9G5sA6PEt9_jIg.PNG.ajx0114/KakaoTalk_20210406_113038573.png?type=w773"
-            />
-            </div>
-        </div>
-        <div
+      <div style="text-align: center">
+        <div style="padding: 30px 0 0 0; text-align: center">
+          <div
             id="login-title"
             style="
-            color: white;
-            margin: 5% 0 0 0;
-            font-size: 18px;
-            font-family: 'Cafe24Oneprettynight';
+              color: white;
+              font-size: 18px;
+              font-family: 'Cafe24Oneprettynight';
             "
-        >
-            Plant it Plan it Planet
+          >
+            <h1>
+              <a
+                href="http://j4a101.p.ssafy.io/"
+                style="text-decoration: none; color: #ffffff"
+                >플랜<span style="color: #00b564">'</span>잇으로 가기</a
+              >
+            </h1>
+          </div>
         </div>
+      </div>
 
-        <div
-            id="login-division-bar"
-            style="
-            text-align: center;
-            height: 1px;
-            width: 90%;
-            margin: 5% auto;
-            background: rgb(133, 133, 133);
-            "
-        ></div>
+      <div
+        id="login-division-bar"
+        style="
+          text-align: center;
+          height: 1px;
+          width: 90%;
+          margin: 5% auto;
+          background: rgb(133, 133, 133);
+        "
+      ></div>
 
+      <div
+        style="
+          width: 90%;
+          height: 310px;
+          margin: 0 auto;
+          border: 2px solid white;
+          border-radius: 10px;
+        "
+      >
         <div
-            style="
-            width: 90%;
-            height: 310px;
-            margin: 0 auto;
-            border: 2px solid white;
+          style="
+            width: 97%;
+            height: 280px;
+            border: dashed 2px white;
+            margin: 10px auto 10px auto;
             border-radius: 10px;
-            "
+          "
         >
-            <div
+          <div
             style="
-                width: 97%;
-                height: 280px;
-                border: dashed 2px white;
-                margin: 10px auto 10px auto;
-                border-radius: 10px;
+              width: 95%;
+              height: 30px;
+              text-align: left;
+              line-height: 30px;
+              color: white;
+              margin: 2% 2%;
             "
-            >
+          >
+            FROM. """ + name + """
+          </div>
+          <div
+            style="
+              width: 95%;
+              height: 210px;
+              border: 1px solid white;
+              margin: 0 0 10% 2%;
+              color: white;
+              border-radius: 10px;
+              text-align: left;
+            "
+          >
             <div
-                style="
+              style="
                 width: 95%;
-                height: 30px;
-                text-align: left;
-                line-height: 30px;
+                margin: 3% auto 0 auto;
                 color: white;
-                margin: 2% 2%;
-                "
+                line-height: 1.5;
+              "
             >
-                FROM. """ + name + """
+              """ + text + """
             </div>
-            <div
-                style="
-                width: 95%;
-                height: 210px;
-                border: 1px solid white;
-                margin: 0 0 10% 2%;
-                color: white;
-                border-radius: 10px;
-                text-align: left;
-                "
-            >
-                <div
-                style="
-                    width: 95%;
-                    margin: 3% auto 0 auto;
-                    color: white;
-                    line-height: 1.5;
-                "
-                >
-                """+ text +"""
-                </div>
-            </div>
-            </div>
+          </div>
         </div>
+      </div>
 
-        <div
-            id="login-division-bar"
-            style="
-            text-align: center;
-            height: 1px;
-            width: 90%;
-            margin: 5% auto;
-            background: rgb(133, 133, 133);
-            "
-        ></div>
-        <div
-            id="login-logo-text"
-            style="
-            color: white;
-            text-align: left;
-            margin: 5% 0 5% 10%;
-            font-size: 17px;
-            "
+      <div
+        id="login-division-bar"
+        style="
+          text-align: center;
+          height: 1px;
+          width: 90%;
+          margin: 5% auto;
+          background: rgb(133, 133, 133);
+        "
+      ></div>
+      <div
+        id="login-logo-text"
+        style="
+          color: white;
+          text-align: left;
+          margin: 5% 0 5% 10%;
+          font-size: 17px;
+        "
+      >
+        <b style="color: #00b564; margin: 5% 2% 10% 17%; font-size: 22px"
+          >"Plant it"</b
         >
-            <b style="color: #00b564; margin: 5% 2% 10% 17%; font-size: 22px"
-            >"Plant it"</b
-            >
-            나만의 식물을 추천받아 <br />
-        </div>
-        <div
-            id="login-logo-text"
-            style="
-            color: white;
-            text-align: left;
-            margin: 5% 0 5% 10%;
-            font-size: 17px;
-            "
+        나만의 식물을 추천받아 <br />
+      </div>
+      <div
+        id="login-logo-text"
+        style="
+          color: white;
+          text-align: left;
+          margin: 5% 0 5% 10%;
+          font-size: 17px;
+        "
+      >
+        <b style="color: #00b564; margin: 5% 2% 5% 17%; font-size: 22px"
+          >"Plan it"</b
         >
-            <b style="color: #00b564; margin: 5% 2% 5% 17%; font-size: 22px"
-            >"Plan it"</b
-            >
-            체계적으로 관리하고 <br />
-        </div>
-        <div
-            id="login-logo-text"
-            style="
-            color: white;
-            text-align: left;
-            margin: 5% 0 5% 10%;
-            font-size: 17px;
-            "
+        체계적으로 관리하고 <br />
+      </div>
+      <div
+        id="login-logo-text"
+        style="
+          color: white;
+          text-align: left;
+          margin: 5% 0 5% 10%;
+          font-size: 17px;
+        "
+      >
+        <b style="color: #00b564; margin: 5% 2% 5% 17%; font-size: 22px"
+          >"Planet"</b
         >
-            <b style="color: #00b564; margin: 5% 2% 5% 17%; font-size: 22px"
-            >"Planet"</b
-            >
-            행성을 가꾸어 나가요 <br />
-        </div>
-        <div
-            id="login-division-bar"
-            style="
-            text-align: center;
-            height: 1px;
-            width: 90%;
-            margin: 5% auto;
-            background: rgb(133, 133, 133);
-            "
-        ></div>
-        </div>
-    </body>
-    </html>
-
+        행성을 가꾸어 나가요 <br />
+      </div>
+      <div
+        id="login-division-bar"
+        style="
+          text-align: center;
+          height: 1px;
+          width: 90%;
+          margin: 5% auto;
+          background: rgb(133, 133, 133);
+        "
+      ></div>
+    </div>
+  </body>
+</html>
     """
 
     msg = MIMEMultipart('alternative')
