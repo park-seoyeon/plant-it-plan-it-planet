@@ -1,0 +1,202 @@
+/* search detail views */
+.content .head {
+  text-align: left;
+  margin: 5% 0 0 5%;
+}
+
+.content .head img {
+  vertical-align: bottom;
+  width: 45%;
+  height: 45%;
+}
+
+.content .head #plus-btn {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: text-top;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-size: 11px;
+  padding: 2% 3%;
+  margin-left: 10%;
+}
+
+.content .head #plus-btn:hover {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: text-top;
+  color: #00b564;
+  border: 2px solid #00b564;
+  border-radius: 10px;
+  font-size: 11px;
+  padding: 2% 3%;
+  margin-left: 10%;
+}
+.content .division {
+  width: 307px;
+  border: 2px solid #ffffff;
+  margin: 3% auto;
+}
+
+.content .back {
+  position: fixed;
+  text-align: right;
+  margin-right: 5%;
+  display: flex;
+  bottom: 75px;
+  right: 0;
+  z-index: 999;
+}
+
+.content .back .back-icon {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 15px;
+  width: 44px;
+  height: 44px;
+}
+
+.content .back .back-icon img {
+  /* vertical-align: bottom; */
+  padding-top: 22%;
+  width: 50%;
+  height: 50%;
+}
+
+/* search detail info */
+.content .detail-img {
+  margin-bottom: 3%;
+}
+
+.content .detail-img img {
+  width: 307px;
+  height: 290px;
+}
+
+.content .plant-name {
+  color: #ffffff;
+  text-align: left;
+  margin-left: 9%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content .plant-intro {
+  color: #ffffff;
+  text-align: left;
+  margin: 3% 0 0 9%;
+  font-size: 12px;
+  width: 307px;
+  line-height: 1.7;
+}
+
+.content #dashed-division {
+  border: 1px dashed #aaaaaa;
+  width: 310px;
+  margin: 3% 0 3% 9%;
+}
+
+.content .info {
+  text-align: left;
+}
+
+.content .info .info-icon {
+  display: inline-block;
+  border-right: 1px solid #ffffff;
+  padding-right: 5%;
+  margin-left: 12%;
+}
+
+.content .info .info-cont {
+  display: inline-block;
+  color: #ffffff;
+  margin-left: 5%;
+  line-height: 1.5;
+}
+
+.content .info .info-cont #title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.content .info .info-cont #desc {
+  font-size: 12px;
+  width: 235px;
+}
+
+/* search detail care */
+.content .care {
+  color: #ffffff;
+}
+
+.content .care .name {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  margin: 0 0 3% 7%;
+}
+
+.content .care .title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 3% 0 3% 7%;
+}
+
+.content .care .desc {
+  text-align: left;
+  font-size: 12px;
+  margin: 0 0 3% 7%;
+  width: 320px;
+  line-height: 1.7;
+}
+/* search detail problem */
+.content .problem {
+  color: #ffffff;
+}
+
+.content .problem-name {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  margin: 0 0 3% 7%;
+}
+
+.content .problem .title {
+  cursor: pointer;
+  color: #ffffff;
+  text-align: left;
+  font-size: 14px;
+  margin: 0 0 3% 7%;
+}
+
+.content .problem img {
+  width: 3%;
+  height: 3%;
+}
+
+.content .problem .title-active {
+  cursor: pointer;
+  color: #00b564;
+  text-align: left;
+  font-size: 14px;
+  margin: 0 0 3% 7%;
+}
+
+.content .problem .desc {
+  color: #ffffff;
+  text-align: left;
+  font-size: 12px;
+  margin: 0 10%;
+  line-height: 1.6;
+}
+
+.content .problem-division {
+  border: 1px solid #808080;
+  width: 350px;
+  margin: 3% auto;
+}
