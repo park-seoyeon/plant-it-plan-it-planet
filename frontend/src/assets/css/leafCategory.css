@@ -1,0 +1,105 @@
+.content #leafcategory {
+  width: 375px;
+  height: 115px;
+}
+
+.content #leafcategory .leafcategoryfilter {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #leafcategory .leafcategoryfilter-active {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #00b564;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #leafcategory .dashedline {
+  width: 330px;
+  height: 0px;
+  margin: 4% auto 0 auto;
+
+  border: 1px dashed #ffffff;
+}
+
+.content #leafcategory #leaftype {
+  /* width: 66px; */
+  float: left;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.content #leafcategory #air {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+}
+
+.content #leafcategory #smell {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+}
+
+.content #leafcategory #animal {
+  width: 109px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #leafcategory #light {
+  width: 109px;
+  float: left;
+}
+
+.content #leafcategory #fruit {
+  width: 82px;
+  float: left;
+}
+
+.content #leafcategory #stick {
+  width: 82px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #leafcategory #bottom {
+  width: 82px;
+  float: left;
+}
+
+.content #leafcategory #flower {
+  width: 82px;
+  float: left;
+}

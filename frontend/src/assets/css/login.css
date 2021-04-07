@@ -1,0 +1,67 @@
+/* login */
+.content #login-logo img {
+  margin: 20% 0 0 0;
+}
+
+.content #login-title {
+  color: white;
+  margin: 2% 0 20% 0;
+  font-size: 17px;
+  font-family: 'Cafe24Oneprettynight';
+}
+
+.content #login-division-bar {
+  text-align: center;
+  height: 1px;
+  width: 271px;
+  margin: 10% 0 10% 15%;
+  background: rgb(133, 133, 133);
+}
+
+.content #login-logo-text {
+  color: white;
+  text-align: left;
+  margin: 10% 0;
+  font-size: 17px;
+}
+
+.content #login-logo-text b {
+  color: #00b564;
+  margin: 10% 2% 10% 17%;
+  font-size: 22px;
+}
+
+.content #login-logo-plantimg {
+  margin: 10% 0 0 0;
+}
+
+.content #login-logo-plantimg img {
+  width: 20%;
+}
+
+.content #login-button {
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 80%;
+  height: 60px;
+  margin: 30% auto 0 auto;
+  color: white;
+}
+
+.content #login-button #login-button-kakao {
+  float: left;
+  margin: 8px 0 0 -40px;
+}
+
+.content #login-button #login-button-kakao img {
+  width: 30%;
+  height: 30%;
+}
+
+.content #login-button #login-button-text {
+  width: 150px;
+  float: left;
+  margin: 7% 0 0 0;
+  font-size: 20px;
+}

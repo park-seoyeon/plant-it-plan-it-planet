@@ -1,0 +1,90 @@
+.content #dungulcategory {
+  width: 375px;
+  height: 80px;
+}
+
+.content #dungulcategory .dungulcategoryfilter {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #dungulcategory .dungulcategoryfilter-active {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #00b564;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #dungulcategory .dashedline {
+  width: 330px;
+  height: 0px;
+  margin: 4% auto 0 auto;
+
+  border: 1px dashed #ffffff;
+}
+
+.content #dungulcategory #leaftype {
+  /* width: 66px; */
+  float: left;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.content #dungulcategory #air3 {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+}
+
+.content #dungulcategory #flower3 {
+  width: 72px;
+  float: left;
+  margin-top: 2%;
+  margin-right: 20px;
+}
+
+.content #dungulcategory #light3 {
+  width: 122px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #dungulcategory #animal3 {
+  width: 112px;
+  float: left;
+}
+
+.content #dungulcategory #fruit3 {
+  width: 82px;
+  float: left;
+}

@@ -1,0 +1,11 @@
+/* intro */
+.content #Introimg img {
+  height: 80%;
+  width: 80%;
+  margin: 50% 0 0 0;
+}
+
+.content #clicktostart {
+  color: white;
+  margin: 10% 0 0 0;
+}

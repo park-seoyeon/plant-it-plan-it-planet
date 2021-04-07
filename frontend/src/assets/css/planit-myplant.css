@@ -1,0 +1,94 @@
+.myplants {
+  height: 200px;
+}
+
+.main_component_myplant_title {
+  text-align: left;
+  margin: 0 0 0 8%;
+  font-size: 18px;
+  color: white;
+}
+
+.main_component_myplant_sub {
+  text-align: left;
+  margin: 0 0 3% 8%;
+  font-size: 7px;
+  color: white;
+}
+
+.main_component_myplant .gotosearch {
+  width: 180px;
+  height: 30px;
+  line-height: 28px;
+
+  background: #242424;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  margin: 0 0 0 26%;
+
+  float: left;
+
+  cursor: pointer;
+}
+
+.main_component_myplant .gotosearch:hover {
+  color: #00b564;
+  border: 1px solid #00b564;
+}
+
+.myplantscard {
+  height: 200px;
+}
+
+.myplantscard img {
+  width: 100%;
+  height: 200px;
+  opacity: 0.5;
+  border-radius: 15px;
+  position: relative;
+}
+
+#myplants_name {
+  position: relative;
+  top: -140px;
+  font-size: 24px;
+  color: white;
+}
+
+.plantsname_detail {
+  position: relative;
+  top: -130px;
+  font-size: 11px;
+  color: white;
+  cursor: pointer;
+}
+
+.gallery {
+  background: #eee;
+}
+
+.gallery_text {
+  color: rgb(36, 36, 36);
+}
+
+.gallery-cell {
+  width: 80%;
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 15px;
+  /* background: #8c8; */
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}

@@ -1,0 +1,106 @@
+.content #cactuscategory {
+  width: 375px;
+  height: 115px;
+}
+
+.content #cactuscategory .cactuscategoryfilter {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #ffffff;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #cactuscategory .cactuscategoryfilter-active {
+  cursor: pointer;
+  width: 82px;
+  height: 28px;
+
+  border: 1px solid #00b564;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 25px;
+
+  color: #00b564;
+
+  float: left;
+  vertical-align: center;
+  margin: 0 0 2% 2%;
+}
+
+.content #cactuscategory .dashedline {
+  width: 330px;
+  height: 0px;
+  margin: 4% auto 0 auto;
+
+  border: 1px dashed #ffffff;
+}
+
+.content #cactuscategory #leaftype {
+  /* width: 66px; */
+  float: left;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.content #cactuscategory #air4 {
+  width: 82px;
+  float: left;
+  margin-top: 2%;
+}
+
+.content #cactuscategory #flower4 {
+  width: 72px;
+  float: left;
+  margin-top: 2%;
+  margin-right: 20px;
+}
+
+.content #cactuscategory #light4 {
+  width: 122px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #cactuscategory #animal4 {
+  width: 112px;
+  float: left;
+}
+
+.content #cactuscategory #fruit4 {
+  width: 82px;
+  float: left;
+}
+
+.content #cactuscategory #stick4 {
+  width: 82px;
+  float: left;
+  margin-left: 5%;
+}
+
+.content #cactuscategory #niddle4 {
+  width: 92px;
+  float: left;
+}
+
+.content #cactuscategory #bottom4 {
+  width: 92px;
+  float: left;
+}

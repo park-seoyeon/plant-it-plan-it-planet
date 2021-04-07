@@ -1,93 +1,95 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" @click="requestKakao">
-    <div>
-      {{ userInfo.name }}
-      <br>
-      {{ userInfo.email }}
-    </div>
+    <router-view />
+    <Navbar />
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
+import Navbar from '@/components/Nav/Navbar.vue';
 export default {
-  name: 'App',
   data: () => {
-    return {
-      userInfo: {
-        name : "test_name",
-        email : "test_email",
-      },
-      isLogin: false,
-
-    }
+    return {};
   },
-  methods: {
-    requestKakao() {
-      window.Kakao.Auth.authorize({
-        redirectUri: `http://localhost:8080`,
-        });
-    },
-
+  components: {
+    Navbar,
   },
-  created(){
-
-    const token = localStorage.getItem('jwt');
-    if (token) {
-      this.isLogin = true;
-      this.userInfo.name = localStorage.getItem('name');
-    }
-
-    this.code = this.$route.query.code;
-    if (this.code != null || this.code != undefined) {
-      axios
-        .post(`http://localhost:8000/login/`, this.code)
-        .then((response) => {
-          history.pushState(null, '', `/`);
-          // let userInfo = null;
-          if (response.data['oauth-result'] === 'success') {
-            userInfo = response.data['userInfo'];
-            localStorage.setItem('jwt', response.data['access-token']);
-            localStorage.setItem('name', response.data['userInfo'].name);
-            localStorage.setItem('user_number', response.data['userInfo'].user_number);
-            location.reload();
-          } else {
-            // const result = confirm('이미 존재하는 이메일입니다. 카카오 계정으로 통합하시겠습니까?');
-
-            if (result) {
-              userInfo = response.data['userInfo'];
-              axios.post(`${SERVER_URL}/kakao/login/merge`, userInfo).then((response) => {
-                history.pushState(null, '', `/`);
-                if (response.data['oauth-result'] === 'success') {
-                  userInfo = response.data['userInfo'];
-                  localStorage.setItem('jwt', response.data['access-token']);
-                  localStorage.setItem('name', response.data['userInfo'].name);
-                  localStorage.setItem('user_number', response.data['userInfo'].user_number);
-                  location.reload();
-                } else {
-                  alert('카카오 로그인에 실패하셨습니다');
-                  this.$router.push({ name: 'Home' }).catch((error) => {
-                    if (error.name === 'NavigationDuplicated') {
-                      location.reload();
-                    }
-                  });
-                }
-              });
-            }
-          }
-        })
-        .catch(() => {
-          alert('로그인중 오류가 발생했습니다. 다시 로그인 해주세요.');
-          this.$router.push({ name: 'Home' }).catch((error) => {
-            if (error.name === 'NavigationDuplicated') {
-              location.reload();
-            }
-          });
-        });
-    }
-  }
-
-}
+};
 </script>
+
+<style>
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BMHANNAAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cafe24Oneprettynight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import './assets/css/display.css';
+@import './assets/css/intro.css';
+@import './assets/css/login.css';
+@import './assets/css/survey.css';
+@import './assets/css/loading.css';
+@import './assets/css/search.css';
+@import './assets/css/plantCategory.css';
+@import './assets/css/skyCategory.css';
+@import './assets/css/leafCategory.css';
+@import './assets/css/dungulCategory.css';
+@import './assets/css/cactusCategory.css';
+@import './assets/css/leafType.css';
+@import './assets/css/searchDetail.css';
+@import './assets/css/planit.css';
+@import './assets/css/planit-myplant.css';
+@import './assets/css/planit-foryou.css';
+@import './assets/css/planit-magazine.css';
+@import './assets/css/myplant.css';
+@import './assets/css/modal.css';
+@import './assets/css/myplant-detail.css';
+@import './assets/css/myplant-cards.css';
+@import './assets/css/mypage.css';
+@import './assets/css/magazine.css';
+@import './assets/css/nav-bar.css';
+
+#app {
+  font-family: 'NanumSquare', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  height: 100%;
+  align-self: center;
+}
+
+html {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  background-color: #252525;
+  font-family: 'NanumSquare', sans-serif;
+  margin: 0px;
+  height: 100%;
+}
+</style>

@@ -1,0 +1,175 @@
+/* myplant.vue */
+.content .plantit-title {
+  text-align: left;
+  color: #ffffff;
+  margin-left: 8%;
+}
+
+.content .plantit-title #myplant {
+  font-size: 24px;
+}
+
+.content .plantit-title #care {
+  font-size: 10px;
+}
+
+/* plantcard.vue */
+.content .plant-card {
+  width: 298px;
+  border: 2px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+  margin: 10% auto;
+}
+
+.content .plant-card:hover {
+  width: 298px;
+  border: 2px dashed #00b564;
+  border-radius: 10px;
+  margin: 10% auto;
+}
+
+.content .plant-card .delete-plant {
+  text-align: right;
+  color: #dd4545;
+}
+
+.content .plant-card .delete-plant .delete {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #dd4545;
+  border-radius: 20px;
+  width: 24px;
+  height: 24px;
+  margin: 2% 2% 0 0;
+}
+
+.content .plant-card {
+  color: #ffffff;
+}
+
+/* myplant */
+.content .plant-card .myplant {
+  text-align: left;
+  margin-left: 2%;
+  cursor: pointer;
+}
+
+.content .plant-card .myplant img {
+  width: 106px;
+  height: 106px;
+}
+
+.content .plant-card .myplant .cont {
+  display: inline-block;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.content .plant-card .myplant .cont #day {
+  font-size: 7px;
+}
+
+.content .plant-card .myplant .cont #name #nickname {
+  display: inline-block;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 115px;
+}
+
+.content .plant-card .myplant .cont #name #level {
+  font-size: 12px;
+  vertical-align: text-top;
+}
+
+.content .plant-card .myplant .cont #water-title {
+  font-size: 12px;
+  margin-bottom: 3%;
+}
+
+.content .plant-card .myplant .cont #water-bar {
+  width: 157px;
+  height: 8px;
+  border: 1px solid #6298e9;
+  border-radius: 30px;
+  margin-bottom: 5%;
+}
+
+.content .plant-card .myplant .cont #water-progress {
+  height: 8px;
+  background: #6298e9;
+  width: 0%;
+}
+
+.content .plant-card .myplant .cont #repotting-title {
+  font-size: 12px;
+  margin-bottom: 3%;
+}
+
+.content .plant-card .myplant .cont #repotting-bar {
+  width: 157px;
+  height: 8px;
+  border: 1px solid #feab2d;
+  border-radius: 30px;
+  margin-bottom: 5%;
+}
+
+.content .plant-card .myplant .cont #repotting-progress {
+  height: 8px;
+  background: #feab2d;
+  width: 0%;
+}
+
+/* wantplant */
+.content .plant-card .wantplant {
+  text-align: left;
+  margin-left: 2%;
+}
+
+.content .plant-card .wantplant img {
+  cursor: pointer;
+  width: 106px;
+  height: 106px;
+}
+
+.content .plant-card .wantplant .cont {
+  display: inline-block;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.content .plant-card .wantplant .cont #name {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
+  margin-bottom: 40%;
+}
+
+.content .plant-card .wantplant .cont #btn {
+  text-align: right;
+  margin-bottom: 5%;
+  font-size: 14px;
+}
+
+.content .plant-card .wantplant .cont #btn #buyit {
+  cursor: pointer;
+  display: inline-block;
+  background: #646464;
+  border-radius: 10px;
+  padding: 1% 5%;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.content .plant-card .wantplant .cont #btn #plantit {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5%;
+  background: #00b564;
+  border-radius: 10px;
+  padding: 1% 5%;
+}

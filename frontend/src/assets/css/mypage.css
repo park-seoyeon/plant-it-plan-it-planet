@@ -1,0 +1,389 @@
+/* mypage.vue */
+.content .planet-title {
+  text-align: left;
+  color: #ffffff;
+  margin: 3% auto 5% auto;
+  margin-left: 8%;
+}
+
+.content .planet-title #mypage {
+  font-size: 24px;
+}
+
+.content .planet-title #care {
+  font-size: 10px;
+}
+
+.content #planet-division-bar {
+  width: 307px;
+  height: 1px;
+  background: rgb(133, 133, 133);
+  margin: 2% auto 0 auto;
+}
+
+.content .top-button {
+  display: flex;
+  margin-top: 5%;
+}
+
+.content .top-button #getsurveyresult {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 37%;
+}
+
+.content .top-button #getsurveyresult:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
+.content .top-button #gotosurvey {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 44%;
+}
+
+.content .top-button #gotosurvey:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
+.content .top-button #logout {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+
+  float: right;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 2%;
+}
+
+.content .top-button #logout:hover {
+  border: 1px solid #00b564;
+  color: #00b564;
+}
+
+.content .myreward {
+  width: 85%;
+  overflow: hidden;
+  height: auto;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 6%;
+  margin-bottom: 5%;
+}
+
+.content #deleteUser {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+
+  font-weight: bolder;
+  font-size: 10px;
+  line-height: 18px;
+
+  color: #ffffff;
+  vertical-align: center;
+  margin: 8% 10% 3% 10%;
+  margin-left: 73%;
+
+  text-align: center;
+}
+
+.content #deleteUser:hover {
+  border: 1px solid #ff3636;
+  color: #ff3636;
+}
+
+/* profilecard.vue */
+.content .profile-card {
+  width: 83%;
+  overflow: hidden;
+  left: 40px;
+  top: 122px;
+
+  background: #242424;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 2% auto;
+  margin-top: 3%;
+  margin-bottom: 8%;
+  color: #ffffff;
+}
+
+.content .profile-card:hover {
+  border: 2px solid #00b564;
+  box-shadow: #ffffff;
+  animation: profile-card-move.2s;
+}
+
+@keyframes profile-card-move {
+  0% {
+    transition: rotate(-0.5deg);
+  }
+  50% {
+    transform: rotate(0.5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.content .profile-card:hover #sky-head {
+  background-color: #00b564;
+}
+
+.content .profile-card #sky-head {
+  background-color: #ffffff;
+  margin-top: 7%;
+  width: 100%;
+  height: 20px;
+}
+
+.content .profile-card .profile-head {
+  height: 60%;
+  margin: 2% 4% 5% 4%;
+  display: flex;
+}
+
+.content .profile-card .profile-head .mypage-profile-image-class {
+  width: 30%;
+  height: 85px;
+}
+
+.content
+  .profile-card
+  .profile-head
+  .mypage-profile-image-class
+  #mypage-profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 70%;
+  margin: 15% 2% 0% 2%;
+  flex: 1;
+}
+
+.content .profile-card .profile-head .head-right {
+  width: 65%;
+  flex: 2;
+}
+
+.content .profile-card .profile-head .head-right .environment {
+  flex: 1;
+  margin-left: 70%;
+}
+
+.content
+  .profile-card
+  .profile-head
+  .head-right
+  .environment
+  #environmentday-image {
+  width: 45%;
+  height: 45%;
+  margin-top: 5%;
+  border: 2px solid #00b564;
+  border-radius: 50%;
+  margin-left: 2%;
+}
+
+.content
+  .profile-card
+  .profile-head
+  .head-right
+  .environment
+  #environmentday-title {
+  width: 80%;
+  font-size: 11px;
+  font-family: 'BMHANNAAir';
+  color: #00b564;
+  margin-left: 11%;
+}
+
+.content
+  .profile-card
+  .profile-head
+  .head-right
+  .environment
+  #non-environmentday {
+  height: 40px;
+}
+.content .profile-card .profile-head .head-right #title {
+  font-size: 22px;
+  margin: 0% 4%;
+  font-family: 'DungGeunMo';
+}
+.content .profile-card .profile-bottom {
+  height: 40%;
+  display: flex;
+  margin-bottom: 6%;
+  margin-top: 3%;
+}
+
+.content .profile-card .profile-bottom .bottom-name {
+  height: 40%;
+  display: flex;
+
+  flex: 1;
+}
+
+.content .profile-card .profile-bottom .bottom-name #name {
+  font-size: 15px;
+  width: 75%;
+  text-align: right;
+  font-weight: bolder;
+  margin: 4% 2% 5% 10%;
+}
+
+.content .profile-card .profile-bottom .bottom-name #level-thumbnail-image {
+  width: 20%;
+  height: 100%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.content .profile-card .profile-bottom .level {
+  flex: 2;
+  width: 65%;
+}
+
+.content .profile-card .profile-bottom .level .level-text {
+  display: flex;
+  font-size: 5px;
+  font-family: 'BMHANNAAir';
+}
+
+.content .profile-card .profile-bottom .level .level-text #next {
+  flex: 1;
+  padding-top: 1%;
+  margin-right: 9%;
+}
+
+.content .profile-card .profile-bottom .level-text #number {
+  flex: 1;
+  margin-left: 9%;
+}
+
+.content .profile-card .profile-bottom .level #level-bar {
+  width: 85%;
+  height: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+.content .profile-card .profile-bottom .level #level-progress {
+  height: 8px;
+  background: #ffffff;
+  width: 0%;
+}
+
+/* myplanet.vue */
+.content .myplanet #planet-image {
+  width: 70%;
+  margin: 2% auto;
+}
+
+.content .myplanet #planet-image:hover {
+  animation: planet-image-move.5s;
+}
+
+@keyframes planet-image-move {
+  0% {
+    transform: scale(1.01) rotate(-1deg);
+  }
+  30% {
+    transform: scale(1.015);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  70% {
+    transform: scale(1.025);
+  }
+}
+
+/* myreward.vue */
+
+.content .myreward .reward {
+  width: 30%;
+  float: left;
+  margin: 5% auto;
+  margin-left: 3%;
+}
+
+.content .myreward .reward #badge #badge-get {
+  width: 60%;
+}
+
+.content .myreward .reward #badge #badge-get:hover {
+  animation: badge-move.2s;
+}
+
+@keyframes badge-move {
+  0% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(-5deg);
+  }
+}
+
+.content .myreward .reward #badge #badge-nonget {
+  width: 60%;
+}
+
+.content .myreward .reward #reward-title {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.content #reward-bottom-full {
+  height: 30px;
+}

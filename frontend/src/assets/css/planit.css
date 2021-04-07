@@ -1,0 +1,60 @@
+.content #planit {
+  float: left;
+}
+
+.content #planit_division {
+  float: left;
+  margin-left: 9%;
+}
+
+.content .planit_logo {
+  float: left;
+  margin: 0 0 0 2%;
+}
+
+.content .planit_profile {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-left: 35%;
+  border-radius: 50px;
+}
+
+.content .planit_profile img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.content .planit_divisionbar {
+  width: 307px;
+  height: 1px;
+  background: rgb(133, 133, 133);
+  margin: 5% 0 0 9%;
+  text-align: center;
+  float: left;
+}
+
+.content .planit_logo {
+  height: 100px;
+  width: 100%;
+  float: left;
+}
+
+.content .planit_myplant {
+  width: 100%;
+  float: left;
+  margin: 0;
+}
+
+.content .planit_foryou {
+  width: 100%;
+  float: left;
+}
+
+.content .planit_magazine {
+  width: 100%;
+  height: 100px;
+  float: left;
+}
