@@ -195,7 +195,7 @@
 
   **말걸기 기능 사용 시 발송되는 E-mail 및 카카오톡 알림 내용**
 
-  <img src = "https://user-images.githubusercontent.com/26132746/113860637-36566700-97e1-11eb-9252-1d02638aeed5.JPG" width="100%" height="100%">
+  <img src = "https://user-images.githubusercontent.com/26132746/113861551-4d498900-97e2-11eb-84ad-7e75f07f830d.JPG" width="100%" height="100%">
 
 
 
