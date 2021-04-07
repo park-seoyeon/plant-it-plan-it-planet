@@ -16,9 +16,9 @@
 
 ###### **<u>MBTI 성향 조사 ( 빅데이터 )</u>** 를 기반으로 당신과 비슷한 성향의 식물이 무엇인지 알아보고,
 
-###### 당신에게 딱 맞는 식물을 추천받아 **<u>물주기, 분갈이, 말걸기 기능</u>**을 활용해 체계적으로 관리하고,
+###### 당신에게 딱 맞는 식물을 추천받아 물주기, 분갈이, 말걸기 기능을 활용해 체계적으로 관리하고,
 
-###### 식물 별로 **<u>식물일지</u>**도 쓰고, **<u>다양한 뱃지</u>**들도 모아 **<u>당신만의 행성</u>**을 깨끗하게 가꾸어 나가요.
+###### 식물 별로 식물일지도 쓰고, 다양한 뱃지들도 모아 당신만의 행성을 깨끗하게 가꾸어 나가요.
 
 ------
 
@@ -46,13 +46,13 @@
 
 - 팀장
 
-  안준웅 ( ENTJ ) : Backend, Bigdata
+  안준웅 ( ENTJ ) : Backend, Bigdata, Server
 
 - 팀원
 
-  송현아 ( ENTJ ) : Backend
+  송현아 ( ENTJ ) : Backend, DB
 
-  신재복 ( ENFP ): Backend, Bigdata
+  신재복 ( ENFP ): Backend, ML
 
   최준호 ( ENFP ): Frontend
 
@@ -74,7 +74,7 @@
 
 
 
-![식물키우기](https://user-images.githubusercontent.com/26132746/113854217-977a3c80-97d9-11eb-99c6-c0fd0a141015.JPG)
+![식물키우기](https://user-images.githubusercontent.com/26132746/113860279-d19b0c80-97e0-11eb-939d-660c31693e60.JPG)
 
 
 
@@ -155,9 +155,9 @@
 
   검색 페이지에서 선택한 식물에 대한 세부내용을 조회할 수 있고,
 
-  '+ 내 식물로 추가하기' 버튼을 이용해 Myplant에 추가해 관리할 수 있습니다.
+  '**+ 내 식물로 추가하기**' 버튼을 이용해 Myplant에 추가해 관리할 수 있습니다.
 
-<img src = "https://user-images.githubusercontent.com/26132746/113857348-67cd3380-97dd-11eb-986c-35a343935239.JPG" width="30%" height="30%">
+<img src = "https://user-images.githubusercontent.com/26132746/113860395-f1323500-97e0-11eb-99f4-97bbc95b464f.JPG" width="80%" height="80%">
 
 
 
@@ -184,6 +184,18 @@
   ( 식물 각각의 LV마다 대화 할 수 있는 내용이 다름 )
 
   <img src = "https://user-images.githubusercontent.com/26132746/113857751-db6f4080-97dd-11eb-9ba7-e39b3281f205.JPG" width="30%" height="30%">
+
+  
+
+  **물주기 실패 alert, 분갈이 실패 alert, 말걸기 alert**
+
+  <img src = "https://user-images.githubusercontent.com/26132746/113860456-07d88c00-97e1-11eb-82f7-d6c4c0921c4e.JPG" width="100%" height="100%">
+
+  
+
+  **말걸기 기능 사용 시 발송되는 E-mail 및 카카오톡 알림 내용**
+
+  <img src = "https://user-images.githubusercontent.com/26132746/113860637-36566700-97e1-11eb-9252-1d02638aeed5.JPG" width="100%" height="100%">
 
 
 
@@ -499,4 +511,3 @@ docker run -d -p 80:80 {이미지 이름}
 
 
 ------
-
