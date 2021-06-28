@@ -2,6 +2,10 @@
 
 **<u>SSAFY 4기 1반 1팀 ENable</u>**
 
+### 관련 UCC링크
+- https://youtu.be/HyD4rG0srdo
+- https://youtu.be/UDHnJt17nzY
+
 # 플랜'잇
 
 ## Plant It. Plan It. Planet.
